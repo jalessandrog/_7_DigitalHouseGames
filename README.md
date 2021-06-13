@@ -20,16 +20,15 @@ De acuerdo con el estudio realizado por el equipo presentamos las siguientes pá
 5) https://www.eneba.com/latam/
 	Esta página web no cuenta con tienda física por lo que el envío de los videojuegos se realiza a los domicilios de los clientes. La ventaja de esta tienda en línea es que puedes adquirir tarjetas de regalo para obtener descuentos y beneficios por ser cliente frecuente.
 
-# Quiénes somos?
 
-1)  Joseph Alessandro García García
-	23 años
-	Residente en Querétaro, Mx.
-	Estudiante en los últimos semestres de la carrera de Sistemas Digitales y Robótica del ITESM Campus Querétaro.
-	Intereses: videojuegos, fotografía y arte digital. 
-	Experiencia en programación: C, Java, C++, JavaScript, MATLAB, Python, VHDL y Verilog.
-	Habilidades principales: adaptabilidad, responsabilidad, trabajo en equipo y buena comunicación. 
+## Descripción del equipo
 
-	
+Jaime Costa: originario de Guadalajara, Jalisco, soy egresado de la Universidad de Guadalajara de la Facultad de Ingeniería Electrónica. Mis hobbies son el piano y los deportes acuáticos como el kitesurf y surf. 
 
-
+Joseph Alessandro García García:
+23 años
+Originario de La Barca, Jalisco. Actualmente, residente en Querétaro, Mx.
+Estudiante en los últimos semestres de la carrera de Sistemas Digitales y Robótica del ITESM Campus Querétaro.
+Hobbies: videojuegos, fotografía y arte digital. 
+Experiencia en programación: C, Java, C++, JavaScript, MATLAB, Python, VHDL y Verilog.
+Habilidades principales: adaptabilidad, responsabilidad, trabajo en equipo y buena comunicación.
