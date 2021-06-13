@@ -19,3 +19,8 @@ De acuerdo con el estudio realizado por el equipo presentamos las siguientes pá
 	Esta página web se puede encontrar videojuegos de varias consolas, lo interesante en esta página es que además de comprar también puede el cliente vender videojuegos propios de versiones anteriores al nuevo videojuego e intercambiar videojuegos con otros usuarios. 		
 5) https://www.eneba.com/latam/
 	Esta página web no cuenta con tienda física por lo que el envío de los videojuegos se realiza a los domicilios de los clientes. La ventaja de esta tienda en línea es que puedes adquirir tarjetas de regalo para obtener descuentos y beneficios por ser cliente frecuente.
+
+
+## Descripción del equipo
+
+Jaime Costa: originario de Guadalajara, Jalisco, soy egresado de la Universidad de Guadalajara de la Facultad de Ingeniería Electrónica. Mis hobbies son el piano y los deportes acuáticos como el kitesurf y surf. 
