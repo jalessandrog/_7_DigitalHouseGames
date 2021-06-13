@@ -5,3 +5,17 @@ Nosotros ofrecemos videojuegos en formato fisico para todo tipo de consolas, nue
 
 ## Nuestros clientes
 Nuestros consumidores son personas apasionadas por los videojuegos que aún disfrutan tenerlos en formato fisico y por cualquier razón no les gusta tener sus juegos en formato digital, lo anterior tiene una serie de implicaciones muy importantes, lo primero es que pertenecen a las clases sociales A,B,C+,C y D+, lo último se debe a que los juegos fisicos suelen ser más caros por obvias razones, pero nosotros vamos a intentar reducir eso lo más posible, otra cosa importante es que debemos evitar que nuestros clientes se contagien de la COVID-19 por lo que son personas concientes de su salud, pero quieren seguir disfrutando de buenos juegos, por todo esto, es que nuestros consumidores principales son hombres y mujeres que se encuentran en una edad entre 15 a 50 años, que estan estudiando o trabajando o los dos. 
+
+## Referentes del Mercado
+
+De acuerdo con el estudio realizado por el equipo presentamos las siguientes páginas web donde ofrecen venta de videojuegos en línea en formato físico:
+1) https://startgames.com.mx/
+	Está página de eccomerce ofrece gran variedad de opciones de videojuegos para los gamers. Se clasifican los videojuegos dependiendo de la consola a la que se puede reproducir el videojuego, además de que da la posibilidad de que el cliente pueda recoger el videojuego en la tienda física del proveedor o el envío del videojuego al domicilio del cliente.
+2) https://gameplanet.com/
+	Esta página web ofrece a los usuarios la posibilidad de adquirir varios videojuegos clasificados por la consola en la que pueden reproducirse. Además de los videojuegos existe la posibilidad de adquirir todos los accesorios para los fanáticos de los videojuegos, desde consolas, controles, cables de conexión y headset, entre otros. También ofrece la opción de recoger el producto en la tienda del proveedor o el envío de la mercancía al domicilio del cliente.
+3) https://virtualzone.mx/
+	Está página web ofrece gran variedad de productos, no solo la venta de videojuegos físicos, sino además consolas, laptop, celulares y mucho más. Sin embargo el diseño y la experiencia de usuario no es de los más agradable, pero el contenido es de los más ambiciosos de las páginas que hemos referenciado en nuestro estudio de mercado.
+4) https://mx.webuy.com/
+	Esta página web se puede encontrar videojuegos de varias consolas, lo interesante en esta página es que además de comprar también puede el cliente vender videojuegos propios de versiones anteriores al nuevo videojuego e intercambiar videojuegos con otros usuarios. 		
+5) https://www.eneba.com/latam/
+	Esta página web no cuenta con tienda física por lo que el envío de los videojuegos se realiza a los domicilios de los clientes. La ventaja de esta tienda en línea es que puedes adquirir tarjetas de regalo para obtener descuentos y beneficios por ser cliente frecuente.
