@@ -19,3 +19,17 @@ De acuerdo con el estudio realizado por el equipo presentamos las siguientes pá
 	Esta página web se puede encontrar videojuegos de varias consolas, lo interesante en esta página es que además de comprar también puede el cliente vender videojuegos propios de versiones anteriores al nuevo videojuego e intercambiar videojuegos con otros usuarios. 		
 5) https://www.eneba.com/latam/
 	Esta página web no cuenta con tienda física por lo que el envío de los videojuegos se realiza a los domicilios de los clientes. La ventaja de esta tienda en línea es que puedes adquirir tarjetas de regalo para obtener descuentos y beneficios por ser cliente frecuente.
+
+# Quiénes somos?
+
+1)  Joseph Alessandro García García
+	23 años
+	Residente en Querétaro, Mx.
+	Estudiante en los últimos semestres de la carrera de Sistemas Digitales y Robótica del ITESM Campus Querétaro.
+	Intereses: videojuegos, fotografía y arte digital. 
+	Experiencia en programación: C, Java, C++, JavaScript, MATLAB, Python, VHDL y Verilog.
+	Habilidades principales: adaptabilidad, responsabilidad, trabajo en equipo y buena comunicación. 
+
+	
+
+
