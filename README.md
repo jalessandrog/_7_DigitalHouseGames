@@ -32,3 +32,8 @@ Estudiante en los últimos semestres de la carrera de Sistemas Digitales y Robó
 Hobbies: videojuegos, fotografía y arte digital. 
 Experiencia en programación: C, Java, C++, JavaScript, MATLAB, Python, VHDL y Verilog.
 Habilidades principales: adaptabilidad, responsabilidad, trabajo en equipo y buena comunicación.
+
+Carlos Jiménez Zepeda:
+Soy originario de Guadalajara, Jalisco y tengo 20 años.
+Actualmente me encuentro estuandiando administración y finanzas en la Universidad Panamericana campus Guadalajara.
+Mis hobbies son jugar videojuegos y ver youtube.
