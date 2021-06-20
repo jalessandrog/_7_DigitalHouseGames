@@ -37,3 +37,9 @@ Carlos Jiménez Zepeda:
 Soy originario de Guadalajara, Jalisco y tengo 20 años.
 Actualmente me encuentro estuandiando administración y finanzas en la Universidad Panamericana campus Guadalajara.
 Mis hobbies son jugar videojuegos y ver youtube.
+
+
+
+## TABLERO DE TRABAJO
+Plataforma utilizada: Trello
+Link al tablero: https://trello.com/b/kh34l62J
