@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="static/css/styles_register.css">
+</head>
+<body>
+    <div class="overlay">
+        <form>
+           <!--   con = Container  for items in the form-->
+           <div class="con">
+           <!--     Start  header Content  -->
+           <header class="head-form">
+              <h2>Crear Cuenta</h2>
+              <!--     A welcome message or an explanation of the login form -->
+              <p>Registrate en DigitalHouseGames ingresando tu información correspondiente</p>
+           </header>
+           <!--     End  header Content  -->
+           <br>
+           <div class="field-set">
+               <!--   Profile Picture -->
+                <div class="profilepic">
+                    <label for="avatar">Choose a profile picture:</label>
+                    <br />
+                    <input type="file"
+                        id="avatar" name="avatar"
+                        accept="image/png, image/jpeg">
+                    <br />
+                    <br />
+                </div>
+                <!--   User names -->
+                <span class="input-item">
+                    <label for="names">Name: </label>
+                </span>
+                <!--   Names Input-->
+                <input class="form-input" id="txt-input" name="names" type="text" placeholder="Names" required>
+                <br>
+
+                <!--   surname -->
+                <span class="input-item">
+                    <label for="sourname">Sourname: </label>
+                </span>
+                <!--   Names Input-->
+                <input class="form-input" id="txt-input" name="surname" type="text" placeholder="sourname" required>
+                <br>
+
+                <!--  email -->
+                <span class="input-item">
+                    <label for="email">Email:</label>
+                 </span>
+                <!--   user name Input-->
+                 <input class="form-input" id="txt-input" type="email" name="email" placeholder="email" required>
+              <br>
+
+                <!--   user name -->
+                <span class="input-item">
+                    <label for="username">Username:</label>
+                 </span>
+                <!--   user name Input-->
+                 <input class="form-input" id="txt-input" type="text" name="username" placeholder="@UserName" required>
+              <br>
+
+                <!-- Date -->
+                <span class="input-item">
+                    <label for="dob">Date of birth:</label>
+                </span>
+                <!--   user name Input-->
+                <input class="form-input" id="dob" type="date" name="dob">
+            <br>
+
+                <!--   Password -->         
+                <span class="input-item">
+                    <label for="password">Password:</label>
+                </span>
+                <!--   Password Input-->
+                <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
+                <br>
+
+                <!--  Confirm Password -->         
+                <span class="input-item">
+                    <label for="cpassword">Confirm Password:</label>
+                </span>
+                <!--   Password Input-->
+                <input class="form-input" type="password" placeholder="Confirm Password" id="cpwd"  name="cpassword" required>
+                <br>
+                <br>
+
+                <p>Perfil del usuario:</p>
+                <!--  Selector Comprador--> 
+                    <label for="comprador">Comprador</label>
+                <!--   Selector Comprador Input-->
+                <input type="radio" id="comprador" name="profile" value="comprador" checked>
+                <br>
+
+                <!--  Selector Vendedor--> 
+                
+                    <label for="vendedor">Vendedor</label>
+
+                <!--   Selector Comprador Input-->
+                <input type="radio" id="vendedor" name="profile" value="vendedor">
+                <br>
+        <!--        buttons -->
+        <!--      button LogIn -->
+              <button class="register-button"> Sign Up </button>
+           </div>
+          <!-- End Form -->
+        </form>
+        </div>
+</body>
+</html>

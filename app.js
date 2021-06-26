@@ -9,5 +9,13 @@ app.listen(3000, () =>{
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile(__dirname + '/views/login.html');
+})
+
+app.get('/ingresar', (req, res) => {
+    res.sendFile(__dirname + '/views/login.html');
+})
+
+app.get('/registrar', (req, res) => {
+    res.sendFile(__dirname + '/views/register.html');
 })
