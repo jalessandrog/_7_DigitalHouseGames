@@ -19,3 +19,7 @@ app.get('/ingresar', (req, res) => {
 app.get('/registrar', (req, res) => {
     res.sendFile(__dirname + '/views/register.html');
 })
+
+app.get('/Sekiro', (req, res) => {
+    res.sendFile(__dirname + '/views/productDetail.html');
+})
