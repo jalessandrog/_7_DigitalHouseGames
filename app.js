@@ -9,7 +9,7 @@ app.listen(3000, () =>{
 })
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/views/login.html');
+    res.sendFile(__dirname + '/views/register.html');
 })
 
 app.get('/ingresar', (req, res) => {
@@ -22,4 +22,8 @@ app.get('/registrar', (req, res) => {
 
 app.get('/Sekiro', (req, res) => {
     res.sendFile(__dirname + '/views/productDetail.html');
+})
+
+app.get('/carrito', (req, res) => {
+    res.sendFile(__dirname + '/views/productCar.html');
 })
