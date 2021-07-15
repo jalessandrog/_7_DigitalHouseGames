@@ -4,65 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/styles_addProduct.css">
+    <title>Añadir Producto</title>
 </head>
 <!--Comienza el Header-->
-<header>
-    <img class="logo" src="/static/images/logo.jpg" />
-    <nav>
-      <ul class="nav_links">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Xbox</a>
-          <ul class="submenu">
-              <li><a href="#">Xbox One S</a></li>
-              <li><a href="#">Xbox One X</a></li>
-          </ul>
-        </li>
-        <li><a href="#">PS</a>
-          <ul class="submenu">
-              <li><a href="#">PS4</a></li>
-              <li><a href="#">PS5</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Switch</a></li>
-        <li><a href="#">Otros</a></li>
-        <li><a href="#">Contacto</a></li>
-      </ul>
-    </nav>
-    <a class="contact" href="#"><button>Iniciar Sesión</button></a>
-  </header>
-<body>
-      <main>
-          <form method="post">
-            <p>Nombre del producto: <input type="text" name="game_name"><br></p> 
-            <p>Descripción del producto: 
-                <br><textarea type="text" name="product_description" row="5" cols="100"></textarea><br>
-            </p>
-            <p>Precio: <input type="number" name="product_price"><br></p>
-            <p>Cantidad Disponible: <input type="number" name="product_stock"><br></p>
-            <p>Categoria: 
-                <input type="radio" name="product_category" value="C"> Consolas
-                <input type="radio" name="product_category" value="A"> Accesorios
-                <input type="radio" name="product_category" value="V"> Videojuegos
-            </p>
-            <p>Plataforma: 
-                <input type="radio" name="platform" value="PS5"> Playstation 5
-                <input type="radio" name="platform" value="PS4"> Playstation 4
-                <input type="radio" name="platform" value="XboxOne"> Xbox One
-                <input type="radio" name="platform" value="XboxSs"> Xbox Series S
-                <input type="radio" name="platform" value="XboxSx"> Xbox Series X
-                <input type="radio" name="platform" value="NSwitch"> Nintendo Switch
-            </p>
-            <p>Información Adicional
-                <br><textarea name="product_review" rows="10" cols="100"> Si lo desea, escriba aqui la información adicional</textarea>
-            </p>
-            <p>
-                <label>Cargar Imagenes</label>
-                <input type="file" name="images[]" id="fileInput" multiple> 
-            </p>
-            <p><input type="submit" name="submit" value="Cargar Producto"/></p>
-          </form>
-      </main>    
+
+<!--Main-->
+  <body>
+    <main>
+        <form class="form" method="post">
+          <p>Nombre del producto: <input type="text" name="game_name"><br></p> 
+          <p>Descripción del producto: 
+              <br><textarea type="text" name="product_description" row="5" cols="100"></textarea><br>
+          </p>
+          <div class="box-price">
+              <p>Precio Unitario: <input type="number" name="product_price"><br></p>
+              <p>Cantidad Disponible: <input type="number" name="product_stock"><br></p>
+          </div>
+          <p>Categoria:
+              <div class="category">
+                  <span><input type="radio" name="product_category" value="C"> Consolas </span>
+                  <span><input type="radio" name="product_category" value="A"> Accesorios </span>
+                  <span><input type="radio" name="product_category" value="V"> Videojuegos </span>
+              </div>
+          </p>
+          <p>Plataforma: 
+              <div class="platform">
+                  <span><input type="radio" name="platform" value="PS5"> Playstation 5</span>
+                  <span><input type="radio" name="platform" value="PS4"> Playstation 4</span>
+                  <span><input type="radio" name="platform" value="XboxOne"> Xbox One</span>
+                  <span><input type="radio" name="platform" value="XboxSs"> Xbox Series S</span>
+                  <span><input type="radio" name="platform" value="XboxSx"> Xbox Series X</span>
+                  <span><input type="radio" name="platform" value="NSwitch"> Nintendo Switch</span>
+              </div>
+          </p>
+          <p>Información Adicional
+              <br><textarea name="product_review" rows="10" cols="100"> Si lo desea, escriba aquí la información adicional</textarea>
+          </p>
+          <p>
+              <label>Cargar Imagenes</label><br>
+              <input type="file" name="images[]" id="fileInput" multiple> 
+          </p>
+          <div class="boton-cargar">
+              <input type="submit" name="submit" value="Cargar Producto"/>
+          </div>
+        </form>
+    </main>    
 </body>
 <!------------------------Footer---------------------------------> 
 <footer>
