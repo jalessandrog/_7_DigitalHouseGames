@@ -8,3 +8,30 @@ De igual forma, este primer sprint es el primer acercamiento con todos los miemb
 #Retos durante el primer sprint:
 Adaptabilidad a los horarios
 Disponibilidad por trabajo o estudios
+
+## SEGUNDO SPRINT
+
+#Conclusiones
+En un proyecto colaborativo es importante que la comunicación sea en toda dirección. Comunicar si hay algun imprevisto personal o del proyecto, si hay algun fallo en la aplicación, si no se sabe solucionar algun error, etc. 
+El proyecto no puede avanzar de manera horizontal si no se completan las tareas previas.
+
+#Retos
+Organización de tiempos
+Establecer juntas semanales para checar avances o problemas en la sprint
+Comunicación
+
+## TERCER SPRINT
+
+#Conclusiones
+
+
+#Retos
+Avanzar de manera horizontal
+Completar en tiempo y forma la sprint
+
+
+
+
+
+
+
