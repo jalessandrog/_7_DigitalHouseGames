@@ -1,3 +1,15 @@
+/*
+Paleta de colores
+
+#F2F2EB
+#F25922
+#F24E29
+#8C3623
+#262626
+#ff523b
+
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -39,15 +51,13 @@ main section article img{
 
 main section.products-box{
     width:50%;
-    background:#c1c1c1;
+    background:#F2F2EB;
     position:relative;
 }
 
-
-
 main section.buy-box{
     width:30%;
-    background:#c1c1c1;
+    background:#F2F2EB;
     padding:15px;
 }
 
@@ -73,14 +83,15 @@ main section.buy-box button{
 }
 
 main section button{
-    background-color: #5d5d5d;
+    background-color: #ff523b;
+    border: #8C3623;
     padding: 10px;
     color: white;
     font-weight: 700;
 }
 
 button:hover{
-    background-color:rgb(11, 62, 62);
+    background-color:#262626;
     cursor:pointer;
 }
 
@@ -96,8 +107,8 @@ main section.products-box div.buttons-compra{
 
 main section.products-box div.cantidad input{
     width:60%;
-    background-color: #878787;
-    color: white;
+    background-color: #fff;
+    color: #262626;
     font-weight: 700;
     text-align: center;
 }
