@@ -12,40 +12,40 @@
 <!--Comienza el Header-->
 
 <!--Main-->
-  <body>
+<body>
     <main>
-        <form class="form" method="post">
-          <p>Nombre del producto: <input type="text" name="game_name"><br></p> 
+        <form class="form" method="POST">
+          <p>Nombre del producto: <input type="text" name="nombre"><br></p> 
           <p>Descripción del producto: 
-              <br><textarea type="text" name="product_description" row="5" cols="100"></textarea><br>
+              <br><textarea type="text" name="breve-descripcion" row="5" cols="100"></textarea><br>
           </p>
           <div class="box-price">
-              <p>Precio Unitario: <input type="number" name="product_price"><br></p>
-              <p>Cantidad Disponible: <input type="number" name="product_stock"><br></p>
+              <p>Precio Unitario: <input type="number" name="precio"><br></p>
+              <p>Cantidad Disponible: <input type="number" name="precio"><br></p>
           </div>
           <p>Categoria:
               <div class="category">
-                  <span><input type="radio" name="product_category" value="C"> Consolas </span>
-                  <span><input type="radio" name="product_category" value="A"> Accesorios </span>
-                  <span><input type="radio" name="product_category" value="V"> Videojuegos </span>
+                  <span><input type="radio" name="categoria" value="C"> Consolas </span>
+                  <span><input type="radio" name="categoria" value="A"> Accesorios </span>
+                  <span><input type="radio" name="categoria" value="V"> Videojuegos </span>
               </div>
           </p>
           <p>Plataforma: 
               <div class="platform">
-                  <span><input type="radio" name="platform" value="PS5"> Playstation 5</span>
-                  <span><input type="radio" name="platform" value="PS4"> Playstation 4</span>
-                  <span><input type="radio" name="platform" value="XboxOne"> Xbox One</span>
-                  <span><input type="radio" name="platform" value="XboxSs"> Xbox Series S</span>
-                  <span><input type="radio" name="platform" value="XboxSx"> Xbox Series X</span>
-                  <span><input type="radio" name="platform" value="NSwitch"> Nintendo Switch</span>
+                  <span><input type="radio" name="plataforma" value="PS5"> Playstation 5</span>
+                  <span><input type="radio" name="plataforma" value="PS4"> Playstation 4</span>
+                  <span><input type="radio" name="plataforma" value="XboxOne"> Xbox One</span>
+                  <span><input type="radio" name="plataforma" value="XboxSs"> Xbox Series S</span>
+                  <span><input type="radio" name="plataforma" value="XboxSx"> Xbox Series X</span>
+                  <span><input type="radio" name="plataforma" value="NSwitch"> Nintendo Switch</span>
               </div>
           </p>
           <p>Información Adicional
-              <br><textarea name="product_review" rows="10" cols="100"> Si lo desea, escriba aquí la información adicional</textarea>
+              <br><textarea name="infromacion-adicional" rows="10" cols="100"> Si lo desea, escriba aquí la información adicional</textarea>
           </p>
           <p>
               <label>Cargar Imagenes</label><br>
-              <input type="file" name="images[]" id="fileInput" multiple> 
+              <input type="file" name="imagenes[]" id="fileInput" multiple> 
           </p>
           <div class="boton-cargar">
               <input type="submit" name="submit" value="Cargar Producto"/>
