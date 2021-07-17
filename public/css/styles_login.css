@@ -1,3 +1,15 @@
+/*
+Paleta de colores
+
+#F2F2EB
+#F25922
+#F24E29
+#8C3623
+#262626
+
+#ff523b
+
+*/
 /* Fonts Form Google Font ::- https://fonts.google.com/  -:: */
 @import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
 /* End Fonts */
@@ -9,6 +21,10 @@
 }
 /* End Global rules */
 
+body{
+    background-color: #fff;
+}
+
 /* Start form  attributes */
 form {
     width: 450px;
@@ -18,6 +34,7 @@ form {
     margin: 2% auto;
     box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
     padding: 2%;
+    background-color: #F2F2EB;
 }
 
 /* form Container */
@@ -35,33 +52,37 @@ form .con {
 }
 
 /* the header form form */
-header {
+div .head-form {
     margin: 2% auto 10% auto;
     text-align: center;
 }
 /* Login title form form */
-header h2 {
+div .head-form h2 {
     font-size: 250%;
     font-family: 'Playfair Display', serif;
     color: #3e403f;
 }
 /*  A welcome message or an explanation of the login form */
-header p {
+div .head-form p {
     letter-spacing: 0.05em;
     margin-top:2em;
 }
 
 form i{
-    color: black;
+    color: #ff523b;
 }
 
 /* //////////////////////////////////////////// */
 /* //////////////////////////////////////////// */
 
 
-.input-item {
+.field-set span{
     background: #fff;
-    color: #333;
+}
+
+.input-item {
+    height: 50px;
+    color: #262626;
     padding: 14.5px 0px 15px 9px;
     border-radius: 5px 0px 0px 5px;
 }
@@ -69,7 +90,7 @@ form i{
 /* inputs form  */
 input[class="form-input"]{
     width: 250px;
-    height: 50px;
+    height: 45px;
   
     margin-top: 2%;
     padding: 15px;
@@ -77,37 +98,27 @@ input[class="form-input"]{
     font-size: 16px;
     font-family: 'Abel', sans-serif;
     color: #5E6472;
-  
-    outline: none;
-    border: none;
-  
-    border-radius: 0px 5px 5px 0px;
-    transition: 0.2s linear;
 
-    border: solid .5px black;
-    
+    border: none;
+    transition: 0.2s linear;
 }
-input[id="txt-input"] {width: 250px;}
+
 /* focus  */
 input:focus {
     transform: translateX(-2px);
     border-radius: 5px;
 }
 
-/* //////////////////////////////////////////// */
-/* //////////////////////////////////////////// */
-
-/* input[type="text"] {min-width: 250px;} */
 /* buttons  */
-button {
-    display: inline-block;
-  
+div .buttons-login{
     width: 280px;
-    height: 50px;
-  
+    margin-top: 7%;
+}
+
+div .buttons-login button{
     padding: 0 20px;
-    background: rgb(88, 79, 4);
     border-radius: 5px;
+    color: #fff;
     
     outline: none;
     border: none;
@@ -116,29 +127,27 @@ button {
     text-align: center;
     transition: all 0.2s linear;
     
-    margin: 7% auto;
+    margin: 2% auto;
     letter-spacing: 0.05em;
 }
 
-/* Submits */
-.submits {
-    width: 48%;
-    display: inline-block;
-    float: left;
-    margin-left: 2%;
+.log-in{
+    width: 100%;
+    height: 50px;
+    background-color: #ff523b;
 }
 
-/*       Forgot Password button FAF3DD  */
-.frgt-pass {
-    background: black;
-    color:white;
+.other{
+    display: flex;
 }
 
-/*     Sign Up button  */
-.sign-up {
-    background: black;
-    color:white;
+.other button{
+    height: 50px;
+    width: 49%;
+    background-color: #262626; 
 }
+
+
 
 
 /* buttons hover */
