@@ -1,0 +1,266 @@
+/*
+Paleta de colores
+
+#F2F2EB
+#F25922
+#F24E29
+#8C3623
+#262626
+
+#ff523b
+
+*/
+/* Fonts Form Google Font ::- https://fonts.google.com/  -:: */
+@import url('https://fonts.googleapis.com/css?family=Abel|Abril+Fatface|Alegreya|Arima+Madurai|Dancing+Script|Dosis|Merriweather|Oleo+Script|Overlock|PT+Serif|Pacifico|Playball|Playfair+Display|Share|Unica+One|Vibur');
+/* End Fonts */
+/* Start Global rules */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* End Global rules */
+
+body{
+    background-color: #fff;
+}
+
+/* Start form  attributes */
+form {
+    width: 450px;
+    min-height: 500px;
+    height: auto;
+    border-radius: 5px;
+    margin: 2% auto;
+    box-shadow: 0 9px 50px hsla(20, 67%, 75%, 0.31);
+    padding: 2%;
+    background-color: #F2F2EB;
+}
+
+/* form Container */
+form .con {
+    display: -webkit-flex;
+    display: flex;
+  
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  
+      margin: 0 auto;
+}
+
+/* the header form form */
+div .head-form {
+    margin: 2% auto 10% auto;
+    text-align: center;
+}
+/* Login title form form */
+div .head-form h2 {
+    font-size: 250%;
+    font-family: 'Playfair Display', serif;
+    color: #3e403f;
+}
+/*  A welcome message or an explanation of the login form */
+div .head-form p {
+    letter-spacing: 0.05em;
+    margin-top:2em;
+}
+
+form i{
+    color: #ff523b;
+}
+
+/* //////////////////////////////////////////// */
+/* //////////////////////////////////////////// */
+
+
+.field-set span{
+    background: #fff;
+}
+
+.input-item {
+    height: 50px;
+    color: #262626;
+    padding: 14.5px 0px 15px 9px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+/* inputs form  */
+input[class="form-input"]{
+    width: 250px;
+    height: 45px;
+  
+    margin-top: 2%;
+    padding: 15px;
+    
+    font-size: 16px;
+    font-family: 'Abel', sans-serif;
+    color: #5E6472;
+
+    border: none;
+    transition: 0.2s linear;
+}
+
+/* focus  */
+input:focus {
+    transform: translateX(-2px);
+    border-radius: 5px;
+}
+
+/* buttons  */
+div .buttons-login{
+    width: 280px;
+    margin-top: 7%;
+}
+
+div .buttons-login button{
+    padding: 0 20px;
+    border-radius: 5px;
+    color: #fff;
+    
+    outline: none;
+    border: none;
+  
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s linear;
+    
+    margin: 2% auto;
+    letter-spacing: 0.05em;
+}
+
+.log-in{
+    width: 100%;
+    height: 50px;
+    background-color: #ff523b;
+}
+
+.other{
+    display: flex;
+}
+
+.other button{
+    height: 50px;
+    width: 49%;
+    background-color: #262626; 
+}
+
+.sign-up a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+/* buttons hover */
+button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+}
+
+/* buttons hover Animation */
+button:hover {
+    animation: ani9 0.4s ease-in-out infinite alternate;
+}
+@keyframes ani9 {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+
+/*-----------Footer--------------*/
+
+footer div.footer div.container div.fila{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.brands{
+    margin: 100px auto;
+}
+.col-5{
+    width: 160px;
+}
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p{
+    color: #8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col1,.footer-col2,.footer-col3,.footer-col4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col1{
+    flex-basis: 30%;
+}
+.footer-col2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col2 img{
+    width: 180px;
+    margin-bottom: 20px;
+    border-radius: 5%;
+}
+.footer-col3,.footer-col4{
+    flex-basis: 12%;
+  
+}
+
+.app-logo{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 140px;
+    cursor: pointer;
+}
+
+.footer li{
+    display: block;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin:  20px 0;
+}
+.copyright{
+    text-align: center;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}

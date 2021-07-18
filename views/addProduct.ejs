@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+<!-- Include Head -->
+
+ <!-- Header -->
+ <%- include('partials/header') %>
+ <!-- /Header -->
+
+<!--Main-->
+  <body>
+    <main>
+        <form class="form" method="POST">
+          <p>Nombre del producto: <input type="text" name="nombre"><br></p> 
+          <p>Descripción del producto: 
+              <br><textarea type="text" name="breve-descripcion" row="5" cols="100"></textarea><br>
+          </p>
+          <div class="box-price">
+              <p>Precio Unitario: <input type="number" name="precio"><br></p>
+              <p>Cantidad Disponible: <input type="number" name="precio"><br></p>
+          </div>
+          <p>Categoria:
+              <div class="category">
+                  <span><input type="radio" name="categoria" value="C"> Consolas </span>
+                  <span><input type="radio" name="categoria" value="A"> Accesorios </span>
+                  <span><input type="radio" name="categoria" value="V"> Videojuegos </span>
+              </div>
+          </p>
+          <p>Plataforma: 
+              <div class="platform">
+                  <span><input type="radio" name="plataforma" value="PS5"> Playstation 5</span>
+                  <span><input type="radio" name="plataforma" value="PS4"> Playstation 4</span>
+                  <span><input type="radio" name="plataforma" value="XboxOne"> Xbox One</span>
+                  <span><input type="radio" name="plataforma" value="XboxSs"> Xbox Series S</span>
+                  <span><input type="radio" name="plataforma" value="XboxSx"> Xbox Series X</span>
+                  <span><input type="radio" name="plataforma" value="NSwitch"> Nintendo Switch</span>
+              </div>
+          </p>
+          <p>Información Adicional
+              <br><textarea name="infromacion-adicional" rows="10" cols="100"> Si lo desea, escriba aquí la información adicional</textarea>
+          </p>
+          <p>
+              <label>Cargar Imagenes</label><br>
+              <input type="file" name="imagenes[]" id="fileInput" multiple> 
+          </p>
+          <div class="boton-cargar">
+              <input type="submit" name="submit" value="Cargar Producto"/>
+          </div>
+        </form>
+    </main>    
+</body>
+  <!-- footer -->
+  <%- include('partials/footer') %>
+  <!-- /footer --> 
+</html>
