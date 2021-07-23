@@ -206,6 +206,42 @@ input:focus{
     color: #ff523b;
 }
 
+.buttons-ED{
+    width: 100%;
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.action-button{
+    border: none;
+    font-size: 1em;
+    color: #ffffff;
+    padding: 8px 30px;
+    margin: 5px 5px;
+    border-radius: 30px;
+    transition: background 0.5s;
+    text-decoration: none;
+}
+
+.action-button.edit {
+    background-color: #ff523b;
+}
+
+.action-button.delete {
+    background-color: #262626;
+    padding: 11px 50px;
+    
+}
+
+.action-button:hover{
+    background: #262626;
+}
+.action-button.delete:hover{
+    background: #ff523b;
+}
 
 /*-----------Footer--------------*/
 
