@@ -13,38 +13,36 @@
            <!--   con = Container  for items in the form-->
            <div class="con">
            <!--     Start  header Content  -->
-           <header class="head-form">
+           <div class="head-form">
               <h2>Crear Cuenta</h2>
               <!--     A welcome message or an explanation of the login form -->
-              <p>Registrate en DigitalHouseGames ingresando tu información correspondiente</p>
-           </header>
+              <p>Registrate en DigitalHouseGames</p>
+           </div>
            <!--     End  header Content  -->
            <br>
            <div class="field-set">
                <!--   Profile Picture -->
                 <div class="profilepic">
-                    <label for="avatar">Choose a profile picture:</label>
+                    <label for="avatar">Elige una foto de perfil:</label>
                     <br />
-                    <input type="file"
-                        id="avatar" name="avatar"
-                        accept="image/png, image/jpeg">
+                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
                     <br />
                     <br />
                 </div>
                 <!--   User names -->
                 <span class="input-item">
-                    <label for="names">Name: </label>
+                    <label for="names">Nombre: </label>
                 </span>
                 <!--   Names Input-->
-                <input class="form-input" id="txt-input" name="names" type="text" placeholder="Names" required>
+                <input class="form-input" id="txt-input" name="names" type="text" placeholder="nombre(s)" required>
                 <br>
 
                 <!--   surname -->
                 <span class="input-item">
-                    <label for="sourname">Sourname: </label>
+                    <label for="sourname">Apellido: </label>
                 </span>
                 <!--   Names Input-->
-                <input class="form-input" id="txt-input" name="surname" type="text" placeholder="sourname" required>
+                <input class="form-input" id="txt-input" name="surname" type="text" placeholder="apellidos" required>
                 <br>
 
                 <!--  email -->
@@ -57,15 +55,15 @@
 
                 <!--   user name -->
                 <span class="input-item">
-                    <label for="username">Username:</label>
+                    <label for="username">Nombre de usuario:</label>
                  </span>
                 <!--   user name Input-->
-                 <input class="form-input" id="txt-input" type="text" name="username" placeholder="@UserName" required>
+                 <input class="form-input" id="txt-input" type="text" name="username" placeholder="@usuario" required>
               <br>
 
                 <!-- Date -->
                 <span class="input-item">
-                    <label for="dob">Date of birth:</label>
+                    <label for="dob">Fecha de nacimiento:</label>
                 </span>
                 <!--   user name Input-->
                 <input class="form-input" id="dob" type="date" name="dob">
@@ -73,7 +71,7 @@
 
                 <!--   Password -->         
                 <span class="input-item">
-                    <label for="password">Password:</label>
+                    <label for="password">Contraseña:</label>
                 </span>
                 <!--   Password Input-->
                 <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
@@ -81,7 +79,7 @@
 
                 <!--  Confirm Password -->         
                 <span class="input-item">
-                    <label for="cpassword">Confirm Password:</label>
+                    <label for="cpassword">Confirmar Contraseña:</label>
                 </span>
                 <!--   Password Input-->
                 <input class="form-input" type="password" placeholder="Confirm Password" id="cpwd"  name="cpassword" required>
