@@ -98,11 +98,17 @@ main input, main textarea{
     width: 30%;
 }
 
+.section-product select{
+    border: none;
+    width: 100%;
+    padding: 5px;
+    background-color: #fff;
+}
+
 .boton-cargar{
     text-align: center;
     cursor: pointer;
     margin: 50px 0;
-
 }
 
 .boton-cargar input{
