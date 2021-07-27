@@ -1,13 +1,233 @@
 [
  {
   "id": 1,
-  "nombre": "",
-  "precio": "",
-  "categoria": "",
-  "plataforma":"",
-  "section":"",
-  "description": "",
-  "infromacion-adicional":"",
-  "imagenes": ""
- }
+  "nombre": "Sekiro Shadows Die Twice",
+  "precio": "1,399.99",
+  "disponible": 100,
+  "consola": "Xbox one",
+  "plataforma":"Xbox",
+  "categoria":"mas-nuevo",
+  "breve-descripcion": "Forja tu propio camino en busca de la venganza en una nueva aventura del desarrollador From Software, responsable de Bloodborne y la serie Dark Souls.",
+  "informacion-adicional": "Esta Edición juego del año ahora incluye contenido adicional:- Recuerdo y Reto de fuerza: nuevos modos de desafío de jefe - Vestigios: deja mensajes y grabaciones de tus acciones para que otros jugadores las vean y califiquen - 3 aspectos desbloqueables Juego del año - The Game Awards 2019 Mejor juego de acción de 2019 - IGN Más de 50 premios y nominaciones Traza tu propio camino hacia la venganza en la galardonada aventura de FromSoftware, creadores de la saga Dark Souls. En Sekiro™: Shadows Die Twice encarnas al lobo manco, un guerrero desfigurado y caído en desgracia que ha sido rescatado al borde de la muerte. Tras jurar proteger a un joven señor descendiente de un antiguo linaje, te conviertes en el objetivo de despiadados enemigos, entre ellos el peligroso clan Ashina. Cuando el joven señor sea capturado, nada te detendrá en tu peligrosa aventura por restituir tu honor, ni siquiera la muerte. Explora el Japón de la era Sengoku de finales del siglo XVI, un brutal periodo de constante conflicto, mientras te enfrentas a inconmensurables enemigos en un mundo oscuro y tortuoso. Despliega un arsenal de instrumentos protésicos letales y poderosas habilidades ninja, al mismo tiempo que combinas el sigilo, la verticalidad y transversalidad, y los viscerales combates cara a cara en una sangrienta confrontación. Véngate. Restituye tu honor. Mata con ingenio.",
+  "imagenPrincipal": "",
+  "imagen2": "",
+  "imagen3": "",
+  "imagen4": ""
+ },
+ {
+    "id": 2,
+    "nombre": "Red Dead Redemption II",
+    "precio": "735.99",
+    "disponible": 100,
+    "consola": "XboxOne",
+    "plataforma":"Xbox",
+    "categoria":"mas-nuevo",
+    "breve-descripcion": "Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era. También incluye acceso al mundo multijugador compartido de Red Dead Online",
+    "informacion-adicional":"América, 1899. Arthur Morgan y la banda de Van der Linde son forajidos en busca y captura. Mientras los agentes federales y los mejores cazarrecompensas de la nación les pisan los talones, la banda deberá abrirse camino por el abrupto territorio del corazón de América y sobrevivir a base de robos y peleas. Arthur deberá elegir entre sus propios ideales y la lealtad a la banda que lo vio crecer. Con contenido adicional para el Modo Historia y un completo modo Foto, Red Dead Redemption 2 también incluye acceso gratuito al mundo multijugador compartido de Red Dead Online, en el que los jugadores asumen diversos roles para ganarse la vida a su manera en la frontera mientras persiguen a fugitivos buscados como cazarrecompensas, crean un negocio como comerciantes, descubren exóticos tesoros como coleccionistas, dirigen una destilería ilegal como licoristas y muchas cosas más.",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   },
+   {
+    "id": 3,
+    "nombre": "Resident Evil 3",
+    "precio": "499.99",
+    "disponible": 100,
+    "consola": "XboxOne",
+    "plataforma":"Xbox",
+    "categoria":"mas-comprado",
+    "breve-descripcion": "Jill Valentine es una de las pocas personas que quedan en Raccoon City que han sido testigos de las atrocidades de Umbrella. Para detenerla, Umbrella decide usar su arma secreta definitiva: ¡Nemesis! También incluye Resident Evil Resistance, un nuevo modo multijugador online 1 contra 4.",
+    "informacion-adicional":"Jill Valentine es una de las pocas personas que quedan en Raccoon City que han sido testigos de las atrocidades de Umbrella. Para detenerla, Umbrella decide usar su arma secreta definitiva: ¡Nemesis! También incluye Resident Evil Resistance, un nuevo modo multijugador online 1 contra 4 ambientado en el universo de Resident Evil, donde 4 supervivientes se enfrentarán al siniestro Cerebro.",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 4,
+    "nombre": "Grand Theft Auto V",
+    "precio": "551.99",
+    "disponible": 100,
+    "consola": "XboxOne",
+    "plataforma":"Xbox",
+    "categoria":"mas-comprado",
+    "breve-descripcion": "Grand Theft Auto V ofrece a los jugadores la opción de explorar el galardonado mundo de Los Santos y el condado de Blaine con una resolución de 4K y disfrutar del juego a 60 fotogramas por segundo.",
+    "informacion-adicional":"Cuando un joven estafador callejero, un ladrón de bancos retirado y un psicópata aterrador se ven involucrados con lo peor y más desquiciado del mundo criminal, del gobierno de los EE. UU. y de la industria del espectáculo, tendrán que llevar a cabo una serie de peligrosos golpes para sobrevivir en una ciudad implacable en la que no pueden confiar en nadie. Y mucho menos los unos en los otros. El juego cuenta con múltiples y variadas opciones de personalización específicas para ordenadores, con más de 25 ajustes configurables distintos para la calidad de las texturas, shader, teselado, antialiasing y muchos otros elementos, además de opciones de personalización del ratón y el teclado. También es posible modificar la densidad de población para controlar el tráfico de vehículos y peatones, y es compatible con dos y tres monitores, 3D y mandos plug-and-play.",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 5,
+    "nombre": "Cyberpunk 2077",
+    "precio": "699.99",
+    "disponible": 100,
+    "consola": "XboxOne",
+    "plataforma":"Xbox",
+    "categoria":"mas-nuevo",
+    "breve-descripcion": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad.",
+    "informacion-adicional":"Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 6,
+    "nombre": "FIFA 22",
+    "precio": "1749.99",
+    "disponible": 100,
+    "consola": "XboxSs",
+    "plataforma":"Xbox",
+    "categoria":"preventas",
+    "breve-descripcion": "Powered by Football™, EA SPORTS™ FIFA 22 acerca aún más el juego a la realidad gracias a mejoras significativas en la jugabilidad y una nueva temporada de novedades en todos los modos.",
+    "informacion-adicional":"¿Qué es FIFA? Juega al juego del mundo con más de 17 000 jugadores, más de 700 equipos, más de 90 estadios y más de 30 ligas de todo el mundo. MODOS DE JUEGO Modo Carrera :vive tus sueños con FIFA 22, ya sea como mánager o como futbolista. Crea el club más nuevo de FIFA, diseña tus equipaciones y tu estadio y decide si quieres competir con la élite o ascender desde las divisiones inferiores mientras encaminas a tu club hacia la gloria. También puedes probar tus habilidades como futbolista con un modo Carrera de jugador más inmersivo, que te dará más formas de progresar, alcanzar tus objetivos y sumergirte en tu viaje Pro mediante el juego. VOLTA FOOTBALL: vuelve a conquistar las calles con VOLTA FOOTBALL. Crea tu futbolista, elige tu equipación y exprésate a tu manera, por tu cuenta o con tu plantilla, en las calles y pistas de fútbol de todo el mundo. Consigue recompensas por tu habilidad con el balón gracias al nuevo estilo de juego rediseñado y juega cada temporada a eventos únicos que tienen lugar en emplazamientos especiales, al tiempo que desbloqueas nuevo equipamiento mediante un nuevo sistema de progreso en la temporada, que te permite ganar XP en todas las recompensas que se ofrecen en VOLTA FOOTBALL sin importar el modo al que juegues. FIFA Ultimate Team : Participa en el modo más popular de FIFA, FIFA Ultimate Team. Crea el equipo de tus sueños con miles de futbolistas del mundo del fútbol. Crea tu propio club dentro y fuera del campo y dales equipamiento personalizado, insignias y un estadio de FUT completo en el que poder dejar tu huella, y haz que equipo juegue partidos contra la IA u otros jugadores de la comunidad FUT. Además, da la bienvenida a algunos de los jugadores más memorables del fútbol en forma de nuevos héroes de FUT: ¡algunas de estas leyendas del fútbol ahora regresan al campo! Autenticidad sin rival: juega con los mejores jugadores del mundo en las competiciones mundiales más importantes, como la icónica UEFA Champions League, la UEFA Europa League, la nueva UEFA Europa Conference League, la CONMEBOL Libertadores, la CONMEBOL Sudamericana, la Premier League, la Bundesliga, LaLiga Santander y otras muchas más.",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 7,
+    "nombre": "Battlefield™ 2042",
+    "precio": "1399.99",
+    "consola": "XboxSs",
+    "plataforma":"Xbox",
+    "categoria":"preventas",
+    "breve-descripcion": "Battlefield™ 2042 es un shooter en primera persona que marca el regreso a la emblemática guerra total de la franquicia. En un mundo en el futuro cercano transformado por el desorden, adáptate y sobrevive con la ayuda de tu patrulla y un arsenal de vanguardia en campos de batalla en constante.",
+    "informacion-adicional":"Con partidas de 128 jugadores, Battlefield™ 2042 ofrece una escala sin precedentes en inmensos campos de batalla. Los jugadores podrán participar en varias experiencias: versiones mejoradas de Conquista y Avance; Portal de Battlefield, una nueva plataforma para la comunidad donde los jugadores pueden crear, compartir y descubrir batallas inesperadas del pasado, presente y futuro de Battlefield; y una nueva experiencia llamada Hazard Zone.",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 8,
+    "nombre": "MORTAL KOMBAT 11 ULTIMATE",
+    "precio": "999.99",
+    "consola": "XboxSx",
+    "plataforma":"Xbox",
+    "categoria":"mejores-ofertas",
+    "breve-descripcion": "¡La experiencia definitiva de MK11! Toma el control de los protectores de la Tierra en las dos campañas temporales más aclamadas para impedir que Kronika haga retroceder el tiempo y reinicie la historia. Incluye el elenco kompleto de los 37 kombatientes, incluidos Rain, Mileena y Rambo.",
+    "informacion-adicional":"Incluye MK11, Kombat Pack 1, la expansión Aftermath y Kombat Pack 2. • Disfruta de las dos impresionantes campañas más aclamadas de MK11 y MK11: Aftermath • Juega en la piel de cualquiera de los 37 kombatientes del elenco kompleto, incluidos los personajes recientemente añadidos: Mileena, Rain y Rambo • Miles de skins, armas y equipo para un nivel de personalización sin precedentes • Incluye a todos los invitados anteriores: Terminator, Joker, Spawn y RoboCop • Todos los modos, incluidas las Torres del Tiempo, la Kripta, el modo En línea, las torres klásicas, etc. • Todos los escenarios, los Fatalities de escenario, los Brutalities, los famosos Fatalities y los Friendships",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 9,
+    "nombre": "EDICIÓN DELUXE DE RESIDENT EVIL VILLAGE",
+    "precio": "1449.99",
+    "consola": "XboxSx",
+    "plataforma":"Xbox",
+    "categoria":"mejores-ofertas",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 10,
+    "nombre": "",
+    "precio": "",
+    "consola": "",
+    "plataforma":"",
+    "categoria":"",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 11,
+    "nombre": "",
+    "precio": "",
+    "consola": "",
+    "plataforma":"",
+    "categoria":"",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 12,
+    "nombre": "",
+    "precio": "",
+    "consola": "",
+    "plataforma":"",
+    "categoria":"",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 13,
+    "nombre": "",
+    "precio": "",
+    "consola": "",
+    "plataforma":"",
+    "categoria":"",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 14,
+    "nombre": "",
+    "precio": "",
+    "consola": "",
+    "plataforma":"",
+    "categoria":"",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+ ,
+ {
+    "id": 15,
+    "nombre": "",
+    "precio": "",
+    "consola": "",
+    "plataforma":"",
+    "categoria":"",
+    "breve-descripcion": "",
+    "informacion-adicional":"",
+    "imagenPrincipal": "",
+    "imagen2": "",
+    "imagen3": "",
+    "imagen4": ""
+   }
+                           
+   
+ 
 ]
