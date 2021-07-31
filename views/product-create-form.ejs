@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+<!-- Include Head -->
+
+ <!-- Header -->
+ <%- include('partials/header') %>
+ <!-- /Header -->
+
+<!--Main-->
+  <body>
+    <main>
+        <form class="form" method="POST">
+          <p>Nombre del producto: <input type="text" name="nombre"><br></p> 
+          <p>Descripción del producto: 
+              <br><textarea type="text" name="breve-descripcion" row="5" cols="100"></textarea><br>
+          </p>
+          <div class="box-price">
+              <p>Precio Unitario: <input type="number" name="precio"><br></p>
+              <p>Cantidad Disponible: <input type="number" name="disponible"><br></p>
+          </div>
+          <p>Plataforma: 
+              <div class="platform">
+                  <span><input type="radio" name="plataforma" value="PS"> Playstation</span>
+                  <span><input type="radio" name="plataforma" value="Xbox"> Xbox</span>
+                  <span><input type="radio" name="plataforma" value="Nintendo"> Nintendo</span>
+              </div>
+          </p>
+          <p>Consola: 
+            <div class="platform">
+                <span><input type="radio" name="consola" value="PS5"> Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4"> Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
+            </div>
+        </p>
+          <p>Información Adicional
+              <br><textarea name="infromacion-adicional" rows="10" cols="100"> Si lo desea, escriba aquí la información adicional</textarea>
+          </p>
+          <p>Categoría:
+            <div class="section-product">
+                <select name="categoria" id="categoria">
+                    <option value="">Elegir</option>
+                    <option value="mas-nuevo">Lo más nuevo</option>
+                    <option value="mas-comprado">Lo más comprado</option>
+                    <option value="mejores-ofertas">Mejores ofertas</option>
+                    <option value="preventas">Preventas</option>
+                </select>
+            </div>
+         </p>
+          <p>
+              <label><h3>Cargar Imagenes</h3></label>
+              Imagen Principal  :
+              <br>
+              <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg"> 
+              <br>
+              <br>
+              Imagenes Secundarias :
+              <br>
+              <input type="file" name="imagen2" id="fileInput" > 
+              <br>
+              <input type="file" name="imagen3" id="fileInput"> 
+              <br>
+              <input type="file" name="imagen4" id="fileInput" > 
+          </p>
+          <div class="boton-cargar">
+              <input type="submit" name="submit" value="Cargar Producto"/>
+          </div>
+        </form>
+    </main>    
+</body>
+  <!-- footer -->
+  <%- include('partials/footer') %>
+  <!-- /footer --> 
+</html>

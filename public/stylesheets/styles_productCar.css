@@ -1,0 +1,208 @@
+/*
+Paleta de colores
+
+#F2F2EB
+#F25922
+#F24E29
+#8C3623
+#262626
+#ff523b
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+/*-----------header--------------*/
+
+/*-----------main--------------*/
+
+main{
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+main section article{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+main section article img{
+    margin:10px;
+    width:10%;
+    height:10%;
+    
+}
+
+main section.products-box{
+    width:50%;
+    background:#F2F2EB;
+    position:relative;
+}
+
+main section.buy-box{
+    width:30%;
+    background:#F2F2EB;
+    padding:15px;
+}
+
+div.articulos, div.envio, div.promotional-code, div.total, div.iva{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+div.promotional-code{
+    position:relative;
+}
+div.promotional-code input{
+    position: absolute;
+    right: 0px;
+}
+
+main section.buy-box button{
+    margin: 10px 35% 0 35%;
+    font-size: 11px;
+}
+
+main section button{
+    background-color: #ff523b;
+    border: #8C3623;
+    padding: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+button:hover{
+    background-color:#262626;
+    cursor:pointer;
+}
+
+main section.products-box div.buttons-compra{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: white;
+    padding:20px 0;
+}
+
+main section.products-box div.cantidad input{
+    width:60%;
+    background-color: #fff;
+    color: #262626;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+
+
+/*-----------Footer--------------*/
+
+footer div.footer div.container div.fila{
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.brands{
+    margin: 100px auto;
+}
+.col-5{
+    width: 160px;
+}
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+
+.footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+.footer p{
+    color: #8a8a8a;
+}
+.footer h3{
+    color: #fff;
+    margin-bottom: 20px;
+}
+.footer-col1,.footer-col2,.footer-col3,.footer-col4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+.footer-col1{
+    flex-basis: 30%;
+}
+.footer-col2{
+    flex: 1;
+    text-align: center;
+}
+.footer-col2 img{
+    width: 180px;
+    margin-bottom: 20px;
+    border-radius: 5%;
+}
+.footer-col3,.footer-col4{
+    flex-basis: 12%;
+  
+}
+
+.app-logo{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 140px;
+    cursor: pointer;
+}
+
+.footer li{
+    display: block;
+}
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin:  20px 0;
+}
+.copyright{
+    text-align: center;
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    
+}
+

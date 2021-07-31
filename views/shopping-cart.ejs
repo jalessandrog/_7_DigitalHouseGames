@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+<!-- Include Head -->
+<body>
+<!------------------------Header--------------------------------->
+ <%- include('partials/header') %>
+ <!-- /Header -->
+   
+<!------------------------Main---------------------------------> 
+    <main>
+        <section class="products-box">
+            <article>
+                <img src="/images/gta.jpg">
+                <div class="tittle-price">
+                    <h3 class="Product-Title">Grand Thef Auto V</h3>
+                    <p>$450.00</p>
+                </div>
+                <div class="cantidad">
+                    <input type="number" value="1" min="1" max="100">
+                </div>
+                <p>$450.00</p>
+                <i class="fas fa-trash"></i>
+            </article>
+            <hr>
+            <article>
+                <img src="/images/cyber.jpg">
+                <div class="tittle-price">
+                    <h3 class="Product-Title">CYBERPUNK 2077</h3>
+                    <p>$699.99</p>
+                </div>
+                <div class="cantidad">
+                    <input type="number" value="1" min="1" max="100">
+                </div>
+                <p>$699.99</p>
+                <i class="fas fa-trash"></i>
+            </article>
+            <hr>
+            <article>
+                <img src="/images/red.jpg">
+                <div class="tittle-price">
+                    <h3 class="Product-Title">RED DEAD REDEMPTION II</h3>
+                    <p>$1,000.0</p>
+                </div>
+                <div class="cantidad">
+                    <input type="number" value="1" min="1" max="100">
+                </div>
+                <p>$1,000.0</p>
+                <i class="fas fa-trash"></i>
+            </article>
+            <div class="buttons-compra">
+                <button class="continuar-compra">  CONTINUAR COMPRA </button>
+                <button class="vaciar-compra">  VACIAR CARRITO </button>
+            </div>
+        </section>
+        <section class="buy-box">
+            <div class="articulos">
+                <h4>#ARTICULOS</h4>
+                <p>$2,149.99</p>
+            </div>
+            <div class="envio">
+                <h4>ENVIO</h4>
+                <p>$30.00</p>
+            </div>
+            <div class="promotional-code">
+                <p>Código Promocional
+                    <span><input type="text" id=promotecode name=promotecode></span>
+                </p>
+            </div>
+            <div class="total">
+                <h4>TOTAL (IVA INCLUIDO)</h4>
+                <p>$2,528.80</p>
+            </div>
+            <div class="iva">
+                <h4>IVA</h4>
+                <p>$348.80</p>
+            </div>
+            <button class="confirmar-compra">  CONFIRMAR COMPRA </button>
+        </section>
+    </main>
+
+</body>
+  <!-- footer -->
+  <%- include('partials/footer') %>
+  <!-- /footer --> 
+</html>
