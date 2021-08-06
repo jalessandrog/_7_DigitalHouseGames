@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <!-- Include Head -->
 <%- include('partials/head') %>
 <!-- Include Head -->
@@ -8,109 +8,71 @@
 <%- include('partials/header') %>
 <!-- /Header -->
 <body>
-    <div class="overlay">
-        <form>
-           <!--   con = Container  for items in the form-->
-           <div class="con">
-           <!--     Start  header Content  -->
-           <div class="head-form">
-              <h2>Crear Cuenta</h2>
-              <!--     A welcome message or an explanation of the login form -->
-              <p>Registrate en DigitalHouseGames</p>
-           </div>
-           <!--     End  header Content  -->
-           <br>
-           <div class="field-set">
-               <!--   Profile Picture -->
-                <div class="profilepic">
-                    <label for="avatar">Elige una foto de perfil:</label>
-                    <br />
-                    <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-                    <br />
-                    <br />
-                </div>
-                <!--   User names -->
-                <span class="input-item">
-                    <label for="names">Nombre: </label>
-                </span>
-                <!--   Names Input-->
-                <input class="form-input" id="txt-input" name="names" type="text" placeholder="nombre(s)" required>
-                <br>
-
-                <!--   surname -->
-                <span class="input-item">
-                    <label for="sourname">Apellido: </label>
-                </span>
-                <!--   Names Input-->
-                <input class="form-input" id="txt-input" name="surname" type="text" placeholder="apellidos" required>
-                <br>
-
-                <!--  email -->
-                <span class="input-item">
-                    <label for="email">Email:</label>
-                 </span>
-                <!--   user name Input-->
-                 <input class="form-input" id="txt-input" type="email" name="email" placeholder="email" required>
-              <br>
-
-                <!--   user name -->
-                <span class="input-item">
-                    <label for="username">Nombre de usuario:</label>
-                 </span>
-                <!--   user name Input-->
-                 <input class="form-input" id="txt-input" type="text" name="username" placeholder="@usuario" required>
-              <br>
-
-                <!-- Date -->
-                <span class="input-item">
-                    <label for="dob">Fecha de nacimiento:</label>
-                </span>
-                <!--   user name Input-->
-                <input class="form-input" id="dob" type="date" name="dob">
-            <br>
-
-                <!--   Password -->         
-                <span class="input-item">
-                    <label for="password">Contraseña:</label>
-                </span>
-                <!--   Password Input-->
-                <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
-                <br>
-
-                <!--  Confirm Password -->         
-                <span class="input-item">
-                    <label for="cpassword">Confirmar Contraseña:</label>
-                </span>
-                <!--   Password Input-->
-                <input class="form-input" type="password" placeholder="Confirm Password" id="cpwd"  name="cpassword" required>
-                <br>
-                <br>
-
-                <p>Perfil del usuario:</p>
-                <!--  Selector Comprador--> 
-                    <label for="comprador">Comprador</label>
-                <!--   Selector Comprador Input-->
-                <input type="radio" id="comprador" name="profile" value="comprador" checked>
-                <br>
-
-                <!--  Selector Vendedor--> 
-                
-                    <label for="vendedor">Vendedor</label>
-
-                <!--   Selector Comprador Input-->
-                <input type="radio" id="vendedor" name="profile" value="vendedor">
-                <br>
-        <!--        buttons -->
-                <div class="buttons-register">
-                    <button class="register-button"> Sign Up </button>
-                </div>
-           </div>
-          <!-- End Form -->
-        </form>
-        </div>
+   <section class="section-register">
+      <h1 class="title">Crear Cuenta</h1>
+      <p class="banner-usuario">Registrate en DigitalHouseGames</p>
+      <div class="form-container register">
+          <form action="###" method="POST">
+                <p>
+                    <label class="label-1">
+                        Nombre(s)
+                        <input type="text" name="username" placeholder="Nombre(s)">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-1">
+                        Apellidos
+                        <input type="text" name="lastname" placeholder="Apellido paterno y materno">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-1">
+                        Email
+                        <input type="email" name="email" placeholder="Correo electronico" >
+                    </label>
+                </p>
+                <p>
+                    <label class="label-1">
+                        Contraseña
+                        <input type="password" name="password" placeholder="Contraseña">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-1">
+                        Confirmar Contraseña
+                        <input type="password" name="confirm-password" placeholder="Confirmar contraseña">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-date">
+                        Fecha de nacimiento
+                        <input type="date" name="remember">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-2">
+                        Perfil de usuario: 
+                        <label class="select" for="comprador">Vendedor</label>
+                        <input type="radio" id="vendedor" name="profile" value="vendedor" checked>
+                        <label class="select" for="comprador">Comprador</label>
+                        <input type="radio" id="comprador" name="profile" value="comprador">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-file">
+                        Imagen de perfil:
+                        <input type="file" name="avatar" accept="image/png, image/jpeg">
+                    </label>
+                </p>
+              <p class="buttons">
+                 <button type="submit" class="action-button">Crear Cuenta</button>
+              </p>
+          </form>
+      </div>
+  </section>
 </body>
 
-  <!-- footer -->
-  <%- include('partials/footer') %>
-  <!-- /footer -->
+<!------------------------Footer---------------------------------> 
+<%- include('partials/footer') %>
+<!-- /footer --> 
 </html>
