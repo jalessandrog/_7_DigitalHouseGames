@@ -496,6 +496,12 @@ input:focus{
         height: 50%;
         margin: auto;
     }
+
+    .buttons-ED form .action-button{
+        width: 50%;
+        font-size: 10px;
+        text-align: center;
+    }
 }
   
   
