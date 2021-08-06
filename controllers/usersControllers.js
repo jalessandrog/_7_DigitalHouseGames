@@ -6,7 +6,7 @@ const path = require('path');
 
 const controller = {
 	index: (req, res) => {
-		res.render('index', {title: 'Inicio', cssFile : 'styles'})
+		res.render('index', {title: 'Inicio', cssFile : 'style'})
 	},
 	login: (req, res)=>{
 		res.render('login', {title: 'Login', cssFile : 'styles_login'})  
