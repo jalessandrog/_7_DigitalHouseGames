@@ -10,7 +10,7 @@ const controller = {
 
     },
     detail: (req, res) => {
-        res.render('detail', {title: 'Crear Cuenta', cssFile : 'styles_productDetail'})
+        res.render('detail', {title: 'Crear Cuenta', cssFile : 'style'})
     },
     basket: (req, res) =>{
          res.render('shopping-cart',{ title: 'Carrito de Compras', cssFile: 'styles_productCar'})

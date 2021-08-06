@@ -9,10 +9,10 @@ const controller = {
 		res.render('index', {title: 'Inicio', cssFile : 'style'})
 	},
 	login: (req, res)=>{
-		res.render('login', {title: 'Login', cssFile : 'styles_login'})  
+		res.render('login', {title: 'Login', cssFile : 'style'})  
 	},
 	signup: (req, res)=>{
-		res.render('register', {title: 'Crear Cuenta', cssFile : 'styles_register'})  
+		res.render('register', {title: 'Crear Cuenta', cssFile : 'style'})  
 	}
 };
 
