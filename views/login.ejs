@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <!-- Include Head -->
 <%- include('partials/head') %>
 <!-- Include Head -->
@@ -8,53 +8,39 @@
 <%- include('partials/header') %>
 <!-- /Header -->
 <body>
-    <div class="overlay">
-        <form>
-           <!--   con = Container  for items in the form-->
-           <div class="con">
-           <!--     Start  header Content  -->
-           <div class="head-form">
-              <h2>Log In</h2>
-              <!--     A welcome message or an explanation of the login form -->
-              <p>Accede a tu cuenta en DigitalHouseGames</p>
-           </div>
-           <!--     End  header Content  -->
-           <br>
-           <div class="field-set">
-              <!--   user name -->
-               <span class="input-item">
-                  <i class="fa fa-user-circle"></i>
-                   <!--   user name Input-->
-                  <input class="form-input" id="txt-input" type="text" placeholder="Usuario" required>
-               </span>
-              <br>
-               <!--   Password -->         
-              <span class="input-item">
-                <i class="fa fa-key"></i>
-                <!--   Password Input-->
-                <input class="form-input" type="password" placeholder="Password" id="pwd"  name="password" required>
-               </span>
-              <br>
-           </div>
-          
-            <div class="buttons-login">
-               <button class="log-in"> Log In </button>
-               <div class="other">
-                  <!--      Forgot Password button-->
-                        <button class="frgt-pass">Forgot Password</button>
-                  <!--     Sign Up button -->
-                        <button class="sign-up">
-                           <a href="/register"> Sign Up </a> 
-                  <!--         Sign Up font icon -->
-                        <i class="fa fa-user-plus" aria-hidden="true"></i>
-                        </button>
-                     </div>
-               </div>
-            </div>
-          
-          <!-- End Form -->
-        </form>
-        </div>
+   <section class="section-login">
+      <h1 class="title">Login</h1>
+      <p class="banner-usuario">Accede a tu cuenta en DigitalHouseGames</p>
+      <div class="form-container login">
+          <form action="###" method="POST">
+              <p>
+                  <label class="label-1">
+                      Email
+                      <input type="text" name="email" placeholder="correo electronico" >
+                  </label>
+              </p>
+              <p>
+                  <label class="label-1">
+                      Contraseña
+                      <input type="password" name="password" placeholder="Contraseña">
+                  </label>
+              </p>
+              <p>
+                  <label class="label-2">
+                      <input type="checkbox" name="remember">
+                      Recordarme
+                  </label>
+              </p>
+              <p class="buttons">
+                 <button type="submit" class="action-button">Ingresar</button>
+              </p>
+              <p class="login-links">
+                 <a href="#">Olvidé Contraseña</a>
+                 <a href="/register">Crear cuenta</a>
+              </p>
+          </form>
+      </div>
+  </section>
 </body>
 
 <!------------------------Footer---------------------------------> 
