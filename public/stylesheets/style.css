@@ -1,0 +1,535 @@
+/*
+Paleta de colores
+
+#F2F2EB
+#F25922
+#F24E29
+#8C3623
+#262626
+#ff523b
+
+Colores logo
+#3e7398 
+#dd655a
+
+*/
+
+/*---------------------------------------
+                 #RESET
+---------------------------------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins',sans-serif;
+}
+
+/*---------------------------------------
+                #GENERALES
+---------------------------------------*/
+.title{
+    text-align: center;
+    margin: 50px;
+    font-size: 2.5em;
+}
+
+.banner-usuario{
+    text-align: center;
+    margin: 20px 0;
+}
+
+/*====== Botones ======*/
+.action-button{
+    border: none;
+    font-size: 1em;
+    background: #ff523b;
+    color: #ffffff;
+    padding: 8px 30px;
+    margin: 10px 5px;
+    border-radius: 30px;
+    transition: background 0.5s;
+    text-decoration: none;
+}
+
+.action-button a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* buttons hover */
+.action-button:hover {
+    transform: translatey(3px);
+    box-shadow: none;
+    background: #262626;
+    animation: btn 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes btn {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+/*====== Inputs ======*/ 
+
+.form-container label.label-1 input, label.label-date input{
+    margin: 5px 0;
+    height: 35px;
+    text-align: center;
+    padding: 7px 0;
+    border-style: none;
+    border-radius: 13px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
+}
+
+/*---------------------------------------
+                 #HEADER
+---------------------------------------*/
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 5%;
+    background-color: #262626;
+}
+
+header .logo {
+    cursor: pointer;
+    margin-right: auto;
+}
+
+header .nav_links a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+header .nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.contact .header-button {
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: #3e7398;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.header-button:hover {
+background-color: rgba(0, 136, 169, 0.8);
+}
+
+.btn-toggle-navbar {
+    background-color: #3e7398;
+    color: #ffff;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 15px;
+}
+
+  /*-------banner-----------*/
+  
+img#imagen_banner {
+    display: block;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+/*---------------------------------------
+                #FOOTER
+---------------------------------------*/
+footer div.footer div.container div.fila {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
+
+
+.footer {
+    background: #262626;
+    color: #9d9d9d;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+
+.footer p {
+    color: #8a8a8a;
+}
+
+.footer h3 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.footer-col3{
+  min-width: 250px;
+  margin-bottom: 20px;
+  flex-basis: 12%;
+}
+
+.footer li {
+    display: block;
+}
+  
+.footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.copyright {
+    text-align: center;
+}
+
+
+/*---------------------------------------
+                #LOGIN/REGISTRO
+---------------------------------------*/
+.section-login .buttons, .section-register .buttons{
+    text-align: center;
+}
+
+/*---------------------------------------
+                #LOGIN
+---------------------------------------*/
+
+.section-login{
+    height: 70vh;
+    margin: 20px;
+}
+
+.login{
+    width: 600px;
+    height: 600px;
+    margin: auto;
+}
+
+.section-login .login-links{
+    display: flex;
+    flex: wrap;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.section-login .login-links a:first-child{
+    font-style: italic;
+    color: #000;
+}
+
+.section-login .login-links a:last-child{
+    color: #dd655a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/*---------------------------------------
+                #REGISTRO
+---------------------------------------*/
+
+.register{
+    width: 600px;
+    height: 800px;
+    margin: auto;
+}
+
+.register p{
+    margin: 10px 0;
+}
+
+.section-register .register .label-2 .select{
+    padding: 0 10px;
+}
+
+/*---------------------------------------
+            #DETALLE PRODUCTO
+---------------------------------------*/
+
+.fila{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.col-2 img{
+    max-width: 100%;
+    padding: 50 px 0;
+}
+
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+/* .contenedor-pequeno{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+} */
+
+.producto-unico{
+    margin-top: 80px;
+}
+
+.producto-unico .col-2 img{
+    padding: 0;
+    height: 50%;
+}
+
+.producto-unico .col-2{
+    padding: 20px;
+}
+
+.producto-unico h4{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.imagenes-chiquitas-fila{
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagenes-chiquitas-columna{
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+#izq{
+    padding-bottom: 0px;
+}
+
+
+.producto-unico input{
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin: 15px 0px;
+    border: 1px solid #ff523b;
+    display: block;
+}
+
+input:focus{
+    outline: none;
+}
+
+.fila2{
+    justify-content: left;
+}
+
+.col-3{
+    flex-basis: 32%;
+    min-width: 250px;
+    margin-bottom: 10px;
+    background-color:#ff523b;
+    color:#fff;
+    text-align: center;
+}
+
+.col-3 h3{
+    text-align: center;
+}
+
+.ratings{
+    display: flex;
+    justify-content: space-evenly;
+    color:yellow;
+}
+
+
+.resena{
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+#noc{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.resena span{
+    padding: 0 10px;
+}
+
+#preguntas{
+    width: 95%;
+}
+
+#preguntas::before{
+    content: "🔍";
+}
+
+.col-20{
+    flex-basis: 10%;
+    cursor: pointer;
+}
+
+.col-21{
+    flex-basis: 90%;
+    text-align: justify;
+    background-color: white;
+    padding: 5% 5%;
+}
+
+.fila3{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.fila7{
+    justify-content: space-between;
+    margin: 30px auto 50px;
+}
+
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    width: 100%;
+}
+
+.col-4 p{
+    font-size: 14px;
+}
+
+.col-4:hover{
+    transform: translateY(-5px);
+}
+
+.rating2{
+    color: #ff523b;
+}
+
+.buttons-ED{
+    width: 100%;
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+  
+  
+
+/*---------------------------------------
+                #RESPONSIVE
+---------------------------------------*/
+
+/* For Mobile version: */
+@media (max-width: 761px){
+
+/*====== HEADER ======*/
+    header nav{
+        margin-right: auto;
+    }
+
+    .btn-toggle-navbar{
+        font-size: 1em;
+    }
+
+    .nav_links{
+        display: none;
+    }
+
+    .contact .header-button{
+        font-size: 11px;
+        margin-left: 10px;
+        padding: 9px 15px;
+    }
+
+/*====== Footer ======*/
+    footer div.footer div.container div.fila {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    footer .footer-col3{
+        font-size: 10px;
+        text-align: center;
+    }
+
+    /*====== Forms ======*/
+
+    .form-container{
+        width: 50%;
+        height: 50%;
+        margin: auto;
+    }
+
+    .buttons-ED form .action-button{
+        width: 50%;
+        font-size: 10px;
+        text-align: center;
+    }
+}
+  
+  
+  /* For tablet and version: */
+  @media (min-width: 761px){
+
+/*====== HEADER ======*/
+    .btn-toggle-navbar {
+        display: none;
+    }
+
+/*====== Footer ======*/
+    footer div.footer div.container div.fila {
+      display: inline-flex;
+    }
+  
+    footer .footer-col3{
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .section-login label.label-1 input, 
+    .section-register label.label-1 input,
+    .section-register label.label-date input
+    {
+        width: 600px;
+    }
+  
+}
+  
+  

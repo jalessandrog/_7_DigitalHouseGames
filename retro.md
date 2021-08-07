@@ -9,7 +9,7 @@ De igual forma, este primer sprint es el primer acercamiento con todos los miemb
 Adaptabilidad a los horarios
 Disponibilidad por trabajo o estudios
 
-## SEGUNDO SPRINT
+### SEGUNDO SPRINT
 
 #Conclusiones
 En un proyecto colaborativo es importante que la comunicación sea en toda dirección. Comunicar si hay algun imprevisto personal o del proyecto, si hay algun fallo en la aplicación, si no se sabe solucionar algun error, etc. 
@@ -20,18 +20,26 @@ Organización de tiempos
 Establecer juntas semanales para checar avances o problemas en la sprint
 Comunicación
 
-## TERCER SPRINT
+### TERCER SPRINT
 
-#Conclusiones
+    -Joseph Alessandro García:
+    Conclusión:
+        En un proyecto es fundamental la comunicación entre los miembros de equipo, la asistencia y el cumplimiento con las tareas asignadas. Para que el proyecto avance en calidad y de manera horizontal es importante el compromiso de todas las áreas o miembros involucrados en el proyecto.
+    
+    Retos:
+        Avanzar de manera horizontal
+        Completar en tiempo y forma la sprint
 
+### CUARTO SPRINT
 
-#Retos
-Avanzar de manera horizontal
-Completar en tiempo y forma la sprint
-
-
-
-
-
-
-
+    - Joseph Alessandro García: 
+    Conclusión: 
+        Para poder avanzar en un proyecto, es importante que a medida que se avanza se observe hacia atrás para aprender y mejorar sobre aquello que no funcionó y celebrar aquello que sí funcionó. No se puede avanzar en cualquier meta/proyecto o será demasiado pesado avanzar si no sé han completado los primeros eslabones del proyecto. 
+	
+    Retos:
+		Comunicación entre miembros del equipo
+		Compromiso entre los miembros del equipo
+		Honestidad entre los miembros del equipo
+		Reuniones para revisar avances
+		Completar y entregar sprint en tiempo y forma
+        Carga de trabajo equilibrada entre miembros del equipo
