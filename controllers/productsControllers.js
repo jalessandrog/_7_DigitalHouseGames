@@ -11,7 +11,9 @@ const controller = {
 
     },
     detail: (req, res) => {
-        res.render('detail', {title: 'Detalles del producto', cssFile : 'style'})
+        let id= parseInt(req.params.id,10)
+        const complist = listpro.find(p => p.id === id)
+        res.render('detail', {title: 'Detalles del producto', cssFile : 'style',listpro2:complist})
     },
     basket: (req, res) =>{
          res.render('shopping-cart',{ title: 'Carrito de Compras', cssFile: 'styles_productCar'})
@@ -42,7 +44,7 @@ const controller = {
         productosJSON= JSON.stringify(productos, null, 2)
 
         fs.writeFileSync(productsFilePath,productosJSON)
-        res.redirect('/')
+        res.redirect('/products/all')
     },
     todos:(req, res) => {
         res.render('all', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro})

@@ -14,7 +14,7 @@
         <form class="form" method="POST" action="/products/addproduct" enctype="multipart/form-data">
           <p>Nombre del producto: <input type="text" name="nombre"><br></p> 
           <p>Descripción del producto: 
-              <br><textarea type="text" name="breve-descripcion" row="5" cols="100"></textarea><br>
+              <br><textarea type="text" name="breveDescripcion" row="5" cols="100"></textarea><br>
           </p>
           <div class="box-price">
               <p>Precio Unitario: <input type="number" name="precio"><br></p>
@@ -38,7 +38,7 @@
             </div>
         </p>
           <p>Información Adicional
-              <br><textarea name="infromacion-adicional" rows="10" cols="100"> Si lo desea, escriba aquí la información adicional</textarea>
+              <br><textarea name="informacionAdicional" rows="10" cols="100" placeholder="Si lo desea, escriba aquí la información adicional"></textarea>
           </p>
           <p>Categoría:
             <div class="section-product">
@@ -58,13 +58,6 @@
               <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg"> 
               <br>
               <br>
-              Imagenes Secundarias :
-              <br>
-              <input type="file" name="imagen2" id="fileInput" accept="image/png, .jpeg, .jpg"> 
-              <br>
-              <input type="file" name="imagen3" id="fileInput"> 
-              <br>
-              <input type="file" name="imagen4" id="fileInput" > 
           </p>
           <div class="boton-cargar">
               <input type="submit" name="submit" value="Cargar Producto"/>

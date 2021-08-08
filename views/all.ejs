@@ -15,7 +15,7 @@
     <div class="fila">  
         <% listpro.forEach(art=> { %> 
                     <div class="col-4">
-                        <a href="/products/detail/<% art.id %> " class="linkbox">
+                        <a href="/products/detail/<%= art.id %> " class="linkbox">
                             <section>
                                 <img src="/images/<%= art.imagenPrincipal %> ">
                                 <h4><%= art.nombre %> </h4>
