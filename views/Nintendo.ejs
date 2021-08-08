@@ -7,13 +7,14 @@
 <body>
     <div class="contenedor-pequeno">
         <div class="fila fila7">
-            <h2>Todos los productos</h2>
+            <h2>Productos de Nintendo</h2>
             <p></p>
         </div>
     </div>
     <div class="contenedor-pequeno">
     <div class="fila">  
-        <% listpro.forEach(art=> { %> 
+        <% listpro.forEach(art=> { %>
+            <% if(art.plataforma=="Nintendo") {%>  
                     <div class="col-4">
                         <a href="/products/detail/<%= art.id %> " class="linkbox">
                             <section>
@@ -30,7 +31,9 @@
                             </section>
                         </a>
                     </div>
-                    
+                    <% }else{ %>
+
+                    <% } %>     
     
         
                      <% }) %>

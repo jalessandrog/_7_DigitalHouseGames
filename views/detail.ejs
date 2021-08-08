@@ -18,7 +18,7 @@
                 <p>Home / <%= listpro2.nombre %> </p>
                 <h1><%= listpro2.nombre %></h1>
                 <p> <%= listpro2.breveDescripcion %></p>  
-                <h4>$<%= listpro2.precio%></h4>
+                <h4>$<%= toThousand(listpro2.precio)%></h4>
 
                 <input type="number" value="1" min="1" max="100">
                 <a href=# class="action-button">Añadir al carrito</a>
@@ -102,59 +102,38 @@
         <p>Ver más</p>
     </div>
 </div>
-
 <div class="contenedor-pequeno">
-    <div class="fila">
-      <div class="col-4">
-          <img src="/images/cyber.jpg">
-          <h4>CYBERPUNK 2077</h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-          </div>
-          <p>$699.99</p> 
-      </div> 
-      <div class="col-4">
-          <img src="/images/re33.jpg">
-          <h4>RESIDENT EVIL 3</h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <p>$499.99</p>
-      </div> 
-      <div class="col-4">
-          <img src="/images/red.jpg">
-          <h4>RED DEAD REDEMPTION II </h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-          </div>
-          <p>$735.99</p>
-      </div> 
-       <div class="col-4">
-          <img src="/images/gta.jpg">
-          <h4>GRAND THEAFT AUTO V</h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <p>$551.99</p>
-      </div> 
-  </div>
+<div class="fila">
+    <% let contador=0%>  
+    <% listpro.forEach(art=> { %> 
+        <% if(art.categoria=="mas-nuevo") { %>
+            <% if(contador<=3){%>
+                <div class="col-4">
+                    <a href="/products/detail/<%= art.id %> " class="linkbox">
+                        <section>
+                            <img src="/images/<%= art.imagenPrincipal %> ">
+                            <h4><%= art.nombre %> </h4>
+                            <div class="rating2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            </div> 
+                            <p>$<%= toThousand(art.precio) %> </p> 
+                            <% contador = contador+1%>
+                        </section>
+                    </a>
+                </div>
+                <% }else{ %>
+                    <% } %>
+            <%}else{%>
+
+                <% } %>
+                 <% }) %>
 </div>
+</div>  
+      
 </body>
 <footer>
   <!-- footer -->
