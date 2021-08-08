@@ -447,6 +447,12 @@ input:focus{
     flex-direction: row;
     flex-wrap: nowrap;
 }
+
+.linkbox{
+    text-decoration: none;
+    color: inherit;
+
+}
   
   
 
