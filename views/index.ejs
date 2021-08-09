@@ -3,15 +3,80 @@
 <!-- Include Head -->
 <%- include('partials/head') %>
 <!-- Include Head -->
-  <body>
+  <body class="body-inicio">
     <!-- Header -->
 	  <%- include('partials/header') %>
 	  <!-- /Header -->
 
     <!--Comienza el banner-->
-    <div id="banner">
-        <img src="/images/banner.jpeg" id="imagen_banner">
+    <div class="contenedor-pequeno">
+      <div class="fila fila7">
+          <h2>Más comprado</h2>
+          <p></p>
+      </div>
+  </div>
+  <div class="contenedor-pequeno">
+  <div class="fila">  
+      <% listpro.forEach(art=> { %>
+          <% if(art.categoria=="mas-comprado") {%>  
+                  <div class="col-4">
+                      <a href="/products/detail/<%= art.id %> " class="linkbox">
+                          <section>
+                              <img src="/images/<%= art.imagenPrincipal %> ">
+                              <h4><%= art.nombre %> </h4>
+                              <div class="rating2">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fas fa-star-half-alt"></i>
+                              </div> 
+                              <p>$<%= toThousand(art.precio) %> </p> 
+                          </section>
+                      </a>
+                  </div>
+                  <% }else{ %>
+
+                  <% } %>     
+  
+      
+                   <% }) %>
     </div>
+  </div> 
+  <div class="contenedor-pequeno">
+    <div class="fila fila7">
+        <h2>Más Nuevo</h2>
+        <p></p>
+    </div>
+</div>
+<div class="contenedor-pequeno">
+<div class="fila">  
+    <% listpro.forEach(art=> { %>
+        <% if(art.categoria=="mas-nuevo") {%>  
+                <div class="col-4">
+                    <a href="/products/detail/<%= art.id %> " class="linkbox">
+                        <section>
+                            <img src="/images/<%= art.imagenPrincipal %> ">
+                            <h4><%= art.nombre %> </h4>
+                            <div class="rating2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            </div> 
+                            <p>$<%= toThousand(art.precio) %> </p> 
+                        </section>
+                    </a>
+                </div>
+                <% }else{ %>
+
+                <% } %>     
+
+    
+                 <% }) %>
+  </div>
+</div>  
   </body>
   <!-- footer -->
   <%- include('partials/footer') %>
