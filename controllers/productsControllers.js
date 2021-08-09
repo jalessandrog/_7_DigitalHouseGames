@@ -4,14 +4,16 @@ const path = require('path');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const listpro = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-//const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
     index: (req, res) => {
 
     },
     detail: (req, res) => {
-        res.render('detail', {title: 'Detalles del producto', cssFile : 'style'})
+        let id= parseInt(req.params.id,10)
+        const complist = listpro.find(p => p.id === id)
+        res.render('detail', {title: 'Detalles del producto', cssFile : 'style',listpro2:complist,listpro:listpro, toThousand:toThousand })
     },
     basket: (req, res) =>{
          res.render('shopping-cart',{ title: 'Carrito de Compras', cssFile: 'styles_productCar'})
@@ -42,11 +44,20 @@ const controller = {
         productosJSON= JSON.stringify(productos, null, 2)
 
         fs.writeFileSync(productsFilePath,productosJSON)
-        res.redirect('/')
+        res.redirect('/products/all')
     },
     todos:(req, res) => {
-        res.render('all', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro})
-    } 
+        res.render('all', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro, toThousand:toThousand})
+    },
+    ni:(req, res) => {
+        res.render('Nintendo', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro, toThousand:toThousand})
+    },
+    ps:(req, res) => {
+        res.render('PS', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro, toThousand:toThousand})
+    },
+    xb:(req, res) => {
+        res.render('Xbox', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro, toThousand:toThousand})
+    }    
 };
 
 module.exports = controller;

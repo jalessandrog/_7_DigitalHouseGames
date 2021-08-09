@@ -10,7 +10,7 @@ Paleta de colores
 
 Colores logo
 #3e7398 
-#dd655a
+#F05742
 
 */
 
@@ -97,7 +97,7 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 30px 5%;
-    background-color: #262626;
+    background-color: #F05742;
 }
 
 header .logo {

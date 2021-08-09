@@ -12,14 +12,13 @@
     <div class="contenedor-pequeno producto-unico">
         <div class="fila">
             <div class="col-2" id="izq">
-                <img src="/images/Sekiro_2.jpg" width="100%" id="imgproducto" >
-                
+                <img src="/images/<%=listpro2.imagenPrincipal%>" width="100%" id="imgproducto" >
             </div>
             <div class="col-2">
-                <p>Home / Sekiro</p>
-                <h1>SEKIRO SHADOW DIE TWICE</h1>
-                <p> Forja tu propio camino en busca de la venganza en una nueva aventura del desarrollador From Software, responsable de Bloodborne y la serie Dark Souls.</p>  
-                <h4>$1,399.99</h4>
+                <p>Home / <%= listpro2.nombre %> </p>
+                <h1><%= listpro2.nombre %></h1>
+                <p> <%= listpro2.breveDescripcion %></p>  
+                <h4>$<%= toThousand(listpro2.precio)%></h4>
 
                 <input type="number" value="1" min="1" max="100">
                 <a href=# class="action-button">Añadir al carrito</a>
@@ -30,6 +29,7 @@
 						</form>
                 </div>
             </div>
+
         </div>
     </div>
     <br>
@@ -39,23 +39,8 @@
         <h2>INFORMACIÓN ADICIONAL</h2>
     </div>
     <br>
-    <p>Esta Edición juego del año ahora incluye contenido adicional:</p>
+    <p><%= listpro2.informacionAdicional%></p>
     <br>
-     <p>- Recuerdo y Reto de fuerza: nuevos modos de desafío de jefe</p>
-     <p>- Vestigios: deja mensajes y grabaciones de tus acciones para que otros jugadores las vean y califiquen</p>
-     <p>- 3 aspectos desbloqueables</p>
-     <br>
-     <p>Juego del año - The Game Awards 2019</p>
-     <p>Mejor juego de acción de 2019 - IGN</p>
-     <p>Más de 50 premios y nominaciones</p>
-     <br>   
-     <p> Traza tu propio camino hacia la venganza en la galardonada aventura de FromSoftware, creadores de la saga Dark Souls.</p>
-     <br>
-     <p> En Sekiro™: Shadows Die Twice encarnas al 'lobo manco', un guerrero desfigurado y caído en desgracia que ha sido rescatado al borde de la muerte. Tras jurar proteger a un joven señor descendiente de un antiguo linaje, te conviertes en el objetivo de despiadados enemigos, entre ellos el peligroso clan Ashina. Cuando el joven señor sea capturado, nada te detendrá en tu peligrosa aventura por restituir tu honor, ni siquiera la muerte.</p>
-     <br>  
-     <p>Explora el Japón de la era Sengoku de finales del siglo XVI, un brutal periodo de constante conflicto, mientras te enfrentas a inconmensurables enemigos en un mundo oscuro y tortuoso. Despliega un arsenal de instrumentos protésicos letales y poderosas habilidades ninja, al mismo tiempo que combinas el sigilo, la verticalidad y transversalidad, y los viscerales combates cara a cara en una sangrienta confrontación.</p>
-     <br>
-     <p>Véngate. Restituye tu honor. Mata con ingenio.</p>
 
 </div>
 <br>
@@ -117,59 +102,38 @@
         <p>Ver más</p>
     </div>
 </div>
-
 <div class="contenedor-pequeno">
-    <div class="fila">
-      <div class="col-4">
-          <img src="/images/cyber.jpg">
-          <h4>CYBERPUNK 2077</h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-          </div>
-          <p>$699.99</p> 
-      </div> 
-      <div class="col-4">
-          <img src="/images/re33.jpg">
-          <h4>RESIDENT EVIL 3</h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <p>$499.99</p>
-      </div> 
-      <div class="col-4">
-          <img src="/images/red.jpg">
-          <h4>RED DEAD REDEMPTION II </h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-          </div>
-          <p>$735.99</p>
-      </div> 
-       <div class="col-4">
-          <img src="/images/gta.jpg">
-          <h4>GRAND THEAFT AUTO V</h4>
-          <div class="rating2">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="far fa-star"></i>
-          </div>
-          <p>$551.99</p>
-      </div> 
-  </div>
+<div class="fila">
+    <% let contador=0%>  
+    <% listpro.forEach(art=> { %> 
+        <% if(art.categoria=="mas-nuevo") { %>
+            <% if(contador<=3){%>
+                <div class="col-4">
+                    <a href="/products/detail/<%= art.id %> " class="linkbox">
+                        <section>
+                            <img src="/images/<%= art.imagenPrincipal %> ">
+                            <h4><%= art.nombre %> </h4>
+                            <div class="rating2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            </div> 
+                            <p>$<%= toThousand(art.precio) %> </p> 
+                            <% contador = contador+1%>
+                        </section>
+                    </a>
+                </div>
+                <% }else{ %>
+                    <% } %>
+            <%}else{%>
+
+                <% } %>
+                 <% }) %>
 </div>
+</div>  
+      
 </body>
 <footer>
   <!-- footer -->
