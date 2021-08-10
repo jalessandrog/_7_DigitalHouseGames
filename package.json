@@ -20,7 +20,11 @@
     "bcryptjs": "^2.4.3",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "express-validator": "^6.12.1",
+=======
+    "method-override": "^3.0.0",
+>>>>>>> 61a02963dd86556a8f9cbbea9837c19b84409a37
     "multer": "^1.4.2"
   },
   "devDependencies": {
