@@ -11,12 +11,17 @@
    <section class="section-register">
       <h1 class="title">Crear Cuenta</h1>
       <p class="banner-usuario">Registrate en DigitalHouseGames</p>
+      <!-- <% if(locals.errors) { %>
+       <%   errors.forEach(error => { %>
+            <p class="msg-errores"><%= error.msg %></p>
+        <% }) %>
+      <% } %> -->
       <div class="form-container register">
           <form class="form" method="POST" action="/register" enctype="multipart/form-data">
                 <p>
                     <label class="label-1">
                         Nombre(s)
-                        <input type="text" name="nombre" placeholder="Nombre(s)">
+                        <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= locals.old && old.nombre %>">
                     </label>
                 </p>
                 <p>
@@ -40,7 +45,7 @@
                 <p>
                     <label class="label-1">
                         Confirmar Contraseña
-                        <input type="password" name="confirm-password" placeholder="Confirmar contraseña">
+                        <input type="password" name="confirm_password" placeholder="Confirmar contraseña">
                     </label>
                 </p>
                 <p>

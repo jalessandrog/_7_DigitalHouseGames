@@ -1,6 +1,6 @@
 // ************ Require's ************
 const express = require('express');
-const upload=require('../config/multer');
+const upload=require('../config/productsMulter');
 const router = express.Router();
 
 
