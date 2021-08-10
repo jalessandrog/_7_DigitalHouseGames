@@ -8,9 +8,9 @@ const { body } = require('express-validator');
 const usersController = require('../controllers/usersControllers');
 
 // Validaciones
-const validacionFormRegistro = [
-    body('nombre').notEmpty().withMessage('Debes completar el campo de Nombre'),
-    body('apellidos').notEmpty().withMessage('Debes completar el campo de Apellidos'),
+const validateCreateForm = [
+    body('nombre').notEmpty().withMessage('Debes completar el campo de nombre'),
+    body('apellidos').notEmpty().withMessage('Debes completar el campo de apellido'),
     body('email')
         .notEmpty().withMessage('Debes completar el email').bail()
         .isEmail().withMessage('Debes completar un email válido'),
@@ -26,7 +26,6 @@ router.get('/login', usersController.login);
 router.post('/login', usersController.login);
 
 router.get('/register', usersController.signup);
-router.post('/register', validacionFormRegistro, upload.single('avatar'), usersController.saveUser);
-
+router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);
 
 module.exports = router;

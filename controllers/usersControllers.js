@@ -1,7 +1,7 @@
+const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require("bcryptjs");
-const { validationResult } = require('express-validator');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
@@ -21,8 +21,8 @@ const controller = {
 	},
 	saveUser: (req, res)=>{
 		let errors = validationResult(req);
-		
-		// if(errors.isEmpty()){
+	
+		if(errors.isEmpty()){
 			let usuario= {
 				id: Date.now(),
 				nombre:req.body.nombre,
@@ -45,11 +45,10 @@ const controller = {
 			usuariosJSON= JSON.stringify(usuarios, null, 2)
 	
 			fs.writeFileSync(usersFilePath,usuariosJSON)
-			res.redirect('/')
-			
-		// }else{
-		// 	return res.render('register',{title: 'Crear Cuenta', cssFile : 'style', errors : errors.array(), old : req.body })
-		// }
+			res.redirect('/login')
+		}else{
+			res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
+		}
 	},
 };
 

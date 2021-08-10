@@ -11,47 +11,57 @@
    <section class="section-register">
       <h1 class="title">Crear Cuenta</h1>
       <p class="banner-usuario">Registrate en DigitalHouseGames</p>
-      <!-- <% if(locals.errors) { %>
-       <%   errors.forEach(error => { %>
-            <p class="msg-errores"><%= error.msg %></p>
-        <% }) %>
-      <% } %> -->
       <div class="form-container register">
           <form class="form" method="POST" action="/register" enctype="multipart/form-data">
+            <% if (locals.errors && errors.nombre) { %>
+                <p class="msg-errores"><%= errors.nombre.msg %></p>
+            <% } %>
                 <p>
                     <label class="label-1">
                         Nombre(s)
-                        <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= locals.old && old.nombre %>">
+                        <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= locals.old && old.nombre %>" >
                     </label>
                 </p>
+                <% if (locals.errors && errors.apellidos) { %>
+                    <p class="msg-errores"><%= errors.apellidos.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-1">
                         Apellidos
-                        <input type="text" name="apellidos" placeholder="Apellido paterno y materno">
+                        <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= locals.old && old.apellidos %>" >
                     </label>
                 </p>
+                <% if (locals.errors && errors.email) { %>
+                    <p class="msg-errores"><%= errors.email.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-1">
                         Email
-                        <input type="email" name="email" placeholder="Correo electronico" >
+                        <input type="email" name="email" placeholder="Correo electronico" value="<%= locals.old && old.email %>" >
                     </label>
                 </p>
+                <% if (locals.errors && errors.password) { %>
+                    <p class="msg-errores"><%= errors.password.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-1">
                         Contraseña
-                        <input type="password" name="password" placeholder="Contraseña">
+                        <input type="password" name="password" placeholder="Contraseña" value="<%= locals.old && old.password %>" >
                     </label>
                 </p>
                 <p>
                     <label class="label-1">
                         Confirmar Contraseña
-                        <input type="password" name="confirm_password" placeholder="Confirmar contraseña">
+                        <input type="password" name="confirm_password" placeholder="Confirmar contraseña" value="<%= locals.old && old.password %>" >
                     </label>
                 </p>
+                <% if (locals.errors && errors.cumpleanios) { %>
+                    <p class="msg-errores"><%= errors.cumpleanios.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-date">
                         Fecha de nacimiento
-                        <input type="date" name="cumpleanios">
+                        <input type="date" name="cumpleanios" value="<%= locals.old && old.cumpleanios %>" >
                     </label>
                 </p>
                 <p>
