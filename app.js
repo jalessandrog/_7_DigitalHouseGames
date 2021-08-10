@@ -2,6 +2,7 @@ const express = require('express');
 const ejs = require('ejs');
 const app = express();
 const path = require('path');
+const methodOverride=require('method-override')
 
 
 // ************ Template Engine ************
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(methodOverride('_method'))
 
 
 const usersRouter = require('./routes/users'); // Rutas main

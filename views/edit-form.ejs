@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+<!-- Include Head -->
+
+ <!-- Header -->
+ <%- include('partials/header') %>
+ <!-- /Header -->
+
+<!--Main-->
+  <body>
+    <main>
+        <form class="form" method="POST" action="/products/addproduct" enctype="multipart/form-data">
+          <p>Nombre del producto: <input type="text" name="nombre" value="<%= listpro3.nombre %>"><br></p> 
+          <p>Descripción del producto: 
+              <br><textarea type="text" name="breveDescripcion" row="5" cols="100" ><%= listpro3.breveDescripcion %></textarea><br>
+          </p>
+          <div class="box-price">
+              <p>Precio Unitario: <input type="number" name="precio" value="<%=listpro3.precio%>"><br></p>
+              <p>Rating: <input type="number" name="rating" min='0' max="5" value="<%= listpro3.rating %>"><br></p>
+          </div>
+          <p>Plataforma: 
+              <div class="platform">
+                  <% if(listpro3.plataforma=='PS'){  %> 
+                  <span><input type="radio" name="plataforma" value="PS" checked> Playstation</span>
+                  <span><input type="radio" name="plataforma" value="Xbox"> Xbox</span>
+                  <span><input type="radio" name="plataforma" value="Nintendo"> Nintendo</span>
+                 <% }else if (listpro3.plataforma=='Xbox') {  %> 
+                    <span><input type="radio" name="plataforma" value="PS" > Playstation</span>
+                  <span><input type="radio" name="plataforma" value="Xbox" checked> Xbox</span>
+                  <span><input type="radio" name="plataforma" value="Nintendo"> Nintendo</span>
+                  <% }else if (listpro3.plataforma=='Nintendo') { %> 
+                    <span><input type="radio" name="plataforma" value="PS" > Playstation</span>
+                  <span><input type="radio" name="plataforma" value="Xbox" > Xbox</span>
+                  <span><input type="radio" name="plataforma" value="Nintendo" checked> Nintendo</span>
+                  <% }  %> 
+                </div>
+          </p>
+          <p>Consola: 
+            <div class="platform">
+                <% if(listpro3.consola=="PS5"){ %> 
+                <span><input type="radio" name="consola" value="PS5" checked> Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4"> Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
+                <% }else if(listpro3.consola=="PS4") { %> 
+                <span><input type="radio" name="consola" value="PS5" > Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4" checked> Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
+                <% }else if(listpro3.consola=="XboxOne") { %> 
+                <span><input type="radio" name="consola" value="PS5" > Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4" > Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"checked> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
+                <% }else if(listpro3.consola=="XboxSs") { %> 
+                <span><input type="radio" name="consola" value="PS5" > Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4" > Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"checked> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
+                <% }else if(listpro3.consola=="XboxSx") { %> 
+                <span><input type="radio" name="consola" value="PS5" > Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4" > Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"checked> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
+                <% }else if(listpro3.consola=="NSwitch") { %> 
+                <span><input type="radio" name="consola" value="PS5" > Playstation 5</span>
+                <span><input type="radio" name="consola" value="PS4" > Playstation 4</span>
+                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
+                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
+                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
+                <span><input type="radio" name="consola" value="NSwitch"checked> Nintendo Switch</span>
+                <% }  %> 
+            </div>
+        </p>
+          <p>Información Adicional
+              <br><textarea name="informacionAdicional" rows="10" cols="100" placeholder="Si lo desea, escriba aquí la información adicional" ><%= listpro3.informacionAdicional %> </textarea>
+          </p>
+          <p>Categoría:
+            <div class="section-product">
+                <% if(listpro3.categoria=='mas-nuevo'){ %> 
+                <select name="categoria" id="categoria">
+                    <option value="">Elegir</option>
+                    <option value="mas-nuevo" selected>Lo más nuevo</option>
+                    <option value="mas-comprado">Lo más comprado</option>
+                    <option value="mejores-ofertas">Mejores ofertas</option>
+                    <option value="preventas">Preventas</option>
+                </select>
+                <% }else if(listpro3.categoria=='mas-comprado') {%>
+                    <select name="categoria" id="categoria">
+                        <option value="">Elegir</option>
+                        <option value="mas-nuevo">Lo más nuevo</option>
+                        <option value="mas-comprado" selected>Lo más comprado</option>
+                        <option value="mejores-ofertas">Mejores ofertas</option>
+                        <option value="preventas">Preventas</option>
+                    </select> 
+                <% }else if(listpro3.categoria=='mejores-ofertas') {%>
+                    <select name="categoria" id="categoria">
+                        <option value="">Elegir</option>
+                        <option value="mas-nuevo">Lo más nuevo</option>
+                        <option value="mas-comprado" >Lo más comprado</option>
+                        <option value="mejores-ofertas"selected>Mejores ofertas</option>
+                        <option value="preventas">Preventas</option>
+                    </select>
+                 <% }else if(listpro3.categoria=='preventas') {%>
+                        <select name="categoria" id="categoria">
+                            <option value="">Elegir</option>
+                            <option value="mas-nuevo">Lo más nuevo</option>
+                            <option value="mas-comprado" >Lo más comprado</option>
+                            <option value="mejores-ofertas">Mejores ofertas</option>
+                            <option value="preventas" selected>Preventas</option>
+                        </select>
+                    <% } %> 
+            </div>
+         </p>
+          <p>
+              <label><h3>Cargar Imagenes</h3></label>
+              Imagen Principal  :
+              <br>
+              <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg" value="<%=listpro3.imagenPrincipal%>"> 
+              <br>
+              <br>
+          </p>
+          <div class="boton-cargar">
+              <input type="submit" name="submit" value="Guardar cambios"/>
+          </div>
+        </form>
+    </main>    
+</body>
+  <!-- footer -->
+  <%- include('partials/footer') %>
+  <!-- /footer --> 
+</html>
