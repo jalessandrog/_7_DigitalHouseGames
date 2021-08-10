@@ -29,6 +29,27 @@ body{
 }
 
 /*---------------------------------------
+                #PRIMERA VISTA
+---------------------------------------*/
+ 
+/*-------Fondo-----------*/
+
+ .body-inicio{
+    background-image: url("/images/banner.jpeg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.body-inicio h2{
+    color: #fff;
+    padding-left: 15px ;
+}
+
+
+
+/*---------------------------------------
                 #GENERALES
 ---------------------------------------*/
 .title{
@@ -141,13 +162,14 @@ background-color: rgba(0, 136, 169, 0.8);
     padding: 5px 15px;
 }
 
-  /*-------banner-----------*/
-  
-img#imagen_banner {
-    display: block;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
+  /*-------Fondo-----------*/
+
+.bgimage{
+    background-image: url("/images/banner.jpeg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /*---------------------------------------

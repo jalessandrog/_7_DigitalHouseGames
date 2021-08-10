@@ -9,7 +9,7 @@ const string= n=>n.toString()
 
 const controller = {
     index: (req, res) => {
-
+        res.render('all', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro, toThousand:toThousand})
     },
     detail: (req, res) => {
         let id= parseInt(req.params.id,10)
