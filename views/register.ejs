@@ -12,7 +12,7 @@
       <h1 class="title">Crear Cuenta</h1>
       <p class="banner-usuario">Registrate en DigitalHouseGames</p>
       <div class="form-container register">
-          <form action="###" method="POST">
+          <form class="form" method="POST" action="/register" enctype="multipart/form-data">
                 <p>
                     <label class="label-1">
                         Nombre(s)
@@ -53,9 +53,9 @@
                     <label class="label-2">
                         Perfil de usuario: 
                         <label class="select" for="comprador">Vendedor</label>
-                        <input type="radio" id="vendedor" name="tipo-usuario" value="vendedor" checked>
+                        <input type="radio" id="vendedor" name="tipo_usuario" value="vendedor" checked>
                         <label class="select" for="comprador">Comprador</label>
-                        <input type="radio" id="comprador" name="tipo-usuario" value="comprador">
+                        <input type="radio" id="comprador" name="tipo_usuario" value="comprador">
                     </label>
                 </p>
                 <p>

@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "nombre": "Joseph Alessandro",
+    "apellidos": "Garcia Garcia",
+    "email": "jalessandro.ag@gmail.com",
+    "password": "$2a$10$S9DgFvVne7Gw4j2eYJXrquK5HJzfQESXofAEmGTnhSpQ7ZYFR1Qfy",
+    "cumpleanios": "2021-08-08",
+    "avatar": "img-avatar.jpg"
+  }
+]
