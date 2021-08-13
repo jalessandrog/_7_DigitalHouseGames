@@ -44,7 +44,7 @@
 
         ¿Qué se va a hacer después?
         Mejorar la funcionalidad de mostrar el nombre del usuario logeado 
-        Activar funcionalidad de recordar usuario ( Cookies y middlewares)
-        Implementar rutas de huéspedes y de usuarios
+        Activar funcionalidad de recordar usuario ( Cookies y middlewares) - Entregable Opcional 7
+        Implementar rutas de huéspedes y de usuarios - Entregable 8
         
     
