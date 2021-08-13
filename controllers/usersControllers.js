@@ -5,13 +5,16 @@ const bcrypt = require("bcryptjs");
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
+const usersList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const listpro = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const controller = {
 	index: (req, res) => {
-		res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand})
+		res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand, userlogin : ''})
 	},
 	login: (req, res)=>{
 		res.render('login', {title: 'Login', cssFile : 'style'})  
@@ -50,6 +53,39 @@ const controller = {
 			res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
 	},
+	processLogin: (req, res) =>{
+		let errors = validationResult(req);
+
+		if(errors.isEmpty()){
+			let userEmail = req.body.email;
+			const userToLogin = usersList.find(correo => correo.email === userEmail)
+
+			if(userToLogin){
+
+				let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+				console.log(isOkThePassword)
+
+				if(isOkThePassword){
+					res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand, userlogin : userToLogin })
+				}else{
+					return res.render('login', {title: 'Login', cssFile : 'style',
+						errors: {
+							password: {
+								msg: 'Contraseña Incorrecta'
+							}
+						}
+					})
+				}
+
+			}else{
+				res.render('login', {title: 'Login', cssFile : 'style'})  
+			}
+
+		}else{
+			res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
+		}
+	}
 };
 
 module.exports = controller;
+

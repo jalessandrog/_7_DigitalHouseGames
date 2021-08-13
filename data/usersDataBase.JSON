@@ -2,10 +2,28 @@
   {
     "id": 1,
     "nombre": "Joseph Alessandro",
-    "apellidos": "Garcia Garcia",
+    "apellidos": "Garcia",
     "email": "jalessandro.ag@gmail.com",
-    "password": "$2a$10$S9DgFvVne7Gw4j2eYJXrquK5HJzfQESXofAEmGTnhSpQ7ZYFR1Qfy",
-    "cumpleanios": "2021-08-08",
-    "avatar": "img-avatar.jpg"
+    "password": "$2a$10$.tSyw.fRlPSCZM6.ewSrROaHyVX6vrMDxNUslryo39j1.vDLgjkcy",
+    "cumpleanios": "1998-05-31",
+    "avatar": "user_img-avatar.jpg"
+  },
+  {
+    "id": 1628824727763,
+    "nombre": "Anthony Edward ",
+    "apellidos": "Stark",
+    "email": "im_ironman@avengers.com",
+    "password": "$2a$10$dmj8NstgmHCxMIX/Z47Ss..R3iGMr6LNoQgcrn9ejXaQWr7A8z5Oq",
+    "cumpleanios": "1970-05-29",
+    "avatar": "user_img-Tony_Stark.jpg"
+  },
+  {
+    "id": 1628825100627,
+    "nombre": "Stephen",
+    "apellidos": "Vincent Strange",
+    "email": "dr_strange@guardiandelagema.com",
+    "password": "$2a$10$nxfyAdL4tCj8u5n8Swi6i.md6lA8kdHRVsWxbgsJ2y/VW0gyBGjcS",
+    "cumpleanios": "1990-07-01",
+    "avatar": "user_img-Stephen-Strange.png"
   }
 ]

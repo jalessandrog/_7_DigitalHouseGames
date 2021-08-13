@@ -118,6 +118,12 @@ body{
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
 }
 
+.userLogin{
+    background-color: #F05742;
+    padding: 0 20px;
+    color: #fff;
+}
+
 /*---------------------------------------
                  #HEADER
 ---------------------------------------*/
@@ -125,7 +131,7 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 30px 5%;
+    padding: 20px 5%;
     background-color: #F05742;
 }
 

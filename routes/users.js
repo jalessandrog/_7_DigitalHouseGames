@@ -20,10 +20,15 @@ const validateCreateForm = [
         .isLength({min: 8, max: 32}).withMessage('Debes ingresar una contraseña con al menos 8 caracteres'),
 ];
 
+const validateUserLogin = [
+    body('email').notEmpty().withMessage('Debes completar el email'),
+];
+
+
 router.get('/', usersController.index); 
 
 router.get('/login', usersController.login);
-router.post('/login', usersController.login);
+router.post('/login', validateUserLogin, usersController.processLogin);
 
 router.get('/register', usersController.signup);
 router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);

@@ -12,19 +12,25 @@
       <h1 class="title">Login</h1>
       <p class="banner-usuario">Accede a tu cuenta en DigitalHouseGames</p>
       <div class="form-container login">
-          <form action="###" method="POST">
+          <form action="/login" method="POST">
+            <% if (locals.errors && errors.email) { %>
+                <p class="msg-errores"><%= errors.email.msg %></p>
+            <% } %>
               <p>
                   <label class="label-1">
                       Email
-                      <input type="text" name="email" placeholder="correo electronico" >
+                      <input type="text" name="email" placeholder="correo electronico" value="<%= locals.old && old.email %>">
                   </label>
               </p>
               <p>
                   <label class="label-1">
                       Contraseña
-                      <input type="password" name="password" placeholder="Contraseña">
+                      <input type="password" name="password" placeholder="Contraseña" value="<%= locals.old && old.password %>">
                   </label>
               </p>
+              <% if (locals.errors && errors.password) { %>
+                <p class="msg-errores"><%= errors.password.msg %></p>
+            <% } %>
               <p>
                   <label class="label-2">
                       <input type="checkbox" name="remember">

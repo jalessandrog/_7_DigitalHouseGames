@@ -23,7 +23,7 @@
         Problemas presentados:
         ----
 
-        ¿Qué se va a hacer?
+        ¿Qué se va a hacer después?
         Automatizar el product detail
         Habilitar funciones de put y delete
         Agregar imagenes en la lista de todos los productos
@@ -33,4 +33,18 @@
         
 ### Semana : 9-15 de agosto de 2021
 
+    - 9-10 de agosto de 2021
+        ¿Qué se hizo?:
+        Formulario para registrar funcionando : muestra middlewares y guarda el usuario en el archivo JSON
+        Formulario login funcionando : muestra middlewares, muestra error si las contraseñas no coinciden y si sí coinciden se muestra inicio con nombre del usuario.
+
+
+        Problemas presentados:
+        Errores en la funcionalidad de mostrar el nombre del usuario logeado 
+
+        ¿Qué se va a hacer después?
+        Mejorar la funcionalidad de mostrar el nombre del usuario logeado 
+        Activar funcionalidad de recordar usuario ( Cookies y middlewares)
+        Implementar rutas de huéspedes y de usuarios
+        
     
