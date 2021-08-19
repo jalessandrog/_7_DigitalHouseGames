@@ -17,7 +17,7 @@ router.get('/basket', productsController.basket);
 router.get('/addproduct', productsController.create);
 router.post('/addproduct',upload.single('imagenPrincipal'),productsController.guardar)
 router.get('/edit/:id', productsController.edit);
-router.put('/edit/:id', productsController.actualizar)
+router.put('/actualizar',upload.single('imagenPrincipal'), productsController.actualizar)
 router.get('/all',productsController.todos)
 router.get('/Nintendo',productsController.ni)
 router.get('/PS',productsController.ps)

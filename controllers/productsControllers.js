@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const methodOverride=require('method-override')
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -65,7 +66,8 @@ const controller = {
         res.render('edit-form',{ title: 'Editar producto', cssFile: 'styles_addProduct',listpro3:complist, string:string})
     },
     actualizar: (req, res) => {
-        res.send('Actualizado')
+        console.log(req.body)
+        res.send('ai')
     }     
 };
 
