@@ -11,7 +11,7 @@
 <!--Main-->
   <body>
     <main>
-        <form class="form" method="POST" action="/products/actualizar?_method=PUT" enctype="multipart/form-data">
+        <form class="form" method="POST" action="/products/edit/<%=listpro3.id%>?_method=PUT" enctype="multipart/form-data">
           <p>Nombre del producto: <input type="text" name="nombre" value="<%=listpro3.nombre%>"><br></p> 
           <p>Descripción del producto: 
               <br><textarea type="text" name="breveDescripcion" row="5" cols="100" ><%=listpro3.breveDescripcion%></textarea><br>

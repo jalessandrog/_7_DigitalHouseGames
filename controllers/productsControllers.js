@@ -66,8 +66,61 @@ const controller = {
         res.render('edit-form',{ title: 'Editar producto', cssFile: 'styles_addProduct',listpro3:complist, string:string})
     },
     actualizar: (req, res) => {
-        console.log(req.body)
-        res.send('ai')
+       // let id= parseInt(req.params.id,10)
+       // listpro.map(function(game){
+        //     if(game.id == id){
+          //       game.nombre= req.body.nombre,
+             //    game.rating= parseInt(req.body.rating,10),
+                // game.precio= parseInt(req.body.precio,10),
+             //    game.plataforma = req.body.plataforma,
+             //    game.consola= req.body.consola,
+             //   game.categoria= req.body.categoria
+         //    }
+         //    return game
+    //     })
+
+        if(req.file){
+            if(req.file.filename){
+                let id= parseInt(req.params.id,10)-1
+                var imagenbor= "public/images/"+(listpro[id].imagenPrincipal)
+                id= id+1
+                if(fs.existsSync(imagenbor)){
+                    fs.unlinkSync(imagenbor)
+                }
+                listpro.map(function(game){
+                    if(game.id == id){
+                        game.nombre= req.body.nombre,
+                        game.rating= parseInt(req.body.rating,10),
+                        game.precio= parseInt(req.body.precio,10),
+                        game.plataforma = req.body.plataforma,
+                        game.consola= req.body.consola,
+                        game.categoria= req.body.categoria,
+                        game.imagenPrincipal=req.file.filename
+
+                    }
+                    return game
+                })
+
+            }
+        }else{
+             let id= parseInt(req.params.id,10)
+             listpro.map(function(game){
+                 if(game.id == id){
+                   game.nombre= req.body.nombre,
+                   game.rating= parseInt(req.body.rating,10),
+                   game.precio= parseInt(req.body.precio,10),
+                   game.plataforma = req.body.plataforma,
+                   game.consola= req.body.consola,
+                   game.categoria= req.body.categoria
+                }
+                return game
+             })
+            
+        }
+        productosJSON= JSON.stringify(listpro, null, 2)
+
+        fs.writeFileSync(productsFilePath,productosJSON)
+        res.redirect('/products/all')
     }     
 };
 
