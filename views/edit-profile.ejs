@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Include Head -->
+<%- include('partials/head') %>
+<!-- Header -->
+<%- include('partials/header') %>
+<body>
+    <section class="section-profile">
+        <h1 class="title">Bienvenido <%= user.nombre %></h1>
+        <div class="imagen-perfil">
+            <img src="/images/users/<%= user.avatar %>" width="10%">
+            <hr class="mini-divisor perfil">
+        </div>
+        <div class="form-container profile">
+            <form class="form" method="POST" action="/edit?_method=PUT" enctype="multipart/form-data">
+                <% if (locals.errors && errors.nombre) { %>
+                    <p class="msg-errores"><%= errors.nombre.msg %></p>
+                <% } %>
+                    <p>
+                        <label class="label-1">
+                            Nombre(s)
+                            <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= user.nombre %>" >
+                        </label>
+                    </p>
+                    <% if (locals.errors && errors.apellidos) { %>
+                        <p class="msg-errores"><%= errors.apellidos.msg %></p>
+                    <% } %>
+                    <p>
+                        <label class="label-1">
+                            Apellidos
+                            <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= user.apellidos %>" >
+                        </label>
+                    </p>
+                    <% if (locals.errors && errors.email) { %>
+                        <p class="msg-errores"><%= errors.email.msg %></p>
+                    <% } %>
+                    <p>
+                        <label class="label-1">
+                            Email
+                            <input type="email" name="email" placeholder="Correo electronico" value="<%= user.email %>" >
+                        </label>
+                    </p>
+                    <% if (locals.errors && errors.password) { %>
+                        <p class="msg-errores"><%= errors.password.msg %></p>
+                    <% } %>
+                    <p>
+                        <label class="label-1">
+                            Contraseña
+                            <input type="password" name="password" placeholder="Contraseña" >
+                        </label>
+                    </p>
+                    <p>
+                        <label class="label-1">
+                            Confirmar Contraseña
+                            <input type="password" name="confirm_password" placeholder="Confirmar contraseña"  >
+                        </label>
+                    </p>
+                    <% if (locals.errors && errors.cumpleanios) { %>
+                        <p class="msg-errores"><%= errors.cumpleanios.msg %></p>
+                    <% } %>
+                    <p>
+                        <label class="label-date">
+                            Fecha de nacimiento
+                            <input type="date" name="cumpleanios" value="<%= user.cumpleanios %>" >
+                        </label>
+                    </p>
+                    <p>
+                        <label class="label-2">
+                            Perfil de usuario: 
+                            <label class="select" for="comprador">Vendedor</label>
+                            <input type="radio" id="vendedor" name="tipo_usuario" value="vendedor" checked>
+                            <label class="select" for="comprador">Comprador</label>
+                            <input type="radio" id="comprador" name="tipo_usuario" value="comprador">
+                        </label>
+                    </p>
+                    <br>
+                    <p>
+                        <label class="label-file">
+                            Nueva imagen de perfil:
+                            <input type="file" name="avatar" accept="image/png, image/jpeg">
+                        </label>
+                    </p>
+                    <br>
+                    <p class="buttons">
+                        <button type="submit" class="action-button cargar">Actualizar</button>
+                        <a href="/profile" class="action-button cancel">Cancelar</a>
+                     </p>
+            </form>
+        </div>
+    </section>
+</body>
+<footer>
+    <!-- footer -->
+    <%- include('partials/footer') %>
+    <!-- /footer --> 
+  </footer>
+</html>

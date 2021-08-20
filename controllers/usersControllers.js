@@ -2,6 +2,7 @@ const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require("bcryptjs");
+const { eliminar } = require('./productsControllers');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
@@ -66,6 +67,7 @@ const controller = {
 				console.log(isOkThePassword)
 
 				if(isOkThePassword){
+					req.session.usuarioLogueado = userToLogin;
 					res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand, userlogin : userToLogin })
 				}else{
 					return res.render('login', {title: 'Login', cssFile : 'style',
@@ -84,7 +86,24 @@ const controller = {
 		}else{
 			res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
+	},
+	profile: (req, res) =>{
+		let user = req.session.usuarioLogueado;
+		console.log(user)
+		res.render('profile', {title: 'Perfil', cssFile : 'style', user : user});
+	},
+	edit:(req, res) =>{
+		let user = req.session.usuarioLogueado;
+		res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user : user});
+	},
+	actualizar: (req, res) =>{
+		let user = req.session.usuarioLogueado;
+
+		res.send('Actualización en curso...')
 	}
+	// eliminar: (req, res) =>{
+		
+	// }
 };
 
 module.exports = controller;

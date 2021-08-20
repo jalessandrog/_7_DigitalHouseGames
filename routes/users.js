@@ -3,6 +3,8 @@ const express = require('express');
 const router = express.Router();
 const upload=require('../config/usersMulter');
 const { body } = require('express-validator');
+const authMiddleware = require('../middlewares/authMiddleware')
+const guestMiddleware = require('../middlewares/guestMiddleware')
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersControllers');
@@ -30,7 +32,12 @@ router.get('/', usersController.index);
 router.get('/login', usersController.login);
 router.post('/login', validateUserLogin, usersController.processLogin);
 
-router.get('/register', usersController.signup);
+router.get('/register', guestMiddleware, usersController.signup);
 router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);
+
+router.get('/profile',authMiddleware, usersController.profile)
+router.get('/edit', authMiddleware, usersController.edit);
+router.put('/edit',upload.single('avatar'), usersController.actualizar)
+// router.delete('/delete',upload.single('avatar'), usersController.eliminar)
 
 module.exports = router;

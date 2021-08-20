@@ -122,6 +122,7 @@ body{
     background-color: #F05742;
     padding: 0 20px;
     color: #fff;
+    
 }
 
 /*---------------------------------------
@@ -238,9 +239,9 @@ footer div.footer div.container div.fila {
 
 
 /*---------------------------------------
-                #LOGIN/REGISTRO
+                #LOGIN/REGISTRO/PROFILE
 ---------------------------------------*/
-.section-login .buttons, .section-register .buttons{
+.section-login .buttons, .section-register .buttons, .section-profile .buttons{
     text-align: center;
 }
 
@@ -296,6 +297,31 @@ footer div.footer div.container div.fila {
 .section-register .register .label-2 .select{
     padding: 0 10px;
 }
+
+
+/*---------------------------------------
+                #PERFIL
+---------------------------------------*/
+  
+.imagen-perfil{
+    text-align: center;
+}
+
+.mini-divisor{
+    background: #F05742;
+    border: none;
+    height: 7px;
+    margin: 2em auto;
+    outline: none;
+    width: 17em;
+}
+
+.profile {
+    width: 600px;
+    height: 800px;
+    margin: auto;
+}
+
 
 /*---------------------------------------
             #DETALLE PRODUCTO
@@ -489,8 +515,8 @@ input:focus{
     color: inherit;
 
 }
-  
-  
+
+
 
 /*---------------------------------------
                 #RESPONSIVE
@@ -567,7 +593,9 @@ input:focus{
 
     .section-login label.label-1 input, 
     .section-register label.label-1 input,
-    .section-register label.label-date input
+    .section-register label.label-date input,
+    .section-profile label.label-1 input,
+    .section-profile label.label-date input
     {
         width: 600px;
     }
