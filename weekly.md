@@ -47,4 +47,21 @@
         Activar funcionalidad de recordar usuario ( Cookies y middlewares) - Entregable Opcional 7
         Implementar rutas de huéspedes y de usuarios - Entregable 8
         
-    
+
+### Semana : 16-22 de agosto de 2021
+        ¿Qué se hizo?:
+        Implementación del método put y delete en la sección de productos que permite actualizar la información de un producto o eliminar un producto.
+        Implementación de rutas de huéspedes y usuarios. Se agregaron middlewares de session para especificar a que rutas se tiene acceso siendo usuario logueado o si es un usuario que aún no se ha registrado.
+
+        Problemas presentados:
+        Errores en la funcionalidad de mostrar el nombre del usuario logeado en la página de inicio
+        Una vez iniciada sesión no se puede "salir de la sesión" a menos que se reinicie el servidor 
+
+        ¿Qué se va a hacer después?
+        Mejorar la funcionalidad de mostrar el nombre del usuario logeado en el index
+        Implementar "cerrar sesión" para que el usuario pase de logueado a invitado/normal.
+        Implementar métodos put y delete para editar información de usuario o borrar usuario.
+        Mejorar el diseño del formulario para registrar producto y agregar sus estilos de css al css principal
+        
+          
+

@@ -43,3 +43,14 @@ Comunicación
 		Reuniones para revisar avances
 		Completar y entregar sprint en tiempo y forma
         Carga de trabajo equilibrada entre miembros del equipo
+
+### QUINTO SPRINT
+    Conclusión: 
+        El trabajo en equipo permite que los entregables sean en tiempo, forma y con mejor calidad. Además estár en constante comunicación ayuda a conocer los avances, problemas y posibles soluciones a estos. Sin mencionar que fortalece las habilidades individuales y de equipo.
+
+    Retos:
+		Seguir con la buena comunicación entre los dos integrantes de equipo
+        Seguir trabajando en colaboración 
+
+    Reto personal - Joseph Alessandro: Organizar los tiempos entre la universidad, prácticas profesionales y clases en Digital House.
+        
