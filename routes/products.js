@@ -18,6 +18,7 @@ router.get('/addproduct', productsController.create);
 router.post('/addproduct',upload.single('imagenPrincipal'),productsController.guardar)
 router.get('/edit/:id', productsController.edit);
 router.put('/edit/:id',upload.single('imagenPrincipal'), productsController.actualizar)
+router.delete('/delete/:id',upload.single('imagenPrincipal'), productsController.eliminar)
 router.get('/all',productsController.todos)
 router.get('/Nintendo',productsController.ni)
 router.get('/PS',productsController.ps)

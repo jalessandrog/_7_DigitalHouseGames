@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const methodOverride=require('method-override')
+const methodOverride=require('method-override');
+const { body } = require('express-validator');
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -32,6 +33,8 @@ const controller = {
             plataforma:req.body.plataforma,
             consola:req.body.consola,
             categoria:req.body.categoria,
+            breveDescripcion: req.body.breveDescripcion,
+            informacionAdicional: req.body.informacionAdicional,
             imagenPrincipal:req.file.filename
         }
         let archivoproductos=fs.readFileSync(productsFilePath,{encoding:'utf-8'})
@@ -81,9 +84,9 @@ const controller = {
 
         if(req.file){
             if(req.file.filename){
-                let id= parseInt(req.params.id,10)-1
-                var imagenbor= "public/images/"+(listpro[id].imagenPrincipal)
-                id= id+1
+                let id= parseInt(req.params.id,10)
+                let index= listpro.findIndex(game=>game.id==id)
+                var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
                 if(fs.existsSync(imagenbor)){
                     fs.unlinkSync(imagenbor)
                 }
@@ -95,6 +98,8 @@ const controller = {
                         game.plataforma = req.body.plataforma,
                         game.consola= req.body.consola,
                         game.categoria= req.body.categoria,
+                        game.breveDescripcion=req.body.breveDescripcion,
+                        game.informacionAdicional=req.body.informacionAdicional,
                         game.imagenPrincipal=req.file.filename
 
                     }
@@ -111,12 +116,29 @@ const controller = {
                    game.precio= parseInt(req.body.precio,10),
                    game.plataforma = req.body.plataforma,
                    game.consola= req.body.consola,
+                   game.breveDescripcion=req.body.breveDescripcion,
+                   game.informacionAdicional=req.body.informacionAdicional
                    game.categoria= req.body.categoria
                 }
                 return game
              })
             
         }
+        productosJSON= JSON.stringify(listpro, null, 2)
+
+        fs.writeFileSync(productsFilePath,productosJSON)
+        res.redirect('/products/all')
+    },
+    eliminar: (req,res)=>{
+        let id= parseInt(req.params.id,10)
+        let index= listpro.findIndex(game=>game.id==id)
+        console.log(index)
+        var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
+            if(fs.existsSync(imagenbor)){
+                    fs.unlinkSync(imagenbor)
+                }
+                res.redirect('/products/all')
+        listpro.splice(index,1)
         productosJSON= JSON.stringify(listpro, null, 2)
 
         fs.writeFileSync(productsFilePath,productosJSON)
