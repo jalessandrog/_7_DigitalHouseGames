@@ -25,19 +25,21 @@ const controller = {
         res.render('product-create-form',{ title: 'Añadir producto', cssFile: 'styles_addProduct'})
     },
     guardar: (req,res)=>{
-        let product= {
-            id: Date.now(),
-            nombre:req.body.nombre,
-            rating: parseInt(req.body.rating,10),
-            precio: parseInt(req.body.precio,10),
-            plataforma:req.body.plataforma,
-            consola:req.body.consola,
-            categoria:req.body.categoria,
-            breveDescripcion: req.body.breveDescripcion,
-            informacionAdicional: req.body.informacionAdicional,
-            imagenPrincipal:req.file.filename
-        }
-        let archivoproductos=fs.readFileSync(productsFilePath,{encoding:'utf-8'})
+        if(req.file){
+            if(req.file.filename){
+                let product= {
+                    id: Date.now(),
+                    nombre:req.body.nombre,
+                    rating: parseInt(req.body.rating,10),
+                    precio: parseInt(req.body.precio,10),
+                    plataforma:req.body.plataforma,
+                    consola:req.body.consola,
+                    categoria:req.body.categoria,
+                    breveDescripcion: req.body.breveDescripcion,
+                    informacionAdicional: req.body.informacionAdicional,
+                    imagenPrincipal:req.file.filename
+                }
+                let archivoproductos=fs.readFileSync(productsFilePath,{encoding:'utf-8'})
         let productos;
         if (archivoproductos==''){
              productos=[]
@@ -50,6 +52,12 @@ const controller = {
 
         fs.writeFileSync(productsFilePath,productosJSON)
         res.redirect('/products/all')
+            }
+        }else{
+            res.send('Falta adjuntar imagen, intentalo de nuevo')
+        }
+        
+        
     },
     todos:(req, res) => {
         res.render('all', {title: 'Todos los productos', cssFile : 'style', listpro:listpro, toThousand:toThousand})
@@ -69,18 +77,6 @@ const controller = {
         res.render('edit-form',{ title: 'Editar producto', cssFile: 'styles_addProduct',listpro3:complist, string:string})
     },
     actualizar: (req, res) => {
-       // let id= parseInt(req.params.id,10)
-       // listpro.map(function(game){
-        //     if(game.id == id){
-          //       game.nombre= req.body.nombre,
-             //    game.rating= parseInt(req.body.rating,10),
-                // game.precio= parseInt(req.body.precio,10),
-             //    game.plataforma = req.body.plataforma,
-             //    game.consola= req.body.consola,
-             //   game.categoria= req.body.categoria
-         //    }
-         //    return game
-    //     })
 
         if(req.file){
             if(req.file.filename){
