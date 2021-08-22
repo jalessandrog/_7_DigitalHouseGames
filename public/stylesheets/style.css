@@ -414,7 +414,10 @@ footer div.footer div.container div.fila {
 }
 
 
-
+span.actualizar_producto{
+    font-weight: bold;
+    color: #F05742;
+}
 /*---------------------------------------
             #DETALLE PRODUCTO
 ---------------------------------------*/

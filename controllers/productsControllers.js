@@ -74,7 +74,7 @@ const controller = {
     edit: (req, res) => {
         let id= parseInt(req.params.id,10)
         const complist = listpro.find(p => p.id === id)
-        res.render('edit-form',{ title: 'Editar producto', cssFile: 'styles_addProduct',listpro3:complist, string:string})
+        res.render('edit-form',{ title: 'Editar producto', cssFile: 'style',listpro3:complist, string:string})
     },
     actualizar: (req, res) => {
 
