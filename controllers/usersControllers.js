@@ -34,7 +34,7 @@ const controller = {
 				email:req.body.email,
 				password:bcrypt.hashSync(req.body.password, 10),
 				cumpleanios:req.body.cumpleanios,
-				tipo_usuario: req.body.tipousuario,
+				rolUsuario: req.body.rolUsuario,
 				avatar:req.file.filename
 			}
 			let usersfile=fs.readFileSync(usersFilePath,{encoding:'utf-8'})

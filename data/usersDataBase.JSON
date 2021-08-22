@@ -6,6 +6,7 @@
     "email": "jalessandro.ag@gmail.com",
     "password": "$2a$10$.tSyw.fRlPSCZM6.ewSrROaHyVX6vrMDxNUslryo39j1.vDLgjkcy",
     "cumpleanios": "1998-05-31",
+    "rolUsuario": "admin",
     "avatar": "user_img-avatar.jpg"
   },
   {
@@ -16,15 +17,27 @@
     "password": "$2a$10$dmj8NstgmHCxMIX/Z47Ss..R3iGMr6LNoQgcrn9ejXaQWr7A8z5Oq",
     "cumpleanios": "1970-05-29",
     "tipo_usuario": "vendedor",
+    "rolUsuario": "admin",
     "avatar": "user_img-Tony_Stark.jpg"
   },
   {
-    "id": 1628825100627,
+    "id": 1629667478093,
     "nombre": "Stephen",
     "apellidos": "Vincent Strange",
     "email": "dr_strange@guardiandelagema.com",
-    "password": "$2a$10$nxfyAdL4tCj8u5n8Swi6i.md6lA8kdHRVsWxbgsJ2y/VW0gyBGjcS",
+    "password": "$2a$10$E8lfGN5jdIzuWohobmXKguz8VXcbT6dEgrTnDQA/mB5DCDwC7M3yK",
     "cumpleanios": "1990-07-01",
+    "rolUsuario": "comprador",
     "avatar": "user_img-Stephen-Strange.png"
+  },
+  {
+    "id": 1629668457509,
+    "nombre": "Carlos",
+    "apellidos": "Jimenez Zepeda",
+    "email": "0230071@up.edu.mx",
+    "password": "$2a$10$EV1cx6gDsMy9OyT/OyPyRuSoAoes0md1U82hA4m3z4sb.sOwnTIIK",
+    "cumpleanios": "2001-01-01",
+    "rolUsuario": "admin",
+    "avatar": "user_img-avatar.jpg"
   }
 ]
