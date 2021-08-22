@@ -22,7 +22,7 @@ const controller = {
          res.render('shopping-cart',{ title: 'Carrito de Compras', cssFile: 'styles_productCar'})
     },
     create: (req, res) => {
-        res.render('product-create-form',{ title: 'Añadir producto', cssFile: 'styles_addProduct'})
+        res.render('product-create-form',{ title: 'Añadir producto', cssFile: 'style'})
     },
     guardar: (req,res)=>{
         if(req.file){

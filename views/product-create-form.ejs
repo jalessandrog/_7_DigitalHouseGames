@@ -10,60 +10,96 @@
 
 <!--Main-->
   <body>
-    <main>
-        <form class="form" method="POST" action="/products/addproduct" enctype="multipart/form-data">
-          <p>Nombre del producto: <input type="text" name="nombre"><br></p> 
-          <p>Descripción del producto: 
-              <br><textarea type="text" name="breveDescripcion" row="5" cols="100"></textarea><br>
-          </p>
-          <div class="box-price">
-              <p>Precio Unitario: <input type="number" name="precio"><br></p>
-              <p>Rating: <input type="number" name="rating" min='0' max="5"><br></p>
-          </div>
-          <p>Plataforma: 
-              <div class="platform">
-                  <span><input type="radio" name="plataforma" value="PS"> Playstation</span>
-                  <span><input type="radio" name="plataforma" value="Xbox"> Xbox</span>
-                  <span><input type="radio" name="plataforma" value="Nintendo"> Nintendo</span>
-              </div>
-          </p>
-          <p>Consola: 
-            <div class="platform">
-                <span><input type="radio" name="consola" value="PS5"> Playstation 5</span>
-                <span><input type="radio" name="consola" value="PS4"> Playstation 4</span>
-                <span><input type="radio" name="consola" value="XboxOne"> Xbox One</span>
-                <span><input type="radio" name="consola" value="XboxSs"> Xbox Series S</span>
-                <span><input type="radio" name="consola" value="XboxSx"> Xbox Series X</span>
-                <span><input type="radio" name="consola" value="NSwitch"> Nintendo Switch</span>
-            </div>
-        </p>
-          <p>Información Adicional
-              <br><textarea name="informacionAdicional" rows="10" cols="100" placeholder="Si lo desea, escriba aquí la información adicional"></textarea>
-          </p>
-          <p>Categoría:
-            <div class="section-product">
-                <select name="categoria" id="categoria">
-                    <option value="">Elegir</option>
-                    <option value="mas-nuevo">Lo más nuevo</option>
-                    <option value="mas-comprado">Lo más comprado</option>
-                    <option value="mejores-ofertas">Mejores ofertas</option>
-                    <option value="preventas">Preventas</option>
-                </select>
-            </div>
-         </p>
-          <p>
-              <label><h3>Cargar Imagenes</h3></label>
-              Imagen Principal  :
-              <br>
-              <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg"> 
-              <br>
-              <br>
-          </p>
-          <div class="boton-cargar">
-              <input type="submit" name="submit" value="Cargar Producto"/>
-          </div>
-        </form>
-    </main>    
+    <section class="section-addProduct">
+        <h1 class="title">Agregar Producto</h1>
+        <p class="banner-usuario"><em>Vender nuevo producto</em></p>
+        <div class="form-container addProduct">
+            <form class="form" method="POST" action="/products/addproduct" enctype="multipart/form-data">
+                <p>
+                    <label class="label-1">
+                        Nombre del producto:
+                        <input type="text" name="nombre">
+                    </label>
+                </p>
+                <p>
+                    <label class="label-textarea">
+                        Descripción del producto:
+                        <textarea type="text" name="breveDescripcion" ></textarea>
+                    </label>
+                </p>
+                <p>
+                    <label class="label-1">
+                        <label class="label-number">
+                            Precio Unitario: 
+                            <input type="number" name="precio">
+                            Rating: 
+                            <input type="number" name="rating" min='0' max="5">
+                        </label>
+                    </label>
+                </p>
+                <p>
+                    <label class="label-2">
+                        Plataforma:
+                        <label class="label-radio">
+                            <label class="select" for="PS">Playstation</label>
+                            <input type="radio" name="plataforma" value="PS">
+                            <label class="select" for="Xbox">Xbox</label>
+                            <input type="radio" name="plataforma" value="Xbox">
+                            <label class="select" for="Nintendo">Nintendo</label>
+                            <input type="radio" name="plataforma" value="Nintendo">
+                        </label>
+                    </label>
+                </p>
+                <p>
+                    <label class="label-2">
+                        Consola:
+                        <label class="label-radio">
+                            <label class="select" for="PS5">Playstation 5</label>
+                            <input type="radio" name="consola" value="PS5">
+                            <label class="select" for="PS4">Playstation 4</label>
+                            <input type="radio" name="consola" value="PS4"> 
+                            <label class="select" for="XboxOne">Xbox One</label>
+                            <input type="radio" name="consola" value="XboxOne">
+                            <label class="select" for="XboxSs">Xbox Series S</label>
+                            <input type="radio" name="consola" value="XboxSs">
+                            <label class="select" for="XboxSx">Xbox Series X</label>
+                            <input type="radio" name="consola" value="XboxSx">
+                            <label class="select" for="NSwitch">Nintendo Switch</label>
+                            <input type="radio" name="consola" value="NSwitch">
+                        </label>
+                    </label>
+                </p>
+                <p>
+                    <label class="label-textarea">
+                        Información Adicional:
+                        <br>
+                        <textarea name="informacionAdicional" placeholder="Si lo desea, escriba aquí la información adicional"></textarea>
+                    </label>
+                </p>
+                <p>
+                    <label class="label-select">
+                        Categoría:
+                        <select name="categoria" id="categoria">
+                            <option value="">Elegir</option>
+                            <option value="mas-nuevo">Lo más nuevo</option>
+                            <option value="mas-comprado">Lo más comprado</option>
+                            <option value="mejores-ofertas">Mejores ofertas</option>
+                            <option value="preventas">Preventas</option>
+                        </select>
+                    </label>
+                </p>
+                <p>
+                    <label class="label-file">
+                        Imagen Principal  :
+                        <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg"> 
+                    </label>
+                </p>
+                <p class="buttons">
+                    <input class="action-button" type="submit" name="submit" value="Cargar Producto"/>
+                 </p>
+            </form>
+        </div>
+    </section>
 </body>
   <!-- footer -->
   <%- include('partials/footer') %>

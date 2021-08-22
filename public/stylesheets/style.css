@@ -108,7 +108,10 @@ body{
 
 /*====== Inputs ======*/ 
 
-.form-container label.label-1 input, label.label-date input{
+.form-container label.label-1 input, 
+label.label-date input,  
+label.label-textarea textarea, 
+label.label-select select{
     margin: 2px 0;
     height: 35px;
     text-align: center;
@@ -116,6 +119,11 @@ body{
     border-style: none;
     border-radius: 13px;
     box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
+}
+
+.form-container label.label-1 input:focus
+{
+    outline: 2px   solid darkorange;
 }
 
 .userLogin{
@@ -241,7 +249,10 @@ footer div.footer div.container div.fila {
 /*---------------------------------------
                 #LOGIN/REGISTRO/PROFILE
 ---------------------------------------*/
-.section-login .buttons, .section-register .buttons, .section-profile .buttons{
+.section-login .buttons, 
+.section-register .buttons, 
+.section-profile .buttons, 
+.section-addProduct .buttons{
     text-align: center;
 }
 
@@ -280,6 +291,10 @@ footer div.footer div.container div.fila {
     text-decoration: none;
 }
 
+.login label.label-2  input[type="checkbox"]:checked {
+    box-shadow: 0 0 0 3px #F05742;
+}
+
 /*---------------------------------------
                 #REGISTRO
 ---------------------------------------*/
@@ -298,6 +313,14 @@ footer div.footer div.container div.fila {
     padding: 0 10px;
 }
 
+.register label.label-date input:focus
+{
+    outline: 2px   solid darkorange;
+}
+
+.register label.label-2 label.label-radio input[type="radio"]:checked {
+    box-shadow: 0 0 0 3px #F05742;
+}
 
 /*---------------------------------------
                 #PERFIL
@@ -321,6 +344,75 @@ footer div.footer div.container div.fila {
     height: 800px;
     margin: auto;
 }
+
+/*---------------------------------------
+            #AGREGAR PRODUCTO
+---------------------------------------*/
+
+.addProduct{
+    width: 600px;
+    height: 1000px;
+    margin: auto;
+}
+
+.addProduct label.label-2 label.label-radio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+    flex-direction: row;
+}
+
+.addProduct label.label-2 label.label-radio input{
+    margin: 1em 1em;
+    padding: .3em 0;
+}
+
+.addProduct label.label-textarea textarea{
+    height: 9em;
+    width: 13em;
+}
+
+.addProduct p{
+    margin: 1em 0;
+}
+
+.addProduct label.label-number{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.addProduct label.label-number input{
+    margin: 0 3em;
+    padding: 0 1em;
+}
+
+.addProduct label.label-number input:first-child{
+    width: 10em;
+}
+
+.addProduct label.label-number input:last-child{
+    width: 10em;
+}
+
+ /*-------HOV-----------*/
+
+.addProduct label.label-2 label.label-radio label:hover{
+    color: #F05742;
+    font-weight: bold;  
+}
+
+.addProduct label.label-2 label.label-radio input[type="radio"]:checked {
+    box-shadow: 0 0 0 3px #F05742;
+}
+
+
+.addProduct label.label-textarea textarea:focus,
+.addProduct label.label-select select:focus
+{
+    outline: 2px   solid darkorange;
+}
+
 
 
 /*---------------------------------------
@@ -350,12 +442,6 @@ footer div.footer div.container div.fila {
     margin: 25px 0;
 }
 
-/* .contenedor-pequeno{
-    max-width: 1080px;
-    margin: auto;
-    padding-left: 25px;
-    padding-right: 25px;
-} */
 
 .producto-unico{
     margin-top: 80px;
@@ -595,7 +681,10 @@ input:focus{
     .section-register label.label-1 input,
     .section-register label.label-date input,
     .section-profile label.label-1 input,
-    .section-profile label.label-date input
+    .section-profile label.label-date input,
+    .section-addProduct label.label-1 input,
+    .section-addProduct label.label-textarea textarea,
+    .section-addProduct label.label-select select
     {
         width: 600px;
     }
