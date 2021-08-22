@@ -52,6 +52,8 @@
         ¿Qué se hizo?:
         Implementación del método put y delete en la sección de productos que permite actualizar la información de un producto o eliminar un producto.
         Implementación de rutas de huéspedes y usuarios. Se agregaron middlewares de session para especificar a que rutas se tiene acceso siendo usuario logueado o si es un usuario que aún no se ha registrado.
+        Se mejoró el diseño del formulario para registrar/editar producto y agregar sus estilos de css al css principal
+        Se corrigió el error que no guardaba el rol de usuario al crear un nuevo usuario
 
         Problemas presentados:
         Errores en la funcionalidad de mostrar el nombre del usuario logeado en la página de inicio
@@ -61,7 +63,8 @@
         Mejorar la funcionalidad de mostrar el nombre del usuario logeado en el index
         Implementar "cerrar sesión" para que el usuario pase de logueado a invitado/normal.
         Implementar métodos put y delete para editar información de usuario o borrar usuario.
-        Mejorar el diseño del formulario para registrar producto y agregar sus estilos de css al css principal
+        Mejorar el formato y diseño del carrito de compras
+        
         
           
 
