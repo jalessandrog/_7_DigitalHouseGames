@@ -13,7 +13,7 @@ router.get('/', productsController.index);
 
 /*** GET ONE PRODUCT ***/ 
 router.get('/detail/:id/', productsController.detail); 
-router.get('/basket', productsController.basket);
+router.get('/basket', authMiddleware, productsController.basket);
 router.get('/addproduct', authMiddleware, productsController.create);
 router.post('/addproduct',upload.single('imagenPrincipal'),productsController.guardar)
 router.get('/edit/:id', authMiddleware, productsController.edit);
