@@ -16,5 +16,12 @@ module.exports = function(sequelize,dataTypes){
     }
     let Consola = sequelize.define(alias,cols,config);
 
+    Consola.associate = function(models){
+        Consola.hasMany(models.Producto,{
+            as:'productos02',
+            foreignKey:'idConsola'
+        })
+    }
+
     return Consola;
 }

@@ -41,5 +41,29 @@ module.exports = function(sequelize,dataTypes){
     }
     let Producto = sequelize.define(alias,cols,config);
 
+    Producto.associate = function(models){
+        Producto.belongsToMany(models.Usuario,{
+            foreignKey:'idProductos',
+            otherKey:'idUsuarios',
+            as:'usuarios02',
+            through:'Producto_usuario',
+            timestamps: false
+        })
+        Producto.belongsTo(models.Categoria,{
+            as:'categoria',
+            foreignKey:'idCategoria'
+        })
+        Producto.belongsTo(models.Plataforma,{
+            as:'plataforma',
+            foreignKey:'idPlataforma'
+        })
+        Producto.belongsTo(models.Consola,{
+            as:'consola',
+            foreignKey:'idConsola'
+        })
+
+    }
+
+
     return Producto;
 }
