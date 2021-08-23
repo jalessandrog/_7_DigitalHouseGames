@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const methodOverride=require('method-override');
 const { body } = require('express-validator');
+let db=require('../database/models');
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');

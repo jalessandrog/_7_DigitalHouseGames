@@ -19,13 +19,13 @@ module.exports = function(sequelize,dataTypes){
     }
     let Productos_Usuarios = sequelize.define(alias,cols,config);
 
-    Categoria.associate = function(models){
-        Categoria.belongsTo(models.Producto,{
+    Productos_Usuarios.associate = function(models){
+        Productos_Usuarios.belongsTo(models.Producto,{
             foreignKey:'idProductos'
         })
     }
-    Categoria.associate = function(models){
-        Categoria.belongsTo(models.Usuario,{
+    Productos_Usuarios.associate = function(models){
+        Productos_Usuarios.belongsTo(models.Usuario,{
             foreignKey:'idUsuarios'
         })
     }

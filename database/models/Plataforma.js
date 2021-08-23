@@ -16,8 +16,8 @@ module.exports = function(sequelize,dataTypes){
     }
     let Plataforma = sequelize.define(alias,cols,config);
 
-    Categoria.associate = function(models){
-        Categoria.hasMany(models.Producto,{
+    Plataforma.associate = function(models){
+        Plataforma.hasMany(models.Producto,{
             as:'productos03',
             foreignKey:'idPlataforma'
         })
