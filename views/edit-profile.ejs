@@ -12,7 +12,7 @@
             <hr class="mini-divisor perfil">
         </div>
         <div class="form-container profile">
-            <form class="form" method="POST" action="/edit?_method=PUT" enctype="multipart/form-data">
+            <form class="form" method="POST" action="/edit/<%=user.id%>?_method=PUT" enctype="multipart/form-data">
                 <% if (locals.errors && errors.nombre) { %>
                     <p class="msg-errores"><%= errors.nombre.msg %></p>
                 <% } %>
@@ -90,7 +90,7 @@
                     <br>
                     <p class="buttons">
                         <button type="submit" class="action-button cargar">Actualizar</button>
-                        <a href="/profile" class="action-button cancel">Cancelar</a>
+                        <a href="/profile/<%= user.id %>" class="action-button cancel">Cancelar</a>
                      </p>
             </form>
         </div>

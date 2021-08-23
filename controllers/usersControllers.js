@@ -18,7 +18,7 @@ const controller = {
 		res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand, userlogin : ''})
 	},
 	login: (req, res)=>{
-		res.render('login', {title: 'Login', cssFile : 'style'})  
+		res.render('login', {title: 'Login', cssFile : 'style', usersList:usersList})  
 	},
 	signup: (req, res)=>{
 		res.render('register', {title: 'Crear Cuenta', cssFile : 'style'})  
@@ -88,22 +88,78 @@ const controller = {
 		}
 	},
 	profile: (req, res) =>{
-		let user = req.session.usuarioLogueado;
-		console.log(user)
-		res.render('profile', {title: 'Perfil', cssFile : 'style', user : user});
+		// let user = req.session.usuarioLogueado;
+		// console.log(user)
+		let id= parseInt(req.params.id,10)
+        const user = usersList.find(p => p.id === id)
+		res.render('profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
 	},
 	edit:(req, res) =>{
-		let user = req.session.usuarioLogueado;
-		res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user : user});
+		let id= parseInt(req.params.id,10)
+        const user = usersList.find(p => p.id === id)
+		res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
 	},
 	actualizar: (req, res) =>{
-		let user = req.session.usuarioLogueado;
+		if(req.file){
+            if(req.file.filename){
+                let id = parseInt(req.params.id,10)
+                let users = usersList.findIndex(user=>user.id==id)
+                var imagenbor = "public/images/users"+(usersList[users].avatar)
+                if(fs.existsSync(imagenbor)){
+                    fs.unlinkSync(imagenbor)
+                }
+                usersList.map(function(user){
+                    if(user.id == id){
+                        user.nombre= req.body.nombre,
+                        user.apellidos = req.body.apellidos,
+                        user.email= req.body.email,
+                        user.password= bcrypt.hashSync(req.body.password, 10),
+                        user.cumpleanios=req.body.cumpleanios,
+                        user.rolUsuario=req.body.rolUsuario,
+                        user.avatar=req.file.filename
+                    }
+                    return user
+                })
+            }
+        }else{
+             let id= parseInt(req.params.id,10)
+             usersList.map(function(user){
+                 if(user.id == id){
+					user.nombre= req.body.nombre,
+					user.apellidos = req.body.apellidos,
+					user.email= req.body.email,
+					user.password= bcrypt.hashSync(req.body.password, 10),
+					user.cumpleanios=req.body.cumpleanios,
+					user.rolUsuario=req.body.rolUsuario
+                }
+                return user
+             })
+            
+        }
+        usuariosJSON= JSON.stringify(usersList, null, 2)
+	
+		fs.writeFileSync(usersFilePath,usuariosJSON)
+        res.redirect('/all')
+	},
+	all: (req, res) =>{
+		res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usersList})
+	},
+	eliminar: (req, res) =>{
+		let id= parseInt(req.params.id,10)
+        let users= usersList.findIndex(user=>user.id==id)
+        console.log(users)
+        var imagenbor = "public/images/users"+(usersList[users].avatar)
+		if(fs.existsSync(imagenbor)){
+			fs.unlinkSync(imagenbor)
+		}
+		res.redirect('/all')
+		usersList.splice(users,1)
 
-		res.send('Actualización en curso...')
+		usuariosJSON= JSON.stringify(usersList, null, 2)
+	
+		fs.writeFileSync(usersFilePath,usuariosJSON)
+        res.redirect('/all')	
 	}
-	// eliminar: (req, res) =>{
-		
-	// }
 };
 
 module.exports = controller;

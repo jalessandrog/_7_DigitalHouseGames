@@ -28,6 +28,7 @@ const validateUserLogin = [
 
 
 router.get('/', usersController.index); 
+router.get('/all',usersController.all);
 
 router.get('/login', usersController.login);
 router.post('/login', validateUserLogin, usersController.processLogin);
@@ -35,9 +36,9 @@ router.post('/login', validateUserLogin, usersController.processLogin);
 router.get('/register', guestMiddleware, usersController.signup);
 router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);
 
-router.get('/profile',authMiddleware, usersController.profile)
-router.get('/edit', authMiddleware, usersController.edit);
-router.put('/edit',upload.single('avatar'), usersController.actualizar)
-// router.delete('/delete',upload.single('avatar'), usersController.eliminar)
+router.get('/profile/:id/', usersController.profile);
+router.get('/edit/:id', usersController.edit);
+router.put('/edit/:id',upload.single('avatar'), usersController.actualizar)
+router.delete('/delete/:id',upload.single('avatar'), usersController.eliminar)
 
 module.exports = router;

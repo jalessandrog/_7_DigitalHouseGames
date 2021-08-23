@@ -6,7 +6,7 @@
 <%- include('partials/header') %>
 <body>
     <section class="section-profile">
-        <h1 class="title">Bienvenido</h1>
+        <h1 class="title">Bienvenido <%= user.nombre %></h1>
         <div class="imagen-perfil">
             <img src="/images/users/<%= user.avatar %>" width="10%">
             <hr class="mini-divisor perfil">
@@ -64,8 +64,8 @@
                     <br>    
             </form>
             <div class="buttons-ED" style="margin-left: 4em;">
-                <form action="" method="">
-                    <a href="/edit" class="action-button edit">MODIFICAR INFORMACIÓN</a>
+                <form action="/delete/<%=user.id %>?_method=DELETE" method="POST">
+                    <a href="/edit/<%= user.id %>" class="action-button edit">MODIFICAR INFORMACIÓN</a>
                     <button type="submit" class="action-button delete">ELIMINAR CUENTA</button>
                 </form>
             </div>

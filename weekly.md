@@ -54,6 +54,7 @@
         Implementación de rutas de huéspedes y usuarios. Se agregaron middlewares de session para especificar a que rutas se tiene acceso siendo usuario logueado o si es un usuario que aún no se ha registrado.
         Se mejoró el diseño del formulario para registrar/editar producto y agregar sus estilos de css al css principal
         Se corrigió el error que no guardaba el rol de usuario al crear un nuevo usuario
+        Se implementarón los métodos put y delete para editar información de usuario o borrar usuario.
 
         Problemas presentados:
         Errores en la funcionalidad de mostrar el nombre del usuario logeado en la página de inicio
@@ -62,7 +63,6 @@
         ¿Qué se va a hacer después?
         Mejorar la funcionalidad de mostrar el nombre del usuario logeado en el index
         Implementar "cerrar sesión" para que el usuario pase de logueado a invitado/normal.
-        Implementar métodos put y delete para editar información de usuario o borrar usuario.
         Mejorar el formato y diseño del carrito de compras
         
         

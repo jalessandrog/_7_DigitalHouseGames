@@ -233,6 +233,14 @@ footer div.footer div.container div.fila {
 .footer li {
     display: block;
 }
+
+.footer-col3 h3 a,
+.footer-col3 li a{
+    text-decoration: none;
+}
+
+.footer-col3 h3 a{color: white;}
+.footer-col3 li a{color: #9d9d9d;}
   
 .footer hr {
     border: none;
@@ -320,6 +328,62 @@ footer div.footer div.container div.fila {
 
 .register label.label-2 label.label-radio input[type="radio"]:checked {
     box-shadow: 0 0 0 3px #F05742;
+}
+
+/*---------------------------------------
+                #LISTA USUARIOS
+---------------------------------------*/
+
+main.users {
+    width: 80rem;
+    margin: auto;
+    padding: 2rem;
+}
+
+.card {
+    display: flex;
+    margin-bottom: 2rem;
+    border-radius: var(--default-radius);
+
+    box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.15);
+}
+.card-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 20%;
+    padding: 1rem;
+    
+    background-color: #F05742;
+    color: white;
+    text-align: center;
+    
+    border-radius: var(--default-radius) 0 0 var(--default-radius);
+}
+
+.card-left figure {
+    height: 100px;
+    width: 100px;
+    margin: 0;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+    background-color: white;
+}
+
+.card-left figure img {
+    width: 100%;
+}
+
+.card-content {
+    width: 80%;
+    padding: 1rem;
+    background-color: #3e7398 ;        
+    color: white;
+    border-radius: 0 var(--default-radius) var(--default-radius) 0;
 }
 
 /*---------------------------------------
@@ -658,6 +722,35 @@ input:focus{
         width: 50%;
         font-size: 10px;
         text-align: center;
+    }
+
+    main.users {
+        width: 20rem;
+        padding: 1rem;
+    }
+    .card-content h3#nombre{
+        font-size: 1rem;
+    }
+
+    .card-content a.action-button{
+        font-size: .5rem;
+    }
+
+    .card-content p#email, 
+    .card-content p#rol{
+        display: none;
+    }
+    .card-left, .card-content{
+        width: 50%;
+    }
+    .card-left h3#id{
+        padding: 1rem 0;
+        font-size: .7rem;
+    }
+    
+    .card-left figure{
+        height: 70px;
+        width: 70px;
     }
 }
   

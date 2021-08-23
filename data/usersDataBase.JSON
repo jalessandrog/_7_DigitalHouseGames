@@ -2,9 +2,9 @@
   {
     "id": 1,
     "nombre": "Joseph Alessandro",
-    "apellidos": "Garcia",
+    "apellidos": "García García",
     "email": "jalessandro.ag@gmail.com",
-    "password": "$2a$10$.tSyw.fRlPSCZM6.ewSrROaHyVX6vrMDxNUslryo39j1.vDLgjkcy",
+    "password": "$2a$10$kofqK1hK4mscDjsMdFQgbOJQqct6muqSxEZOuVA2gzlSG5UUQvDY2",
     "cumpleanios": "1998-05-31",
     "rolUsuario": "admin",
     "avatar": "user_img-avatar.jpg"
