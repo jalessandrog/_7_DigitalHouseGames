@@ -14,9 +14,9 @@
     <div class="contenedor-pequeno">
     <div class="fila">  
         <% listpro.forEach(art=> { %> 
-            <% if(art.plataforma=="PS") {%>  
+            <% if(art.idPlataforma==1) {%>  
                 <div class="col-4">
-                    <a href="/products/detail/<%= art.id %> " class="linkbox">
+                    <a href="/products/detail/<%= art.idProductos %> " class="linkbox">
                         <section>
                             <img src="/images/<%= art.imagenPrincipal %> ">
                             <h4><%= art.nombre %> </h4>

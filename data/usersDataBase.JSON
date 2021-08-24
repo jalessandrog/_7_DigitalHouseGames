@@ -39,5 +39,15 @@
     "cumpleanios": "2001-01-01",
     "rolUsuario": "admin",
     "avatar": "user_img-avatar.jpg"
+  },
+  {
+    "id": 1629771836668,
+    "nombre": "Bruce",
+    "apellidos": "Banner",
+    "email": "elvengadormasfuerte@gmail.com",
+    "password": "$2a$10$MLI5ghU5K2P6W.Ap2D4AR.uXNYwC9oBn6JT//i1mI382oA61ZQQxq",
+    "cumpleanios": "1982-07-23",
+    "rolUsuario": "admin",
+    "avatar": "user_img-Hulk.jpg"
   }
 ]
