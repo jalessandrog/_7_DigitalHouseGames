@@ -20,6 +20,11 @@ const controller = {
 	login: (req, res)=>{
 		res.render('login', {title: 'Login', cssFile : 'style', usersList:usersList})  
 	},
+	logout: (req, res) => {
+		res.clearCookie('email');
+		req.session.destroy();
+		return res.redirect('/');
+	},
 	signup: (req, res)=>{
 		res.render('register', {title: 'Crear Cuenta', cssFile : 'style'})  
 	},
@@ -68,7 +73,12 @@ const controller = {
 
 				if(isOkThePassword){
 					req.session.usuarioLogueado = userToLogin;
-					res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand, userlogin : userToLogin })
+
+					if(req.body.remember != undefined){
+						res.cookie('recordarme', userToLogin.email, { maxAge: 60000*10 })
+					}
+
+					res.redirect('/')
 				}else{
 					return res.render('login', {title: 'Login', cssFile : 'style',
 						errors: {
@@ -88,8 +98,6 @@ const controller = {
 		}
 	},
 	profile: (req, res) =>{
-		// let user = req.session.usuarioLogueado;
-		// console.log(user)
 		let id= parseInt(req.params.id,10)
         const user = usersList.find(p => p.id === id)
 		res.render('profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});

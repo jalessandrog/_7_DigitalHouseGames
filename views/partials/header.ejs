@@ -25,5 +25,14 @@
       <li><a href="/all">Contacto</a></li>
     </ul>
   </nav>
+  <% if (!locals.logueado) { %>
   <a class="contact" href="/login"><button class="header-button">Iniciar Sesión</button></a>
+  <% } else { %>
+  <a class="contact" href="/logout"><button class="header-button">Cerrar Sesión</button></a>
+  <% } %>
 </header>
+<% if (locals.logueado) { %>
+  <div class="userLogin">
+      <a href="/profile/<%= locals.logueado.id %>"><strong><em><%= locals.logueado.nombre %> </em></strong></a>
+  </div>
+<% } %>

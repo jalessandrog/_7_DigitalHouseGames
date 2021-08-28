@@ -33,6 +33,8 @@ router.get('/all', authMiddleware, usersController.all);
 router.get('/login', usersController.login);
 router.post('/login', validateUserLogin, usersController.processLogin);
 
+router.get('/logout', usersController.logout);
+
 router.get('/register', guestMiddleware, usersController.signup);
 router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);
 
