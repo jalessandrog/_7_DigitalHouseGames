@@ -21,7 +21,7 @@ const controller = {
 		res.render('login', {title: 'Login', cssFile : 'style', usersList:usersList})  
 	},
 	logout: (req, res) => {
-		res.clearCookie('email');
+		res.clearCookie('recordarme');
 		req.session.destroy();
 		return res.redirect('/');
 	},
