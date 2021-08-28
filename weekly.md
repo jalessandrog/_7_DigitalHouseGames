@@ -64,6 +64,23 @@
         Mejorar la funcionalidad de mostrar el nombre del usuario logeado en el index
         Implementar "cerrar sesión" para que el usuario pase de logueado a invitado/normal.
         Mejorar el formato y diseño del carrito de compras
+        Implementar función recordar usuario
+
+### Semana : 23-29 de agosto de 2021
+        ¿Qué se hizo?:
+        Se realizó el diagrama de base de datos de los productos, el cual se tomará como base para el script de structura.
+        Se creó el script de estructura para crear las tablas y las relaciones de los productos
+        
+
+        Problemas presentados:
+        Problemas en la función recordar usuario
+        
+
+        ¿Qué se va a hacer después?
+        Agregar botón de añadir productos
+        Validaciones para usuarios compradores y usuarios administradores
+        Implementar delete desde sequelize para la base de datos
+
         
         
           
