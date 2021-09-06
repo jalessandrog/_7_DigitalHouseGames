@@ -104,9 +104,9 @@ CREATE TABLE usuarios(
 
 -- Llenado tabla usuarios
 INSERT INTO usuarios(idUsuario,nombre,apellidos,email,`password`,cumpleanios,avatar,idCategoriaU)
-VALUES (1,'Joseph Alessandro','Garcia','jalessandro.ag@gmail.com','$2a$10$.tSyw.fRlPSCZM6.ewSrROaHyVX6vrMDxNUslryo39j1.vDLgjkcy','1998-05-31','user_img-avatar.jpg',2),
+VALUES (1,'Joseph Alessandro','Garcia','jalessandro.ag@gmail.com','$2a$10$.tSyw.fRlPSCZM6.ewSrROaHyVX6vrMDxNUslryo39j1.vDLgjkcy','1998-05-31','user_img-avatar.jpg',1),
 (2,'Anthony Edward','Stark','im_ironman@avengers.com','$2a$10$dmj8NstgmHCxMIX/Z47Ss..R3iGMr6LNoQgcrn9ejXaQWr7A8z5Oq','1970-05-29','user_img-Tony_Stark.jpg',1),
-(3,'Stephen','Vincent Strange','dr_strange@guardiandelagema.com','$2a$10$nxfyAdL4tCj8u5n8Swi6i.md6lA8kdHRVsWxbgsJ2y/VW0gyBGjcS','1990-07-01','user_img-Stephen-Strange.png',1);
+(3,'Stephen','Vincent Strange','dr_strange@guardiandelagema.com','$2a$10$nxfyAdL4tCj8u5n8Swi6i.md6lA8kdHRVsWxbgsJ2y/VW0gyBGjcS','1990-07-01','user_img-Stephen-Strange.png',2);
 
 -- -- Creacion tabla productos_usuarios
 

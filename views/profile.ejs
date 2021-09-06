@@ -6,9 +6,9 @@
 <%- include('partials/header') %>
 <body>
     <section class="section-profile">
-        <h1 class="title">Bienvenido <%= user.nombre %></h1>
+        <h1 class="title">Bienvenido <%= usersList2.nombre %></h1>
         <div class="imagen-perfil">
-            <img src="/images/users/<%= user.avatar %>" width="10%">
+            <img src="/images/users/<%= usersList2.avatar %>" width="10%">
             <hr class="mini-divisor perfil">
         </div>
         <div class="form-container profile">
@@ -19,7 +19,7 @@
                     <p>
                         <label class="label-1">
                             Nombre(s)
-                            <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= user.nombre %>" >
+                            <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= usersList2.nombre %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.apellidos) { %>
@@ -28,7 +28,7 @@
                     <p>
                         <label class="label-1">
                             Apellidos
-                            <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= user.apellidos %>" >
+                            <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= usersList2.apellidos %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.email) { %>
@@ -37,7 +37,7 @@
                     <p>
                         <label class="label-1">
                             Email
-                            <input type="email" name="email" placeholder="Correo electronico" value="<%= user.email %>" >
+                            <input type="email" name="email" placeholder="Correo electronico" value="<%= usersList2.email %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.cumpleanios) { %>
@@ -46,26 +46,26 @@
                     <p>
                         <label class="label-date">
                             Fecha de nacimiento
-                            <input type="date" name="cumpleanios" value="<%= user.cumpleanios %>" >
+                            <input type="date" name="cumpleanios" value="<%= usersList2.cumpleanios %>" >
                         </label>
                     </p>
                     <p>
                         <label class="label-2">
                             Perfil de usuario: 
-                            <% if(user.tipo_usuario == 'vendedor'){ %>
-                            <label class="select" for="comprador">Vendedor</label>
-                            <input type="radio" id="vendedor" name="tipo_usuario" value="vendedor" checked>
-                            <% }else if(user.tipo_usuario == 'comprador') {%>
+                            <% if(usersList2.idCategoriaU == 1){ %>
+                            <label class="select" for="comprador">Administrador</label>
+                            <input type="radio" id="vendedor" name="idCategoriaU" value='1' checked>
+                            <% }else if(usersList2.idCategoriaU == 2) {%>
                             <label class="select" for="comprador">Comprador</label>
-                            <input type="radio" id="comprador" name="tipo_usuario" value="comprador" checked>
+                            <input type="radio" id="comprador" name="categoriau" value='2' checked>
                             <% } %> 
                         </label>
                     </p>
                     <br>    
             </form>
             <div class="buttons-ED" style="margin-left: 4em;">
-                <form action="/delete/<%=user.id %>?_method=DELETE" method="POST">
-                    <a href="/edit/<%= user.id %>" class="action-button edit">MODIFICAR INFORMACIÓN</a>
+                <form action="/delete/<%=usersList2.idUsuario %>?_method=DELETE" method="POST">
+                    <a href="/edit/<%= usersList2.idUsuario %>" class="action-button edit">MODIFICAR INFORMACIÓN</a>
                     <button type="submit" class="action-button delete">ELIMINAR CUENTA</button>
                 </form>
             </div>

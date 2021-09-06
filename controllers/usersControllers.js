@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require("bcryptjs");
 const { eliminar } = require('./productsControllers');
+const db=require('../database/models');
+const { debugPort } = require('process');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
@@ -12,6 +14,8 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const listpro = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+const string= n=>n.toString()
 
 const controller = {
 	index: (req, res) => {
@@ -32,32 +36,57 @@ const controller = {
 		let errors = validationResult(req);
 	
 		if(errors.isEmpty()){
-			let usuario= {
-				id: Date.now(),
-				nombre:req.body.nombre,
-				apellidos:req.body.apellidos,
-				email:req.body.email,
-				password:bcrypt.hashSync(req.body.password, 10),
-				cumpleanios:req.body.cumpleanios,
-				rolUsuario: req.body.rolUsuario,
-				avatar:req.file.filename
-			}
-			let usersfile=fs.readFileSync(usersFilePath,{encoding:'utf-8'})
-			let usuarios;
-			if (usersfile==''){
-				usuarios=[]
+			if(req.file){
+				if(req.file.filename){
+					db.Usuario.create({
+						nombre:req.body.nombre,
+						apellidos:req.body.apellidos,
+						email:req.body.email,
+						password:bcrypt.hashSync(req.body.password, 10),
+						cumpleanios:req.body.cumpleanios,
+						idCategoriaU: parseInt(req.body.rolUsuario,10),
+						avatar:req.file.filename
+					})
+					.then(function(a)
+                	{res.redirect('/login')})
+				}
 			}else{
-				usuarios=JSON.parse(usersfile)
+				res.send('Falta adjuntar imagen, intentalo de nuevo')
 			}
-			usuarios.push(usuario)
-	
-			usuariosJSON= JSON.stringify(usuarios, null, 2)
-	
-			fs.writeFileSync(usersFilePath,usuariosJSON)
-			res.redirect('/login')
 		}else{
 			res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
+			
+
+		// let errors = validationResult(req);
+	
+		// if(errors.isEmpty()){
+		// 	let usuario= {
+		// 		id: Date.now(),
+		// 		nombre:req.body.nombre,
+		// 		apellidos:req.body.apellidos,
+		// 		email:req.body.email,
+		// 		password:bcrypt.hashSync(req.body.password, 10),
+		// 		cumpleanios:req.body.cumpleanios,
+		// 		rolUsuario: req.body.rolUsuario,
+		// 		avatar:req.file.filename
+		// 	}
+		// 	let usersfile=fs.readFileSync(usersFilePath,{encoding:'utf-8'})
+		// 	let usuarios;
+		// 	if (usersfile==''){
+		// 		usuarios=[]
+		// 	}else{
+		// 		usuarios=JSON.parse(usersfile)
+		// 	}
+		// 	usuarios.push(usuario)
+	
+		// 	usuariosJSON= JSON.stringify(usuarios, null, 2)
+	
+		// 	fs.writeFileSync(usersFilePath,usuariosJSON)
+		// 	res.redirect('/login')
+		// }else{
+		// 	res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
+		// }
 	},
 	processLogin: (req, res) =>{
 		let errors = validationResult(req);
@@ -98,14 +127,27 @@ const controller = {
 		}
 	},
 	profile: (req, res) =>{
-		let id= parseInt(req.params.id,10)
-        const user = usersList.find(p => p.id === id)
-		res.render('profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
+		let allUsers= db.Usuario.findAll()
+		let userspecific= db.Usuario.findByPk(parseInt(req.params.id,10))
+		Promise.all([allUsers,userspecific])
+			.then(function([todosresultados,user]){
+				res.render('profile', {title: 'Perfil', cssFile : 'style', usersList2:user, usersList:todosresultados});
+			})
+		// let id= parseInt(req.params.id,10)
+        // const user = usersList.find(p => p.id === id)
+		// res.render('profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
 	},
 	edit:(req, res) =>{
-		let id= parseInt(req.params.id,10)
-        const user = usersList.find(p => p.id === id)
-		res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
+		db.Usuario.findByPk(parseInt(req.params.id,10),{
+			include:[{association:'categoriau'}]
+		})
+		.then(function(resuser){
+			res.render('edit-profile', {title: 'Perfil', cssFile : 'style', usersList3:resuser, string:string})
+		})
+
+		// let id= parseInt(req.params.id,10)
+        // const user = usersList.find(p => p.id === id)
+		// res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
 	},
 	actualizar: (req, res) =>{
 		if(req.file){
@@ -130,9 +172,9 @@ const controller = {
                 })
             }
         }else{
-             let id= parseInt(req.params.id,10)
-             usersList.map(function(user){
-                 if(user.id == id){
+            let id= parseInt(req.params.id,10)
+            usersList.map(function(user){
+                if(user.id == id){
 					user.nombre= req.body.nombre,
 					user.apellidos = req.body.apellidos,
 					user.email= req.body.email,
@@ -141,8 +183,7 @@ const controller = {
 					user.rolUsuario=req.body.rolUsuario
                 }
                 return user
-             })
-            
+            })   
         }
         usuariosJSON= JSON.stringify(usersList, null, 2)
 	
@@ -150,7 +191,11 @@ const controller = {
         res.redirect('/all')
 	},
 	all: (req, res) =>{
-		res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usersList})
+		db.Usuario.findAll()
+			.then(function(usuarios){
+				res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usuarios})
+			})
+		// res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usersList})
 	},
 	eliminar: (req, res) =>{
 		let id= parseInt(req.params.id,10)

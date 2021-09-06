@@ -82,6 +82,19 @@
         Implementar delete desde sequelize para la base de datos
 
         
+### Semana : 30 de agosto de 2021   - 6 de septiembre de 2021
+      ¿Qué se hizo?:
+        Se implemento ver perfil, editar usuario, ver lista de usuarios con Base de Datos
+
         
+
+        Problemas presentados:
+        Error al crear usuario con base de datos
+        
+
+        ¿Qué se va a hacer después?
+        Agregar botón de añadir productos
+        Validaciones para usuarios compradores y usuarios administradores
+        Implementar delete desde sequelize para la base de datos
           
 
