@@ -41,6 +41,7 @@ router.post('/register', upload.single('avatar'), validateCreateForm, usersContr
 router.get('/profile/:id/', authMiddleware, usersController.profile);
 router.get('/edit/:id', authMiddleware, usersController.edit);
 router.put('/edit/:id',upload.single('avatar'), usersController.actualizar)
-router.delete('/delete/:id',upload.single('avatar'), usersController.eliminar)
+
+router.post('/delete/:id',upload.single('avatar'), usersController.eliminar)
 
 module.exports = router;

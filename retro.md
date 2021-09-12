@@ -53,4 +53,16 @@ Comunicación
         Seguir trabajando en colaboración 
 
     Reto personal - Joseph Alessandro: Organizar los tiempos entre la universidad, prácticas profesionales y clases en Digital House.
-        
+    
+### SEXTO SPRINT
+    Conclusión: 
+        Hay orgullo y algo de cansancio en está sprint. A inicios del proyecto, el equipo pasó de ser de tres integrantes activos a ser solo dos. De estos dos integrantes activos, ambos somos estudiantes universitarios que hemos desarrollado y mejorado habilidades para poder estar al día con nuestro proyecto. 
+        El proyecto inicio con una carga de trabajo no equilibrada y con una gran falta en el tiempo y forma de cada sprint, sin embargo, al día de hoy, los miembros activos del equipo hemos logrado ponernos al día y en las entregas. 
+        Esta sprint, ha sido bastante retadora, ya que ambos miembros estamos en epocas de parciales, pero no ha sido motivo para dejar a un lado el proyecto y considero que eso muestra nuestro compromiso con el equipo y el proyecto. 
+        En cuanto a los conocimientos aplicados en esta sprint, es genial ver como se hace la fusión del desarrollo de una página web (front-end y back-end) con una base de datos y como interactuan entre si, dandonos una amplia idea de como trabajan las grandes compañias como Amazon, Netflix, Mercado Libre, etc.
+
+    Retos:
+        Seguir con la buena comunicación entre los dos integrantes de equipo
+        Seguir trabajando en colaboración 
+    
+    

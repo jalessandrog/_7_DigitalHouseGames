@@ -136,66 +136,111 @@ const controller = {
     actualizar: (req, res) => {
 
         if(req.file){
-            if(req.file.filename){
-                let id= parseInt(req.params.id,10)
-                let index= listpro.findIndex(game=>game.id==id)
-                var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
-                if(fs.existsSync(imagenbor)){
-                    fs.unlinkSync(imagenbor)
+			if(req.file.filename){
+				db.Producto.update({
+                    nombre:req.body.nombre,
+                    rating: parseInt(req.body.rating,10),
+                    precio: parseInt(req.body.precio,10),
+                    breveDescripcion: req.body.breveDescripcion,
+                    informacionAdicional: req.body.informacionAdicional,
+                    imagenPrincipal:req.file.filename,
+                    idPlataforma:parseInt(req.body.plataforma,10),
+                    idConsola:parseInt(req.body.consola,10),
+                    idCategoria:parseInt(req.body.categoria,10)
+                },{
+					where: {
+						idProductos: req.params.id
+					}
+				});
+			}
+		}else{
+			db.Producto.update({
+                nombre:req.body.nombre,
+                rating: parseInt(req.body.rating,10),
+                precio: parseInt(req.body.precio,10),
+                breveDescripcion: req.body.breveDescripcion,
+                informacionAdicional: req.body.informacionAdicional,
+                idPlataforma:parseInt(req.body.plataforma,10),
+                idConsola:parseInt(req.body.consola,10),
+                idCategoria:parseInt(req.body.categoria,10)
+            },{
+                where: {
+                    idProductos: req.params.id
                 }
-                listpro.map(function(game){
-                    if(game.id == id){
-                        game.nombre= req.body.nombre,
-                        game.rating= parseInt(req.body.rating,10),
-                        game.precio= parseInt(req.body.precio,10),
-                        game.plataforma = req.body.plataforma,
-                        game.consola= req.body.consola,
-                        game.categoria= req.body.categoria,
-                        game.breveDescripcion=req.body.breveDescripcion,
-                        game.informacionAdicional=req.body.informacionAdicional,
-                        game.imagenPrincipal=req.file.filename
+            });
+		}
+		res.redirect('/products/detail/'+ parseInt(req.params.id,10))
 
-                    }
-                    return game
-                })
+        // if(req.file){
+        //     if(req.file.filename){
+        //         let id= parseInt(req.params.id,10)
+        //         let index= listpro.findIndex(game=>game.id==id)
+        //         var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
+        //         if(fs.existsSync(imagenbor)){
+        //             fs.unlinkSync(imagenbor)
+        //         }
+        //         listpro.map(function(game){
+        //             if(game.id == id){
+        //                 game.nombre= req.body.nombre,
+        //                 game.rating= parseInt(req.body.rating,10),
+        //                 game.precio= parseInt(req.body.precio,10),
+        //                 game.plataforma = req.body.plataforma,
+        //                 game.consola= req.body.consola,
+        //                 game.categoria= req.body.categoria,
+        //                 game.breveDescripcion=req.body.breveDescripcion,
+        //                 game.informacionAdicional=req.body.informacionAdicional,
+        //                 game.imagenPrincipal=req.file.filename
 
-            }
-        }else{
-             let id= parseInt(req.params.id,10)
-             listpro.map(function(game){
-                 if(game.id == id){
-                   game.nombre= req.body.nombre,
-                   game.rating= parseInt(req.body.rating,10),
-                   game.precio= parseInt(req.body.precio,10),
-                   game.plataforma = req.body.plataforma,
-                   game.consola= req.body.consola,
-                   game.breveDescripcion=req.body.breveDescripcion,
-                   game.informacionAdicional=req.body.informacionAdicional
-                   game.categoria= req.body.categoria
-                }
-                return game
-             })
+        //             }
+        //             return game
+        //         })
+
+        //     }
+        // }else{
+        //      let id= parseInt(req.params.id,10)
+        //      listpro.map(function(game){
+        //          if(game.id == id){
+        //            game.nombre= req.body.nombre,
+        //            game.rating= parseInt(req.body.rating,10),
+        //            game.precio= parseInt(req.body.precio,10),
+        //            game.plataforma = req.body.plataforma,
+        //            game.consola= req.body.consola,
+        //            game.breveDescripcion=req.body.breveDescripcion,
+        //            game.informacionAdicional=req.body.informacionAdicional
+        //            game.categoria= req.body.categoria
+        //         }
+        //         return game
+        //      })
             
-        }
-        productosJSON= JSON.stringify(listpro, null, 2)
+        // }
+        // productosJSON= JSON.stringify(listpro, null, 2)
 
-        fs.writeFileSync(productsFilePath,productosJSON)
-        res.redirect('/products/all')
+        // fs.writeFileSync(productsFilePath,productosJSON)
+        // res.redirect('/products/all')
     },
     eliminar: (req,res)=>{
-        let id= parseInt(req.params.id,10)
-        let index= listpro.findIndex(game=>game.id==id)
-        console.log(index)
-        var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
-            if(fs.existsSync(imagenbor)){
-                    fs.unlinkSync(imagenbor)
-                }
-                res.redirect('/products/all')
-        listpro.splice(index,1)
-        productosJSON= JSON.stringify(listpro, null, 2)
 
-        fs.writeFileSync(productsFilePath,productosJSON)
-        res.redirect('/products/all')
+        db.Producto.destroy({
+			where:{
+				idProductos: parseInt(req.params.id,10)
+			}
+		})
+
+		res.redirect('/products/all')
+
+        // let id= parseInt(req.params.id,10)
+        // let index= listpro.findIndex(game=>game.id==id)
+        // console.log(index)
+        // var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
+        //     if(fs.existsSync(imagenbor)){
+        //             fs.unlinkSync(imagenbor)
+        //         }
+        //         res.redirect('/products/all')
+        // listpro.splice(index,1)
+        // productosJSON= JSON.stringify(listpro, null, 2)
+
+        // fs.writeFileSync(productsFilePath,productosJSON)
+        // res.redirect('/products/all')
     }     
 };
 

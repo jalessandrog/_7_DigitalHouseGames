@@ -22,9 +22,6 @@ De acuerdo con el estudio realizado por el equipo presentamos las siguientes pá
 
 
 ## Descripción del equipo
-
-Jaime Costa: originario de Guadalajara, Jalisco, soy egresado de la Universidad de Guadalajara de la Facultad de Ingeniería Electrónica. Mis hobbies son el piano y los deportes acuáticos como el kitesurf y surf. 
-
 Joseph Alessandro García García:
 23 años
 Originario de La Barca, Jalisco. Actualmente, residente en Querétaro, Mx.

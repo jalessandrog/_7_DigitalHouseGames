@@ -18,7 +18,7 @@ router.get('/addproduct', authMiddleware, productsController.create);
 router.post('/addproduct',upload.single('imagenPrincipal'),productsController.guardar)
 router.get('/edit/:id', authMiddleware, productsController.edit);
 router.put('/edit/:id',upload.single('imagenPrincipal'), productsController.actualizar)
-router.delete('/delete/:id',upload.single('imagenPrincipal'), productsController.eliminar)
+router.post('/delete/:id',upload.single('imagenPrincipal'), productsController.eliminar)
 router.get('/all',productsController.todos)
 router.get('/Nintendo',productsController.ni)
 router.get('/PS',productsController.ps)

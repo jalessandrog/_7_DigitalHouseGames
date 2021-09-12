@@ -44,7 +44,7 @@ const controller = {
 						email:req.body.email,
 						password:bcrypt.hashSync(req.body.password, 10),
 						cumpleanios:req.body.cumpleanios,
-						idCategoriaU: parseInt(req.body.rolUsuario,10),
+						idCategoriaU: parseInt(req.body.categoriau,10),
 						avatar:req.file.filename
 					})
 					.then(function(a)
@@ -56,7 +56,6 @@ const controller = {
 		}else{
 			res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
-			
 
 		// let errors = validationResult(req);
 	
@@ -150,45 +149,79 @@ const controller = {
 		// res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
 	},
 	actualizar: (req, res) =>{
+
 		if(req.file){
-            if(req.file.filename){
-                let id = parseInt(req.params.id,10)
-                let users = usersList.findIndex(user=>user.id==id)
-                var imagenbor = "public/images/users"+(usersList[users].avatar)
-                if(fs.existsSync(imagenbor)){
-                    fs.unlinkSync(imagenbor)
-                }
-                usersList.map(function(user){
-                    if(user.id == id){
-                        user.nombre= req.body.nombre,
-                        user.apellidos = req.body.apellidos,
-                        user.email= req.body.email,
-                        user.password= bcrypt.hashSync(req.body.password, 10),
-                        user.cumpleanios=req.body.cumpleanios,
-                        user.rolUsuario=req.body.rolUsuario,
-                        user.avatar=req.file.filename
-                    }
-                    return user
-                })
-            }
-        }else{
-            let id= parseInt(req.params.id,10)
-            usersList.map(function(user){
-                if(user.id == id){
-					user.nombre= req.body.nombre,
-					user.apellidos = req.body.apellidos,
-					user.email= req.body.email,
-					user.password= bcrypt.hashSync(req.body.password, 10),
-					user.cumpleanios=req.body.cumpleanios,
-					user.rolUsuario=req.body.rolUsuario
-                }
-                return user
-            })   
-        }
-        usuariosJSON= JSON.stringify(usersList, null, 2)
+			if(req.file.filename){
+				db.Usuario.update({
+					nombre:req.body.nombre,
+					apellidos:req.body.apellidos,
+					email:req.body.email,
+					password:bcrypt.hashSync(req.body.password, 10),
+					cumpleanios:req.body.cumpleanios,
+					idCategoriaU: parseInt(req.body.categoriau,10),
+					avatar:req.file.filename
+				},{
+					where: {
+						idUsuario: req.params.id
+					}
+				});
+			}
+		}else{
+			db.Usuario.update({
+				nombre:req.body.nombre,
+				apellidos:req.body.apellidos,
+				email:req.body.email,
+				password:bcrypt.hashSync(req.body.password, 10),
+				cumpleanios:req.body.cumpleanios,
+				idCategoriaU: parseInt(req.body.categoriau,10),
+			},{
+				where: {
+					idUsuario: parseInt(req.params.id,10)
+				}
+			});
+		}
+		res.redirect('/profile/'+ parseInt(req.params.id,10))
+		
+
+		// if(req.file){
+        //     if(req.file.filename){
+        //         let id = parseInt(req.params.id,10)
+        //         let users = usersList.findIndex(user=>user.id==id)
+        //         var imagenbor = "public/images/users"+(usersList[users].avatar)
+        //         if(fs.existsSync(imagenbor)){
+        //             fs.unlinkSync(imagenbor)
+        //         }
+        //         usersList.map(function(user){
+        //             if(user.id == id){
+        //                 user.nombre= req.body.nombre,
+        //                 user.apellidos = req.body.apellidos,
+        //                 user.email= req.body.email,
+        //                 user.password= bcrypt.hashSync(req.body.password, 10),
+        //                 user.cumpleanios=req.body.cumpleanios,
+        //                 user.rolUsuario=req.body.rolUsuario,
+        //                 user.avatar=req.file.filename
+        //             }
+        //             return user
+        //         })
+        //     }
+        // }else{
+        //     let id= parseInt(req.params.id,10)
+        //     usersList.map(function(user){
+        //         if(user.id == id){
+		// 			user.nombre= req.body.nombre,
+		// 			user.apellidos = req.body.apellidos,
+		// 			user.email= req.body.email,
+		// 			user.password= bcrypt.hashSync(req.body.password, 10),
+		// 			user.cumpleanios=req.body.cumpleanios,
+		// 			user.rolUsuario=req.body.rolUsuario
+        //         }
+        //         return user
+        //     })   
+        // }
+        // usuariosJSON= JSON.stringify(usersList, null, 2)
 	
-		fs.writeFileSync(usersFilePath,usuariosJSON)
-        res.redirect('/all')
+		// fs.writeFileSync(usersFilePath,usuariosJSON)
+        // res.redirect('/all')
 	},
 	all: (req, res) =>{
 		db.Usuario.findAll()
@@ -198,20 +231,29 @@ const controller = {
 		// res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usersList})
 	},
 	eliminar: (req, res) =>{
-		let id= parseInt(req.params.id,10)
-        let users= usersList.findIndex(user=>user.id==id)
-        console.log(users)
-        var imagenbor = "public/images/users"+(usersList[users].avatar)
-		if(fs.existsSync(imagenbor)){
-			fs.unlinkSync(imagenbor)
-		}
-		res.redirect('/all')
-		usersList.splice(users,1)
 
-		usuariosJSON= JSON.stringify(usersList, null, 2)
+		db.Usuario.destroy({
+			where:{
+				idUsuario: parseInt(req.params.id,10)
+			}
+		})
+
+		res.redirect('/all')	
+
+		// let id= parseInt(req.params.id,10)
+        // let users= usersList.findIndex(user=>user.id==id)
+        // console.log(users)
+        // var imagenbor = "public/images/users"+(usersList[users].avatar)
+		// if(fs.existsSync(imagenbor)){
+		// 	fs.unlinkSync(imagenbor)
+		// }
+		// res.redirect('/all')
+		// usersList.splice(users,1)
+
+		// usuariosJSON= JSON.stringify(usersList, null, 2)
 	
-		fs.writeFileSync(usersFilePath,usuariosJSON)
-        res.redirect('/all')	
+		// fs.writeFileSync(usersFilePath,usuariosJSON)
+        // res.redirect('/all')	
 	}
 };
 

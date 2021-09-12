@@ -98,3 +98,22 @@
         Implementar delete desde sequelize para la base de datos
           
 
+### Semana : 7 - 13 de septiembre de 2021
+        ¿Qué se hizo?:
+                -Agregar botón de añadir productos
+
+                -CRUD de usuarios con Base de datos: registrar usuario (create), actualizar información de usuario  (update), eliminar usuario (destroy)
+                
+                -CRUD de productos con Base de datos: actualizar información de productos (update), eliminar productos (destroy)
+
+
+        Problemas presentados:
+                -Usuario nuevo se guarda en la base de datos y se puede apreciar la nueva tupla en MySQL Workbench pero al intentar iniciar sesión con este nuevo usuario, no se loguea porque no parece existir en la base de datos.
+
+                -Error al intentar actualizar producto (update) : UnhandledPromiseRejectionWarning: SequelizeForeignKeyConstraintError: Cannot add or update a child row: a foreign key constraint fails (`dhg_db`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`idConsola`) REFERENCES `consola` (`idConsola`))
+        
+
+        ¿Qué se va a hacer después?
+        Validaciones para usuarios compradores y usuarios administradores
+        Implementar delete desde sequelize para la base de datos 
+        Implementar Carrito de Compras Dinamico con Base de Datos   
