@@ -115,5 +115,4 @@
 
         ¿Qué se va a hacer después?
         Validaciones para usuarios compradores y usuarios administradores
-        Implementar delete desde sequelize para la base de datos 
         Implementar Carrito de Compras Dinamico con Base de Datos   

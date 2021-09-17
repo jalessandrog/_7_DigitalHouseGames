@@ -91,39 +91,53 @@ const controller = {
 		let errors = validationResult(req);
 
 		if(errors.isEmpty()){
-			let userEmail = req.body.email;
-			const userToLogin = usersList.find(correo => correo.email === userEmail)
-
-			if(userToLogin){
-
-				let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-				console.log(isOkThePassword)
-
-				if(isOkThePassword){
-					req.session.usuarioLogueado = userToLogin;
-
-					if(req.body.remember != undefined){
-						res.cookie('recordarme', userToLogin.email, { maxAge: 60000*10 })
-					}
-
-					res.redirect('/')
-				}else{
-					return res.render('login', {title: 'Login', cssFile : 'style',
-						errors: {
-							password: {
-								msg: 'Contraseña Incorrecta'
-							}
-						}
-					})
-				}
-
-			}else{
-				res.render('login', {title: 'Login', cssFile : 'style'})  
-			}
-
+			
+			db.Usuario.findByPk(req.params.email,{
+				include:[{association:'categoriau'}]
+			})
+			
+			
 		}else{
-			res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
+			res.render('login', {title: 'Login', cssFile : 'style', usersList4:userToLogin, errors: errors.mapped(), old : req.body });
 		}
+
+
+		// let errors = validationResult(req);
+
+		// if(errors.isEmpty()){
+		// 	let userEmail = req.body.email;
+		// 	const userToLogin = usersList.find(correo => correo.email === userEmail)
+
+		// 	if(userToLogin){
+
+		// 		let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+		// 		console.log(isOkThePassword)
+
+		// 		if(isOkThePassword){
+		// 			req.session.usuarioLogueado = userToLogin;
+
+		// 			if(req.body.remember != undefined){
+		// 				res.cookie('recordarme', userToLogin.email, { maxAge: 60000*10 })
+		// 			}
+
+		// 			res.redirect('/')
+		// 		}else{
+		// 			return res.render('login', {title: 'Login', cssFile : 'style',
+		// 				errors: {
+		// 					password: {
+		// 						msg: 'Contraseña Incorrecta'
+		// 					}
+		// 				}
+		// 			})
+		// 		}
+
+		// 	}else{
+		// 		res.render('login', {title: 'Login', cssFile : 'style'})  
+		// 	}
+
+		// }else{
+		// 	res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
+		// }
 	},
 	profile: (req, res) =>{
 		let allUsers= db.Usuario.findAll()
