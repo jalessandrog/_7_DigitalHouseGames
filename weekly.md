@@ -116,3 +116,20 @@
         ¿Qué se va a hacer después?
         Validaciones para usuarios compradores y usuarios administradores
         Implementar Carrito de Compras Dinamico con Base de Datos   
+
+### Semana : 14 - 20 de septiembre de 2021
+        ¿Qué se hizo?:
+                -Se corrigió el error que no permitía acceder con un nuevo usuario almacenado en la base de datos
+                -CRUD de usuarios con Base de datos: Autenticar usuario usando la base de datos
+                -Actualización de middlewares con base de datos
+                -Implementación de middleware para Administrador
+
+
+
+        Problemas presentados:
+                -Error al intentar actualizar producto (update) : UnhandledPromiseRejectionWarning: SequelizeForeignKeyConstraintError: Cannot add or update a child row: a foreign key constraint fails (`dhg_db`.`productos`, CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`idConsola`) REFERENCES `consola` (`idConsola`))
+                -Error de prueba: Al intentar acceder con una contraseña incorrecta o cuenta no existente en la base de datos, la interfaz no muestra los errores y permanece cargando.
+        
+
+        ¿Qué se va a hacer después?
+        Implementar Carrito de Compras Dinamico con Base de Datos   

@@ -5,6 +5,7 @@ const upload=require('../config/usersMulter');
 const { body } = require('express-validator');
 const authMiddleware = require('../middlewares/authMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
+const adminMiddleware = require('../middlewares/adminMiddleware')
 
 // ************ Controller Require ************
 const usersController = require('../controllers/usersControllers');
@@ -28,7 +29,7 @@ const validateUserLogin = [
 
 
 router.get('/', usersController.index); 
-router.get('/all', authMiddleware, usersController.all);
+router.get('/all', authMiddleware, adminMiddleware, usersController.all);
 
 router.get('/login', usersController.login);
 router.post('/login', validateUserLogin, usersController.processLogin);
@@ -39,9 +40,9 @@ router.get('/register', guestMiddleware, usersController.signup);
 router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);
 
 router.get('/profile/:id/', authMiddleware, usersController.profile);
-router.get('/edit/:id', authMiddleware, usersController.edit);
+router.get('/edit/:id', authMiddleware, adminMiddleware,usersController.edit);
 router.put('/edit/:id',upload.single('avatar'), usersController.actualizar)
 
-router.post('/delete/:id',upload.single('avatar'), usersController.eliminar)
+router.post('/delete/:id',adminMiddleware, upload.single('avatar'), usersController.eliminar)
 
 module.exports = router;

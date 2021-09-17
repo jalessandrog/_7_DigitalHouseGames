@@ -1,19 +1,16 @@
 const fs = require('fs');
 const path = require('path');
-
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
-const usersList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+const db=require('../database/models');
 
 function userioLogueadoMiddleware (req, res, next) {
     res.locals.logueado = false; //res.locals son variables que se pueden compartir en todas las vistas indistintamente del controlador
 
-    let cookieEmail = req.cookies.email;
-    const userCookie = usersList.find(correo => correo.email === cookieEmail)
+    let cookieEmail = db.Usuario.findOne({where: {email: req.cookies.recordarme}})
     
-    if(userCookie){
-        req.session.usuarioLogueado = userCookie;
-    }
-
+    .then(function(user) {
+        if(user) {req.session.userLogged = user;}
+    });
+    
     if(req.session.usuarioLogueado){
         res.locals.logueado = true;
         res.locals.logueado = req.session.usuarioLogueado; 

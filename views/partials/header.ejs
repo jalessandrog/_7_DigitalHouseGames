@@ -22,7 +22,9 @@
       </li>
       <li><a href="/products/Nintendo">Nintendo</a></li>
       <li><a href="#">Otros</a></li>
+      <% if (locals.logueado.idCategoriaU == 1) { %> 
       <li><a href="/all">Contacto</a></li>
+      <% } %>
     </ul>
   </nav>
   <% if (!locals.logueado) { %>
@@ -33,6 +35,6 @@
 </header>
 <% if (locals.logueado) { %>
   <div class="userLogin">
-      <a href="/profile/<%= locals.logueado.id %>"><strong><em><%= locals.logueado.nombre %> </em></strong></a>
+      <a href="/profile/<%= locals.logueado.idUsuario %>"><strong><em><%= locals.logueado.nombre %> </em></strong></a>
   </div>
 <% } %>

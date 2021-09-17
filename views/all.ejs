@@ -5,15 +5,19 @@
 <!-- Header -->
 <%- include('partials/header') %>
 <body>
-    <div class="contenedor-pequeno">
-        <div class="fila fila7">
-            <h2>Todos los productos</h2>
-            <p></p>
-            <p class="buttons">
-                <a class="action-button" href="/products/addproduct">Agregar nuevos productos</a>
-            </p>
+    <% if (locals.logueado) { %> 
+        <% if (locals.logueado.idCategoriaU == 1) { %> 
+        <div class="contenedor-pequeno">
+            <div class="fila fila7">
+                <h2>Todos los productos</h2>
+                <p></p>
+                <p class="buttons">
+                    <a class="action-button" href="/products/addproduct">Agregar nuevos productos</a>
+                </p>
+            </div>
         </div>
-    </div>
+        <% } %>
+    <% } %>
     <div class="contenedor-pequeno">
     <div class="fila">  
         <% listpro.forEach(art=> { %> 

@@ -1,20 +1,8 @@
-const fs = require('fs');
-const path = require('path');
-const db=require('../database/models');
-
-
 function adminMiddleware (req, res, next) {
-    const adminPrivilege = db.Usuario.findByPk(res.locals.logueado.email)
-    
-    // if(userCookie){
-    //     req.session.usuarioLogueado = userCookie;
-    // }
-
-    // if(req.session.usuarioLogueado){
-    //     res.locals.logueado = true;
-    //     res.locals.logueado = req.session.usuarioLogueado; 
-    // }
-
+    if (req.session.usuarioLogueado.idCategoriaU != 1){
+        res.redirect('/')
+        console.log("Acceso denegado - requiere permisos de administrador")
+    }
     next();
 } 
 

@@ -2,9 +2,8 @@ const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require("bcryptjs");
-const { eliminar } = require('./productsControllers');
 const db=require('../database/models');
-const { debugPort } = require('process');
+// const { debugPort } = require('process');
 
 
 const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
@@ -91,14 +90,39 @@ const controller = {
 		let errors = validationResult(req);
 
 		if(errors.isEmpty()){
+
+			let userToLogin = db.Usuario.findOne({where: {email: req.body.email}})
 			
-			db.Usuario.findByPk(req.params.email,{
-				include:[{association:'categoriau'}]
+			.then(function(user){
+				if(userToLogin){
+
+					let isOkThePassword = bcrypt.compareSync(req.body.password, user.password)
+					console.log(isOkThePassword)
+	
+					if(isOkThePassword){
+						delete userToLogin.user;
+						req.session.usuarioLogueado = user;
+
+						if(req.body.remember != undefined){
+							res.cookie('recordarme', req.body.email, { maxAge: 60000*10 })
+						}
+
+						res.redirect('/')
+					}else{
+						return res.render('login', {title: 'Login', cssFile : 'style',
+							errors: {
+								password: {
+									msg: 'Contraseña Incorrecta'
+								}
+							}
+						})
+					}
+				}else{
+					res.render('login', {title: 'Login', cssFile : 'style'})  
+				}
 			})
-			
-			
 		}else{
-			res.render('login', {title: 'Login', cssFile : 'style', usersList4:userToLogin, errors: errors.mapped(), old : req.body });
+			res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
 
 
@@ -108,13 +132,13 @@ const controller = {
 		// 	let userEmail = req.body.email;
 		// 	const userToLogin = usersList.find(correo => correo.email === userEmail)
 
-		// 	if(userToLogin){
+			// if(userToLogin){
 
-		// 		let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-		// 		console.log(isOkThePassword)
+			// 	let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
+			// 	console.log(isOkThePassword)
 
-		// 		if(isOkThePassword){
-		// 			req.session.usuarioLogueado = userToLogin;
+			// 	if(isOkThePassword){
+			// 		req.session.usuarioLogueado = userToLogin;
 
 		// 			if(req.body.remember != undefined){
 		// 				res.cookie('recordarme', userToLogin.email, { maxAge: 60000*10 })
