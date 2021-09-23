@@ -3,7 +3,7 @@ const path = require('path');
 const methodOverride=require('method-override');
 const { body } = require('express-validator');
 let db=require('../database/models');
-const { debugPort } = require('process');
+const { debugPort, send } = require('process');
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -144,79 +144,41 @@ const controller = {
                     breveDescripcion: req.body.breveDescripcion,
                     informacionAdicional: req.body.informacionAdicional,
                     imagenPrincipal:req.file.filename,
-                    idPlataforma:parseInt(req.body.plataforma,10),
-                    idConsola:parseInt(req.body.consola,10),
-                    idCategoria:parseInt(req.body.categoria,10)
+                    // idPlataforma:parseInt(req.body.plataforma,10),
+                    // idConsola:parseInt(req.body.consola,10),
+                    // idCategoria:parseInt(req.body.categoria,10)
                 },{
 					where: {
-						idProductos: req.params.id
+						idProductos: parseInt(req.params.id,10)
 					}
-				});
+				}).then(function(result){
+                    console.log(result)
+                    res.redirect('/products/detail/'+ parseInt(req.params.id,10))
+                })
+                .catch(error => res.JSON(error))
 			}
 		}else{
+            console.log(req.params.id)
+            console.log(req.body)
 			db.Producto.update({
                 nombre:req.body.nombre,
                 rating: parseInt(req.body.rating,10),
                 precio: parseInt(req.body.precio,10),
                 breveDescripcion: req.body.breveDescripcion,
                 informacionAdicional: req.body.informacionAdicional,
-                idPlataforma:parseInt(req.body.plataforma,10),
-                idConsola:parseInt(req.body.consola,10),
-                idCategoria:parseInt(req.body.categoria,10)
+                // idPlataforma:parseInt(req.body.plataforma,10),
+                // idConsola:parseInt(req.body.consola,10),
+                // idCategoria:parseInt(req.body.categoria,10)
             },{
                 where: {
-                    idProductos: req.params.id
+                    idProductos: parseInt(req.params.id,10)
                 }
-            });
+            }).then(function(result){
+                console.log(result)
+                res.redirect('/products/detail/'+ parseInt(req.params.id,10))
+            })
+            .catch(error => res.JSON(error))
 		}
-		res.redirect('/products/detail/'+ parseInt(req.params.id,10))
-
-        // if(req.file){
-        //     if(req.file.filename){
-        //         let id= parseInt(req.params.id,10)
-        //         let index= listpro.findIndex(game=>game.id==id)
-        //         var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
-        //         if(fs.existsSync(imagenbor)){
-        //             fs.unlinkSync(imagenbor)
-        //         }
-        //         listpro.map(function(game){
-        //             if(game.id == id){
-        //                 game.nombre= req.body.nombre,
-        //                 game.rating= parseInt(req.body.rating,10),
-        //                 game.precio= parseInt(req.body.precio,10),
-        //                 game.plataforma = req.body.plataforma,
-        //                 game.consola= req.body.consola,
-        //                 game.categoria= req.body.categoria,
-        //                 game.breveDescripcion=req.body.breveDescripcion,
-        //                 game.informacionAdicional=req.body.informacionAdicional,
-        //                 game.imagenPrincipal=req.file.filename
-
-        //             }
-        //             return game
-        //         })
-
-        //     }
-        // }else{
-        //      let id= parseInt(req.params.id,10)
-        //      listpro.map(function(game){
-        //          if(game.id == id){
-        //            game.nombre= req.body.nombre,
-        //            game.rating= parseInt(req.body.rating,10),
-        //            game.precio= parseInt(req.body.precio,10),
-        //            game.plataforma = req.body.plataforma,
-        //            game.consola= req.body.consola,
-        //            game.breveDescripcion=req.body.breveDescripcion,
-        //            game.informacionAdicional=req.body.informacionAdicional
-        //            game.categoria= req.body.categoria
-        //         }
-        //         return game
-        //      })
-            
-        // }
-        // productosJSON= JSON.stringify(listpro, null, 2)
-
-        // fs.writeFileSync(productsFilePath,productosJSON)
-        // res.redirect('/products/all')
     },
     eliminar: (req,res)=>{
 
@@ -227,20 +189,6 @@ const controller = {
 		})
 
 		res.redirect('/products/all')
-
-        // let id= parseInt(req.params.id,10)
-        // let index= listpro.findIndex(game=>game.id==id)
-        // console.log(index)
-        // var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
-        //     if(fs.existsSync(imagenbor)){
-        //             fs.unlinkSync(imagenbor)
-        //         }
-        //         res.redirect('/products/all')
-        // listpro.splice(index,1)
-        // productosJSON= JSON.stringify(listpro, null, 2)
-
-        // fs.writeFileSync(productsFilePath,productosJSON)
-        // res.redirect('/products/all')
     }     
 };
 
