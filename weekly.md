@@ -136,13 +136,12 @@
 
 ### Semana : 21 - 27 de septiembre de 2021
         ¿Qué se hizo?:
-                
+                -Se corrigió el error al intentar actualizar un producto utilizando update. 
 
         Problemas presentados:
-                -Error al modificar ID de tabla asociada a Productos - error en la llaves foraneas de productos
                 -Error con middleware usuarioLogueado
         
 
         ¿Qué se va a hacer después?
                 Implementar Carrito de Compras Dinamico con Base de Datos
-                Corregir errores presentados de sprint 6
+                Iniciar con sprint 7

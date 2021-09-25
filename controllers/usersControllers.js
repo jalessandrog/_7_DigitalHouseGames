@@ -6,8 +6,8 @@ const db=require('../database/models');
 // const { debugPort } = require('process');
 
 
-const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
-const usersList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+// const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
+// const usersList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const listpro = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -21,7 +21,7 @@ const controller = {
 		res.render('index', {title: 'Inicio', cssFile : 'style', listpro:listpro, toThousand:toThousand, userlogin : ''})
 	},
 	login: (req, res)=>{
-		res.render('login', {title: 'Login', cssFile : 'style', usersList:usersList})  
+		res.render('login', {title: 'Login', cssFile : 'style'})  
 	},
 	logout: (req, res) => {
 		res.clearCookie('recordarme');
@@ -46,8 +46,9 @@ const controller = {
 						idCategoriaU: parseInt(req.body.categoriau,10),
 						avatar:req.file.filename
 					})
-					.then(function(a)
-                	{res.redirect('/login')})
+					.then(function(a){
+						res.redirect('/login')
+					}).catch(error => res.JSON(error))
 				}
 			}else{
 				res.send('Falta adjuntar imagen, intentalo de nuevo')
@@ -120,7 +121,7 @@ const controller = {
 				}else{
 					res.render('login', {title: 'Login', cssFile : 'style'})  
 				}
-			})
+			}).catch(error => res.JSON(error))
 		}else{
 			res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
@@ -169,7 +170,7 @@ const controller = {
 		Promise.all([allUsers,userspecific])
 			.then(function([todosresultados,user]){
 				res.render('profile', {title: 'Perfil', cssFile : 'style', usersList2:user, usersList:todosresultados});
-			})
+			}).catch(error => res.JSON(error))
 		// let id= parseInt(req.params.id,10)
         // const user = usersList.find(p => p.id === id)
 		// res.render('profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
@@ -180,7 +181,7 @@ const controller = {
 		})
 		.then(function(resuser){
 			res.render('edit-profile', {title: 'Perfil', cssFile : 'style', usersList3:resuser, string:string})
-		})
+		}).catch(error => res.JSON(error))
 
 		// let id= parseInt(req.params.id,10)
         // const user = usersList.find(p => p.id === id)
@@ -202,7 +203,11 @@ const controller = {
 					where: {
 						idUsuario: parseInt(req.params.id,10)
 					}
-				});
+				}).then(function(result){
+					console.log(result)
+					res.redirect('/profile/'+ parseInt(req.params.id,10))
+				})
+				.catch(error => res.JSON(error))
 			}
 		}else{
 			db.Usuario.update({
@@ -216,9 +221,13 @@ const controller = {
 				where: {
 					idUsuario: parseInt(req.params.id,10)
 				}
-			});
+			}).then(function(result){
+				console.log(result)
+				res.redirect('/profile/'+ parseInt(req.params.id,10))
+			})
+			.catch(error => res.JSON(error))
 		}
-		res.redirect('/profile/'+ parseInt(req.params.id,10))
+		// res.redirect('/profile/'+ parseInt(req.params.id,10))
 		
 
 		// if(req.file){
@@ -265,7 +274,7 @@ const controller = {
 		db.Usuario.findAll()
 			.then(function(usuarios){
 				res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usuarios})
-			})
+			}).catch(error => res.JSON(error))
 		// res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usersList})
 	},
 	eliminar: (req, res) =>{
@@ -274,9 +283,13 @@ const controller = {
 			where:{
 				idUsuario: parseInt(req.params.id,10)
 			}
+		}).then(function(result){
+			console.log(result)
+			res.redirect('/all')
 		})
+		.catch(error => res.JSON(error))
 
-		res.redirect('/all')	
+		// res.redirect('/all')	
 
 		// let id= parseInt(req.params.id,10)
         // let users= usersList.findIndex(user=>user.id==id)
