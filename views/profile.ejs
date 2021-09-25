@@ -6,7 +6,11 @@
 <%- include('partials/header') %>
 <body>
     <section class="section-profile">
-        <h1 class="title">Bienvenido <%= usersList2.nombre %></h1>
+        <% if (locals.user.nombre === usersList2.nombre) { %>
+        <h1 class="title">Bienvenido <%= locals.user.nombre %></h1>
+        <% } else { %>
+        <h1 class="title">Perfil de <%= usersList2.nombre %></h1>
+        <% } %>
         <div class="imagen-perfil">
             <img src="/images/users/<%= usersList2.avatar %>" width="10%">
             <hr class="mini-divisor perfil">

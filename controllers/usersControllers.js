@@ -3,11 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const bcrypt = require("bcryptjs");
 const db=require('../database/models');
-// const { debugPort } = require('process');
-
-
-// const usersFilePath = path.join(__dirname, '../data/usersDataBase.JSON');
-// const usersList = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const listpro = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -48,7 +43,7 @@ const controller = {
 					})
 					.then(function(a){
 						res.redirect('/login')
-					}).catch(error => res.JSON(error))
+					}).catch(error => console.error(error));
 				}
 			}else{
 				res.send('Falta adjuntar imagen, intentalo de nuevo')
@@ -56,52 +51,25 @@ const controller = {
 		}else{
 			res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
-
-		// let errors = validationResult(req);
-	
-		// if(errors.isEmpty()){
-		// 	let usuario= {
-		// 		id: Date.now(),
-		// 		nombre:req.body.nombre,
-		// 		apellidos:req.body.apellidos,
-		// 		email:req.body.email,
-		// 		password:bcrypt.hashSync(req.body.password, 10),
-		// 		cumpleanios:req.body.cumpleanios,
-		// 		rolUsuario: req.body.rolUsuario,
-		// 		avatar:req.file.filename
-		// 	}
-		// 	let usersfile=fs.readFileSync(usersFilePath,{encoding:'utf-8'})
-		// 	let usuarios;
-		// 	if (usersfile==''){
-		// 		usuarios=[]
-		// 	}else{
-		// 		usuarios=JSON.parse(usersfile)
-		// 	}
-		// 	usuarios.push(usuario)
-	
-		// 	usuariosJSON= JSON.stringify(usuarios, null, 2)
-	
-		// 	fs.writeFileSync(usersFilePath,usuariosJSON)
-		// 	res.redirect('/login')
-		// }else{
-		// 	res.render('register', {title: 'Crear Cuenta', cssFile : 'style', errors: errors.mapped(), old : req.body });
-		// }
 	},
 	processLogin: (req, res) =>{
 		let errors = validationResult(req);
 
 		if(errors.isEmpty()){
 
-			let userToLogin = db.Usuario.findOne({where: {email: req.body.email}})
-			
+			db.Usuario.findOne({
+				where: {
+					email: req.body.email
+				}
+			})
 			.then(function(user){
-				if(userToLogin){
+				if(user){
 
 					let isOkThePassword = bcrypt.compareSync(req.body.password, user.password)
 					console.log(isOkThePassword)
 	
 					if(isOkThePassword){
-						delete userToLogin.user;
+						delete user.user;
 						req.session.usuarioLogueado = user;
 
 						if(req.body.remember != undefined){
@@ -119,50 +87,18 @@ const controller = {
 						})
 					}
 				}else{
-					res.render('login', {title: 'Login', cssFile : 'style'})  
+					res.render('login', {title: 'Login', cssFile : 'style',
+						errors: {
+							email: {
+								msg: 'No se encuentra email'
+							}
+						}
+					}) 
 				}
-			}).catch(error => res.JSON(error))
+			}).catch(error => console.error(error));
 		}else{
 			res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
 		}
-
-
-		// let errors = validationResult(req);
-
-		// if(errors.isEmpty()){
-		// 	let userEmail = req.body.email;
-		// 	const userToLogin = usersList.find(correo => correo.email === userEmail)
-
-			// if(userToLogin){
-
-			// 	let isOkThePassword = bcrypt.compareSync(req.body.password, userToLogin.password)
-			// 	console.log(isOkThePassword)
-
-			// 	if(isOkThePassword){
-			// 		req.session.usuarioLogueado = userToLogin;
-
-		// 			if(req.body.remember != undefined){
-		// 				res.cookie('recordarme', userToLogin.email, { maxAge: 60000*10 })
-		// 			}
-
-		// 			res.redirect('/')
-		// 		}else{
-		// 			return res.render('login', {title: 'Login', cssFile : 'style',
-		// 				errors: {
-		// 					password: {
-		// 						msg: 'Contraseña Incorrecta'
-		// 					}
-		// 				}
-		// 			})
-		// 		}
-
-		// 	}else{
-		// 		res.render('login', {title: 'Login', cssFile : 'style'})  
-		// 	}
-
-		// }else{
-		// 	res.render('login', {title: 'Login', cssFile : 'style', errors: errors.mapped(), old : req.body });
-		// }
 	},
 	profile: (req, res) =>{
 		let allUsers= db.Usuario.findAll()
@@ -170,10 +106,7 @@ const controller = {
 		Promise.all([allUsers,userspecific])
 			.then(function([todosresultados,user]){
 				res.render('profile', {title: 'Perfil', cssFile : 'style', usersList2:user, usersList:todosresultados});
-			}).catch(error => res.JSON(error))
-		// let id= parseInt(req.params.id,10)
-        // const user = usersList.find(p => p.id === id)
-		// res.render('profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
+			}).catch(error => console.error(error));
 	},
 	edit:(req, res) =>{
 		db.Usuario.findByPk(parseInt(req.params.id,10),{
@@ -181,11 +114,7 @@ const controller = {
 		})
 		.then(function(resuser){
 			res.render('edit-profile', {title: 'Perfil', cssFile : 'style', usersList3:resuser, string:string})
-		}).catch(error => res.JSON(error))
-
-		// let id= parseInt(req.params.id,10)
-        // const user = usersList.find(p => p.id === id)
-		// res.render('edit-profile', {title: 'Perfil', cssFile : 'style', user:user, usersList:usersList});
+		}).catch(error => console.error(error));
 	},
 	actualizar: (req, res) =>{
 
@@ -207,7 +136,7 @@ const controller = {
 					console.log(result)
 					res.redirect('/profile/'+ parseInt(req.params.id,10))
 				})
-				.catch(error => res.JSON(error))
+				.catch(error => console.error(error));
 			}
 		}else{
 			db.Usuario.update({
@@ -225,60 +154,16 @@ const controller = {
 				console.log(result)
 				res.redirect('/profile/'+ parseInt(req.params.id,10))
 			})
-			.catch(error => res.JSON(error))
+			.catch(error => console.error(error));
 		}
-		// res.redirect('/profile/'+ parseInt(req.params.id,10))
-		
-
-		// if(req.file){
-        //     if(req.file.filename){
-        //         let id = parseInt(req.params.id,10)
-        //         let users = usersList.findIndex(user=>user.id==id)
-        //         var imagenbor = "public/images/users"+(usersList[users].avatar)
-        //         if(fs.existsSync(imagenbor)){
-        //             fs.unlinkSync(imagenbor)
-        //         }
-        //         usersList.map(function(user){
-        //             if(user.id == id){
-        //                 user.nombre= req.body.nombre,
-        //                 user.apellidos = req.body.apellidos,
-        //                 user.email= req.body.email,
-        //                 user.password= bcrypt.hashSync(req.body.password, 10),
-        //                 user.cumpleanios=req.body.cumpleanios,
-        //                 user.rolUsuario=req.body.rolUsuario,
-        //                 user.avatar=req.file.filename
-        //             }
-        //             return user
-        //         })
-        //     }
-        // }else{
-        //     let id= parseInt(req.params.id,10)
-        //     usersList.map(function(user){
-        //         if(user.id == id){
-		// 			user.nombre= req.body.nombre,
-		// 			user.apellidos = req.body.apellidos,
-		// 			user.email= req.body.email,
-		// 			user.password= bcrypt.hashSync(req.body.password, 10),
-		// 			user.cumpleanios=req.body.cumpleanios,
-		// 			user.rolUsuario=req.body.rolUsuario
-        //         }
-        //         return user
-        //     })   
-        // }
-        // usuariosJSON= JSON.stringify(usersList, null, 2)
-	
-		// fs.writeFileSync(usersFilePath,usuariosJSON)
-        // res.redirect('/all')
 	},
 	all: (req, res) =>{
 		db.Usuario.findAll()
 			.then(function(usuarios){
 				res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usuarios})
-			}).catch(error => res.JSON(error))
-		// res.render('users', {title: 'Lista Usuarios', cssFile : 'style', usersList:usersList})
+			}).catch(error => console.error(error));
 	},
 	eliminar: (req, res) =>{
-
 		db.Usuario.destroy({
 			where:{
 				idUsuario: parseInt(req.params.id,10)
@@ -287,24 +172,7 @@ const controller = {
 			console.log(result)
 			res.redirect('/all')
 		})
-		.catch(error => res.JSON(error))
-
-		// res.redirect('/all')	
-
-		// let id= parseInt(req.params.id,10)
-        // let users= usersList.findIndex(user=>user.id==id)
-        // console.log(users)
-        // var imagenbor = "public/images/users"+(usersList[users].avatar)
-		// if(fs.existsSync(imagenbor)){
-		// 	fs.unlinkSync(imagenbor)
-		// }
-		// res.redirect('/all')
-		// usersList.splice(users,1)
-
-		// usuariosJSON= JSON.stringify(usersList, null, 2)
-	
-		// fs.writeFileSync(usersFilePath,usuariosJSON)
-        // res.redirect('/all')	
+		.catch(error => console.error(error));
 	}
 };
 

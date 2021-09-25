@@ -15,10 +15,14 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
-app.use(cookieParser());
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(session({secret: 'Secreto!!!'}));
+app.use(session({
+    secret: 'Secreto!!!',
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(cookieParser());
 app.use(recordarmeMiddleware);
 app.use(usuarioLogueadoMiddleware);
 
@@ -31,6 +35,10 @@ const { cookie } = require('express-validator');
 app.use('/', usersRouter);
 app.use('/products', productsRouter);
 
+
+app.use((req, res, next)=>{
+    res.status(404);
+});
 
 app.listen(3000, () =>{
     console.log('Servidor funcionando en el puerto 3000')
