@@ -136,10 +136,9 @@
 
 ### Semana : 21 - 27 de septiembre de 2021
         ¿Qué se hizo?:
-                -Se corrigió el error al intentar actualizar un producto utilizando update. 
-
-        Problemas presentados:
-                -Error con middleware usuarioLogueado
+                -Se corrigió el error al intentar actualizar un producto utilizando update.
+                -Se corrigió el mensaje de error que ocasionaba el middleware que validaba si el usuario se había autenticado
+                -Se corrigió el error que provocaba que el sitio se detuviera y no mostraba los errores de validación si se ingresaba una cuenta de correo no existente en la base de datos
         
 
         ¿Qué se va a hacer después?
