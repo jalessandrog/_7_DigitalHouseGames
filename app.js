@@ -6,7 +6,7 @@ const methodOverride=require('method-override');
 const session = require('express-session');
 const cookieParser = require('cookie-parser'); 
 const recordarmeMiddleware = require('./middlewares/cookieMiddleware');
-const userioLogueadoMiddleware = require('./middlewares/usurioLogueado');
+const usuarioLogueadoMiddleware = require('./middlewares/usuarioLogueado');
 
 
 // ************ Template Engine ************
@@ -20,7 +20,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.use(session({secret: 'Secreto!!!'}));
 app.use(recordarmeMiddleware);
-app.use(userioLogueadoMiddleware);
+app.use(usuarioLogueadoMiddleware);
 
 
 const usersRouter = require('./routes/users'); // Rutas main

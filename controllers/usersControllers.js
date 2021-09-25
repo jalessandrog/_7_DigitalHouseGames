@@ -200,7 +200,7 @@ const controller = {
 					avatar:req.file.filename
 				},{
 					where: {
-						idUsuario: req.params.id
+						idUsuario: parseInt(req.params.id,10)
 					}
 				});
 			}

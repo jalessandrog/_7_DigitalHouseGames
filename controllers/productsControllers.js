@@ -3,7 +3,7 @@ const path = require('path');
 const methodOverride=require('method-override');
 const { body } = require('express-validator');
 let db=require('../database/models');
-const { debugPort } = require('process');
+const { debugPort, send } = require('process');
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -151,10 +151,15 @@ const controller = {
 					where: {
 						idProductos: parseInt(req.params.id,10)
 					}
-				}).then(function(a)
-                {res.redirect('/products/detail/'+ parseInt(req.params.id,10))});
+				}).then(function(result){
+                    console.log(result)
+                    res.redirect('/products/detail/'+ parseInt(req.params.id,10))
+                })
+                .catch(error => res.JSON(error))
 			}
 		}else{
+            console.log(req.params.id)
+            console.log(req.body)
 			db.Producto.update({
                 nombre:req.body.nombre,
                 rating: parseInt(req.body.rating,10),
@@ -220,6 +225,10 @@ const controller = {
 
         // fs.writeFileSync(productsFilePath,productosJSON)
         // res.redirect('/products/all')
+                // idPlataforma:parseInt(req.body.plataforma,10),
+                // idConsola:parseInt(req.body.consola,10),
+                // idCategoria:parseInt(req.body.categoria,10)
+            
     },
     eliminar: (req,res)=>{
 
@@ -230,20 +239,6 @@ const controller = {
 		})
 
 		res.redirect('/products/all')
-
-        // let id= parseInt(req.params.id,10)
-        // let index= listpro.findIndex(game=>game.id==id)
-        // console.log(index)
-        // var imagenbor= "public/images/"+(listpro[index].imagenPrincipal)
-        //     if(fs.existsSync(imagenbor)){
-        //             fs.unlinkSync(imagenbor)
-        //         }
-        //         res.redirect('/products/all')
-        // listpro.splice(index,1)
-        // productosJSON= JSON.stringify(listpro, null, 2)
-
-        // fs.writeFileSync(productsFilePath,productosJSON)
-        // res.redirect('/products/all')
     }     
 };
 
