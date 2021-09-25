@@ -37,11 +37,11 @@ router.post('/login', validateUserLogin, usersController.processLogin);
 router.get('/logout', usersController.logout);
 
 router.get('/register', guestMiddleware, usersController.signup);
-router.post('/register', upload.single('avatar'), validateCreateForm, usersController.saveUser);
+router.post('/register', guestMiddleware, upload.single('avatar'), validateCreateForm, usersController.saveUser);
 
 router.get('/profile/:id/', authMiddleware, usersController.profile);
 router.get('/edit/:id', authMiddleware, adminMiddleware,usersController.edit);
-router.put('/edit/:id',upload.single('avatar'), usersController.actualizar)
+router.put('/edit/:id',adminMiddleware, upload.single('avatar'), usersController.actualizar)
 
 router.post('/delete/:id',adminMiddleware, upload.single('avatar'), usersController.eliminar)
 
