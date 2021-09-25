@@ -38,6 +38,7 @@ app.use('/products', productsRouter);
 
 app.use((req, res, next)=>{
     res.status(404);
+    res.send('ERROR 404')
 });
 
 app.listen(3000, () =>{

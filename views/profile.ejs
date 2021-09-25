@@ -23,7 +23,7 @@
                     <p>
                         <label class="label-1">
                             Nombre(s)
-                            <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= usersList2.nombre %>" >
+                            <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= usersList2.nombre %>" disabled>
                         </label>
                     </p>
                     <% if (locals.errors && errors.apellidos) { %>
@@ -32,7 +32,7 @@
                     <p>
                         <label class="label-1">
                             Apellidos
-                            <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= usersList2.apellidos %>" >
+                            <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= usersList2.apellidos %>" disabled>
                         </label>
                     </p>
                     <% if (locals.errors && errors.email) { %>
@@ -41,7 +41,7 @@
                     <p>
                         <label class="label-1">
                             Email
-                            <input type="email" name="email" placeholder="Correo electronico" value="<%= usersList2.email %>" >
+                            <input type="email" name="email" placeholder="Correo electronico" value="<%= usersList2.email %>" disabled>
                         </label>
                     </p>
                     <% if (locals.errors && errors.cumpleanios) { %>
@@ -50,7 +50,7 @@
                     <p>
                         <label class="label-date">
                             Fecha de nacimiento
-                            <input type="date" name="cumpleanios" value="<%= usersList2.cumpleanios %>" >
+                            <input type="date" name="cumpleanios" value="<%= usersList2.cumpleanios %>" disabled>
                         </label>
                     </p>
                     <p>
@@ -67,12 +67,14 @@
                     </p>
                     <br>    
             </form>
+            <% if(locals.user.idCategoriaU == 1){ %>
             <div class="buttons-ED" style="margin-left: 4em;">
                 <form action="/delete/<%=usersList2.idUsuario %>" method="POST">
                     <a href="/edit/<%= usersList2.idUsuario %>" class="action-button edit">MODIFICAR INFORMACIÓN</a>
                     <button type="submit" class="action-button delete">ELIMINAR CUENTA</button>
                 </form>
             </div>
+            <% } %> 
         </div>
     </section>
 </body>
