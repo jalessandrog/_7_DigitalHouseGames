@@ -149,9 +149,10 @@ const controller = {
                     idCategoria:parseInt(req.body.categoria,10)
                 },{
 					where: {
-						idProductos: req.params.id
+						idProductos: parseInt(req.params.id,10)
 					}
-				});
+				}).then(function(a)
+                {res.redirect('/products/detail/'+ parseInt(req.params.id,10))});
 			}
 		}else{
 			db.Producto.update({
@@ -163,13 +164,15 @@ const controller = {
                 idPlataforma:parseInt(req.body.plataforma,10),
                 idConsola:parseInt(req.body.consola,10),
                 idCategoria:parseInt(req.body.categoria,10)
-            },{
-                where: {
-                    idProductos: req.params.id
-                }
-            });
+            },
+            {
+                where: {idProductos: parseInt(req.params.id)}
+                
+            }).then(function(a)
+            {res.redirect('/products/detail/'+ parseInt(req.params.id,10))});
+        
 		}
-		res.redirect('/products/detail/'+ parseInt(req.params.id,10))
+	
 
         // if(req.file){
         //     if(req.file.filename){
