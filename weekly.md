@@ -144,3 +144,12 @@
         ¿Qué se va a hacer después?
                 Implementar Carrito de Compras Dinamico con Base de Datos
                 Iniciar con sprint 7
+
+### Semana : 15 - 17 de octubre de 2021
+
+        ¿Qué se hizo?:
+                -Se implementaron las validaciones en el front-end para el Login
+        
+        ¿Qué se va a hacer después?
+                Implementar las validaciones en el front-end para el Register
+                Implementar las validaciones en el front-end y back-end para los forms de productos (Registrar producto, etc)
