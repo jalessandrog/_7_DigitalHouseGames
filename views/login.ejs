@@ -8,48 +8,55 @@
 <%- include('partials/header') %>
 <!-- /Header -->
 <body>
-   <section class="section-login">
-      <h1 class="title">Login</h1>
-      <p class="banner-usuario">Accede a tu cuenta en DigitalHouseGames</p>
-      <div class="form-container login">
-          <form action="/login" method="POST">
-            <% if (locals.errors && errors.email) { %>
-                <p class="msg-errores"><%= errors.email.msg %></p>
-            <% } %>
-              <p>
-                  <label class="label-1">
-                      Email
-                      <input type="text" name="email" placeholder="correo electronico" value="<%= locals.old && old.email %>">
-                  </label>
-              </p>
-              <p>
-                  <label class="label-1">
-                      Contraseña
-                      <input type="password" name="password" placeholder="Contraseña" value="<%= locals.old && old.password %>">
-                  </label>
-              </p>
-              <% if (locals.errors && errors.password) { %>
-                <p class="msg-errores"><%= errors.password.msg %></p>
-            <% } %>
-              <p>
-                  <label class="label-2">
-                      <input type="checkbox" name="remember">
-                      Recordarme
-                  </label>
-              </p>
-              <p class="buttons">
-                 <button type="submit" class="action-button">Ingresar</button>
-              </p>
-              <p class="login-links">
-                 <!-- <a href="#">Olvidé Contraseña</a> -->
-                 <a href="/register">Crear cuenta</a>
-              </p>
-          </form>
-      </div>
-  </section>
-</body>
+    <section class="section-login">
+        <h1 class="title">Login</h1>
+        <p class="banner-usuario">Accede a tu cuenta en DigitalHouseGames</p>
+        <div class="form-container login">
+            <form action="/login" method="POST" class="LoginForm">
+                
+                <p>
+                    <label class="label-1">
+                        Email
+                        <input type="text" name="email" id="email" placeholder="correo electronico" value="<%= locals.old && old.email %>">
+                    </label>
+                </p>
+                <% if (locals.errors && errors.email) { %>
+                    <p class="msg-errores"><%= errors.email.msg %></p>
+                <% } %>
 
-<!------------------------Footer---------------------------------> 
-<%- include('partials/footer') %>
+                <p>
+                    <label class="label-1">
+                        Contraseña
+                        <input type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.old && old.password %>">
+                    </label>
+                </p>
+                <% if (locals.errors && errors.password) { %>
+                    <p class="msg-errores"><%= errors.password.msg %></p>
+                <% } %>
+
+                <p>
+                    <label class="label-2">
+                        <input type="checkbox" name="remember">
+                        Recordarme
+                    </label>
+                </p>
+
+                <p class="buttons">
+                    <button type="submit" class="action-button" id="botonIngresar">Ingresar</button>
+                </p>
+                <p class="login-links">
+                    <!-- <a href="#">Olvidé Contraseña</a> -->
+                    <a href="/register">Crear cuenta</a>
+                </p>
+            </form>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+    <!------------------------Footer---------------------------------> 
+    <%- include('partials/footer') %>
 <!-- /footer --> 
+<script src="/javascripts/ValidacionLogin.js"></script>
+</body>
 </html>

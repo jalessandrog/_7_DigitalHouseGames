@@ -25,6 +25,7 @@ const validateCreateForm = [
 
 const validateUserLogin = [
     body('email').notEmpty().withMessage('Debes completar el email'),
+    body('password').notEmpty().withMessage('Debes escribir una contraseña'),
 ];
 
 
