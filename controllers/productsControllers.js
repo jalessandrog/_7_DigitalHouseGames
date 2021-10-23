@@ -4,6 +4,7 @@ const methodOverride=require('method-override');
 const { body } = require('express-validator');
 let db=require('../database/models');
 const { debugPort, send } = require('process');
+const { validationResult } = require('express-validator')
 
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -39,26 +40,34 @@ const controller = {
          res.render('product-create-form',{ title: 'Añadir producto', cssFile: 'style'})
     },
     guardar: (req,res)=>{
+        let errors = validationResult(req);
+        
 
-        if(req.file){
-            if(req.file.filename){
-                db.Producto.create({
-                    nombre:req.body.nombre,
-                    rating: parseInt(req.body.rating,10),
-                    precio: parseInt(req.body.precio,10),
-                    breveDescripcion: req.body.breveDescripcion,
-                    informacionAdicional: req.body.informacionAdicional,
-                    imagenPrincipal:req.file.filename,
-                    idPlataforma:parseInt(req.body.plataforma,10),
-                    idConsola:parseInt(req.body.consola,10),
-                    idCategoria:parseInt(req.body.categoria,10)
-                })
-                .then(function(a)
-                {res.redirect('/products/all')})
+        if(errors.isEmpty()){
+            if(req.file){
+                if(req.file.filename){
+                    db.Producto.create({
+                        nombre:req.body.nombre,
+                        rating: parseInt(req.body.rating,10),
+                        precio: parseInt(req.body.precio,10),
+                        breveDescripcion: req.body.breveDescripcion,
+                        informacionAdicional: req.body.informacionAdicional,
+                        imagenPrincipal:req.file.filename,
+                        idPlataforma:parseInt(req.body.plataforma,10),
+                        idConsola:parseInt(req.body.consola,10),
+                        idCategoria:parseInt(req.body.categoria,10)
+                    })
+                    .then(function(a)
+                    {res.redirect('/products/all')})
+                }
+            }else{
+                res.send('Falta adjuntar imagen, intentalo de nuevo')
             }
         }else{
-            res.send('Falta adjuntar imagen, intentalo de nuevo')
+            return res.render('product-create-form',{ title: 'Añadir producto', cssFile: 'style', errors: errors.mapped(), old: req.body})
         }
+
+
 //        if(req.file){
 //            if(req.file.filename){
 //                let product= {
@@ -134,49 +143,61 @@ const controller = {
 //        res.render('edit-form',{ title: 'Editar producto', cssFile: 'style',listpro3:complist, string:string})
     },
     actualizar: (req, res) => {
-
-        if(req.file){
-			if(req.file.filename){
-				db.Producto.update({
+        let errors=validationResult(req);
+        if(errors.isEmpty()){
+            if(req.file){
+                if(req.file.filename){
+                    db.Producto.update({
+                        nombre:req.body.nombre,
+                        rating: parseInt(req.body.rating,10),
+                        precio: parseInt(req.body.precio,10),
+                        breveDescripcion: req.body.breveDescripcion,
+                        informacionAdicional: req.body.informacionAdicional,
+                        imagenPrincipal:req.file.filename,
+                        idPlataforma:parseInt(req.body.plataforma,10),
+                        idConsola:parseInt(req.body.consola,10),
+                        idCategoria:parseInt(req.body.categoria,10)
+                    },{
+                        where: {
+                            idProductos: parseInt(req.params.id,10)
+                        }
+                    }).then(function(result){
+                        console.log(result)
+                        res.redirect('/products/detail/'+ parseInt(req.params.id,10))
+                    })
+                    .catch(error => res.JSON(error))
+                }
+            }else{
+                console.log(req.params.id)
+                console.log(req.body)
+                db.Producto.update({
                     nombre:req.body.nombre,
                     rating: parseInt(req.body.rating,10),
                     precio: parseInt(req.body.precio,10),
                     breveDescripcion: req.body.breveDescripcion,
                     informacionAdicional: req.body.informacionAdicional,
-                    imagenPrincipal:req.file.filename,
                     idPlataforma:parseInt(req.body.plataforma,10),
                     idConsola:parseInt(req.body.consola,10),
                     idCategoria:parseInt(req.body.categoria,10)
-                },{
-					where: {
-						idProductos: parseInt(req.params.id,10)
-					}
-				}).then(function(result){
-                    console.log(result)
-                    res.redirect('/products/detail/'+ parseInt(req.params.id,10))
-                })
-                .catch(error => res.JSON(error))
-			}
-		}else{
-            console.log(req.params.id)
-            console.log(req.body)
-			db.Producto.update({
-                nombre:req.body.nombre,
-                rating: parseInt(req.body.rating,10),
-                precio: parseInt(req.body.precio,10),
-                breveDescripcion: req.body.breveDescripcion,
-                informacionAdicional: req.body.informacionAdicional,
-                idPlataforma:parseInt(req.body.plataforma,10),
-                idConsola:parseInt(req.body.consola,10),
-                idCategoria:parseInt(req.body.categoria,10)
-            },
-            {
-                where: {idProductos: parseInt(req.params.id)}
-                
-            }).then(function(a)
-            {res.redirect('/products/detail/'+ parseInt(req.params.id,10))});
+                },
+                {
+                    where: {idProductos: parseInt(req.params.id)}
+                    
+                }).then(function(a)
+                {res.redirect('/products/detail/'+ parseInt(req.params.id,10))});
+            
+            }
+        }else{
+            db.Producto.findByPk(parseInt(req.params.id,10),{
+                include:[{association:'consola'}]
+            })
+            .then(function(resprod){
+                res.render('edit-form',{ title: 'Editar producto', cssFile: 'style', errors: errors.mapped(), old: req.body, listpro3:resprod, string:string})
+            })
+            
+        }
+
         
-		}
 	
 
         // if(req.file){

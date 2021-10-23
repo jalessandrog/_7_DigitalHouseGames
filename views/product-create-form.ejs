@@ -18,57 +18,75 @@
                 <p>
                     <label class="label-1">
                         Nombre del producto:
-                        <input type="text" name="nombre">
+                        <input type="text" name="nombre" id="nombre" value="<%= locals.old && old.nombre %>">
                     </label>
                 </p>
+                <% if (locals.errors && errors.nombre) { %>
+                    <p class="msg-errores"><%= errors.nombre.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-textarea">
                         Descripción del producto:
-                        <textarea type="text" name="breveDescripcion" ></textarea>
+                        <textarea type="text" name="breveDescripcion" ><%= locals.old && old.breveDescripcion %></textarea>
                     </label>
                 </p>
+                <% if (locals.errors && errors.breveDescripcion) { %>
+                    <p class="msg-errores"><%= errors.breveDescripcion.msg %></p>
+                <% } %>                
                 <p>
                     <label class="label-1">
                         <label class="label-number">
                             Precio Unitario: 
-                            <input type="number" name="precio">
+                            <input type="number" name="precio" min='0' value="<%= locals.old && old.precio %>">
                             Rating: 
-                            <input type="number" name="rating" min='0' max="5">
+                            <input type="number" name="rating" min='0' max="5" value="<%= locals.old && old.rating %>">
                         </label>
                     </label>
                 </p>
+                <% if (locals.errors && errors.precio) { %>
+                    <p class="msg-errores"><%= errors.precio.msg %></p>
+                <% } %> 
+                <% if (locals.errors && errors.rating) { %>
+                    <p class="msg-errores"><%= errors.rating.msg %></p>
+                <% } %>                               
                 <p>
                     <label class="label-2">
                         Plataforma:
                         <label class="label-radio">
                             <label class="select" for="PS">Playstation</label>
-                            <input type="radio" name="plataforma" value='1'>
+                            <input type="radio" name="plataforma" value='1' <%= locals.old && old.plataforma == '1' ? 'checked' : null%> >
                             <label class="select" for="Xbox">Xbox</label>
-                            <input type="radio" name="plataforma" value='2'>
+                            <input type="radio" name="plataforma" value='2' <%= locals.old && old.plataforma == '2' ? 'checked' : null %>>
                             <label class="select" for="Nintendo">Nintendo</label>
-                            <input type="radio" name="plataforma" value='3'>
+                            <input type="radio" name="plataforma" value='3' <%= locals.old && old.plataforma == '3' ? 'checked' : null %>>
                         </label>
                     </label>
                 </p>
+                <% if (locals.errors && errors.plataforma) { %>
+                    <p class="msg-errores"><%= errors.plataforma.msg %></p>
+                <% } %>  
                 <p>
                     <label class="label-2">
                         Consola:
                         <label class="label-radio">
                             <label class="select" for="PS5">Playstation 5</label>
-                            <input type="radio" name="consola" value='1'>
+                            <input type="radio" name="consola" value='1' <%= locals.old && old.consola == '1' ? 'checked' : null %> >
                             <label class="select" for="PS4">Playstation 4</label>
-                            <input type="radio" name="consola" value='2'> 
+                            <input type="radio" name="consola" value='2' <%= locals.old && old.consola == '2' ? 'checked' : null %>> 
                             <label class="select" for="XboxOne">Xbox One</label>
-                            <input type="radio" name="consola" value='3'>
+                            <input type="radio" name="consola" value='3' <%= locals.old && old.consola == '3' ? 'checked' : null %>>
                             <label class="select" for="XboxSs">Xbox Series S</label>
-                            <input type="radio" name="consola" value='4'>
+                            <input type="radio" name="consola" value='4' <%= locals.old && old.consola == '4' ? 'checked' : null %>>
                             <label class="select" for="XboxSx">Xbox Series X</label>
-                            <input type="radio" name="consola" value='5'>
+                            <input type="radio" name="consola" value='5' <%= locals.old && old.consola == '5' ? 'checked' : null %>>
                             <label class="select" for="NSwitch">Nintendo Switch</label>
-                            <input type="radio" name="consola" value='6'>
+                            <input type="radio" name="consola" value='6' <%= locals.old && old.consola == '6' ? 'checked' : null %>>
                         </label>
                     </label>
                 </p>
+                <% if (locals.errors && errors.consola) { %>
+                    <p class="msg-errores"><%= errors.consola.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-textarea">
                         Información Adicional:
@@ -81,19 +99,25 @@
                         Categoría:
                         <select name="categoria" id="categoria">
                             <option value="">Elegir</option>
-                            <option value='1'>Lo más nuevo</option>
-                            <option value='2'>Lo más comprado</option>
-                            <option value='3'>Mejores ofertas</option>
-                            <option value='4'>Preventas</option>
+                            <option value='1'<%= locals.old && old.categoria == '1' ? 'selected' : null %> >Lo más nuevo</option>
+                            <option value='2'<%= locals.old && old.categoria == '2' ? 'selected' : null %>>Lo más comprado</option>
+                            <option value='3'<%= locals.old && old.categoria == '3' ? 'selected' : null %>>Mejores ofertas</option>
+                            <option value='4'<%= locals.old && old.categoria == '4' ? 'selected' : null %>>Preventas</option>
                         </select>
                     </label>
                 </p>
+                <% if (locals.errors && errors.categoria) { %>
+                    <p class="msg-errores"><%= errors.categoria.msg %></p>
+                <% } %>
                 <p>
                     <label class="label-file">
                         Imagen Principal  :
-                        <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg"> 
+                        <input type="file" name="imagenPrincipal" id="fileInput"  accept="image/png, .jpeg, .jpg, .gif"> 
                     </label>
                 </p>
+                <% if (locals.errors && errors.imagenPrincipal) { %>
+                    <p class="msg-errores"><%= errors.imagenPrincipal.msg %></p>
+                <% } %> 
                 <p class="buttons">
                     <input class="action-button" type="submit" name="submit" value="Cargar Producto"/>
                  </p>
@@ -101,6 +125,12 @@
         </div>
     </section>
 </body>
+    <%if (locals.errors){ %>
+        <br>
+        <br>
+        <br>
+        <br>
+    <%}%>
   <!-- footer -->
   <%- include('partials/footer') %>
   <!-- /footer --> 
