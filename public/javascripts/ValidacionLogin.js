@@ -9,11 +9,13 @@ window.addEventListener('load', function(){
         if(input.value === ''){
             input.placeholder = "Correo Electronico obligatorio";
             input.style.backgroundColor = "orange";
+            errors[select.name] = `${select.name} is required`
         }
         else if(!correo) {
             input.placeholder = "Escriba un correo electronico valido, por favor";
             input.style.backgroundColor = "orange";
             input.value = "";
+            errors[select.name] = `${select.name} es invalido`
         } else {
             input.classList.remove('invalid');
             input.style.backgroundColor = "white";
@@ -24,6 +26,7 @@ window.addEventListener('load', function(){
         if(input.value === ''){
             input.placeholder = "Contraseña Obligatoria";
             input.style.backgroundColor = "orange";
+            errors[select.name] = `${select.name} is required`
         }else{
             input.style.backgroundColor = "white";
         }
@@ -33,9 +36,17 @@ window.addEventListener('load', function(){
     email.addEventListener("blur", function(){ validarEmail(email); })
     password.addEventListener("blur", function(){ validarPassword(password); })
 
-    forms.addEventListener("submit", function(e) {
-        validateEmail()
-        validatePassword()
-        e.preventDefault();
+    function ValidacionForm() {
+        validarEmail()
+        validarPassword()
+    }
+
+    forms.addEventListener("submit", function(event) {
+        if(Object.keys(errors).length) {
+            event.preventDefault();
+            event.stopPropagation();
+            console.log(errors)
+        }
+        console.log('Autenticación exitosa')
     })
 })

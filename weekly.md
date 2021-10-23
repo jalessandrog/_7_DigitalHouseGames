@@ -153,3 +153,5 @@
         ¿Qué se va a hacer después?
                 Implementar las validaciones en el front-end para el Register
                 Implementar las validaciones en el front-end y back-end para los forms de productos (Registrar producto, etc)
+
+### Semana : 15 - 17 de octubre de 2021

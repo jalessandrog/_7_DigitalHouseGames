@@ -669,6 +669,15 @@ input:focus{
 
 }
 
+p.InfoProduct{
+    padding: 1.5rem;
+    text-align: justify;
+}
+
+h2.InfoProduct{
+    padding: 0 1.5rem;
+    text-align: justify;
+}
 
 
 /*---------------------------------------
@@ -677,6 +686,29 @@ input:focus{
 
 /* For Mobile version: */
 @media (max-width: 761px){
+
+    .imagen-perfil img{
+        width: 20%;
+    }
+
+    .action-button.cancel{
+        font-size: .8rem;
+        text-align: center;
+    }
+
+    .action-button.cargar{
+        font-size: .79rem;
+        text-align: center;
+    }
+    p.buttons{
+        margin-bottom: 3rem;
+    }
+
+    p.buttons a.action-button{
+        font-size: .5rem;
+        text-align: center;
+        padding: .6rem;
+    }
 
 /*====== HEADER ======*/
     header nav{
@@ -719,8 +751,8 @@ input:focus{
     }
 
     .buttons-ED form .action-button{
-        width: 50%;
-        font-size: 10px;
+        margin-left: 0;
+        font-size: 8px;
         text-align: center;
     }
 
@@ -758,6 +790,15 @@ input:focus{
   /* For tablet and version: */
   @media (min-width: 761px){
 
+    .buttons-ED form .action-button{
+        margin-left: 5rem;
+        font-size: 8px;
+        text-align: center;
+    }
+
+    
+
+
 /*====== HEADER ======*/
     .btn-toggle-navbar {
         display: none;
@@ -786,5 +827,9 @@ input:focus{
     }
   
 }
-  
-  
+
+@media (min-width: 1020px){
+    .buttons-ED form .action-button{
+        font-size: .8rem;
+    }
+}
