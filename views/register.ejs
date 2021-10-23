@@ -13,7 +13,7 @@
         <h1 class="title">Crear Cuenta</h1>
         <p class="banner-usuario">Registrate en DigitalHouseGames</p>
         <div class="form-container register">
-            <form class="form" id="RegisterForm" method="POST" action="/register" enctype="multipart/form-data">
+            <form class="RegisterForm" id="RegisterForm" method="POST" action="/register" enctype="multipart/form-data">
             
                 <p>
                     <label class="label-1">
@@ -28,7 +28,7 @@
                 <p>
                     <label class="label-1">
                         Apellidos
-                        <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= locals.old && old.apellidos %>" >
+                        <input type="text" name="apellidos" placeholder="Apellido paterno y materno" id="apellidos" value="<%= locals.old && old.apellidos %>" >
                     </label>
                 </p>
                 <% if (locals.errors && errors.apellidos) { %>
@@ -38,7 +38,7 @@
                 <p>
                     <label class="label-1">
                         Email
-                        <input type="email" name="email" placeholder="Correo electronico" value="<%= locals.old && old.email %>" >
+                        <input type="email" name="email" placeholder="Correo electronico" id="email" value="<%= locals.old && old.email %>" >
                     </label>
                 </p>
                 <% if (locals.errors && errors.email) { %>
@@ -48,7 +48,7 @@
                 <p>
                     <label class="label-1">
                         Contraseña
-                        <input type="password" name="password" placeholder="Contraseña" value="<%= locals.old && old.password %>" >
+                        <input type="password" name="password" placeholder="Contraseña" id="password" value="<%= locals.old && old.password %>" >
                     </label>
                 </p>
                 <% if (locals.errors && errors.password) { %>
@@ -67,7 +67,7 @@
                 <p>
                     <label class="label-2">
                         Perfil de usuario: 
-                        <label class="label-radio">
+                        <label class="label-radio" required>
                             <label class="select" for="admin">Administrador</label>
                             <input type="radio" name="categoriau" value='1'>
                             <label class="select" for="comprador">Comprador</label>
@@ -78,7 +78,7 @@
                 <p>
                     <label class="label-file">
                         Imagen de perfil:
-                        <input type="file" name="avatar" accept="image/png, image/jpeg">
+                        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
                     </label>
                 </p>
                 <p class="buttons">
@@ -90,6 +90,6 @@
     <!------------------------Footer---------------------------------> 
     <%- include('partials/footer') %>
     <!-- /footer --> 
-
+    <script src="/javascripts/ValidacionRegister.js"></script>
 </body>
 </html>
