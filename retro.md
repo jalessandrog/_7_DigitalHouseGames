@@ -64,5 +64,16 @@ Comunicación
     Retos:
         Seguir con la buena comunicación entre los dos integrantes de equipo
         Seguir trabajando en colaboración 
+
+### SEPTIMO SPRINT
+    Conclusión: 
+        Esta sprint ha sido algo fácil a comparación de las anteriores, hubo pequeños detalles pero nada que una investigación en google y console.log que no puedan solucionar. 
+        Aunque ha sido una sprint fácil, ha sido complejo trabajar en ella. En definitiva es complicado trabajar, ser universitario y además estar en la certificación. Sin embargo, me siento orgulloso del lejano camino que he recorrido y de todo lo que he aprendido sobre Desarrollo Web, Base de datos, nuevas herramientas, etc. Incluso de la madurez profesional y habilidades de trabajo en equipo que he adquirido y desarrollado a lo largo de estas 7 sprints. 
+        En cuanto a los conocimientos aplicados en esta sprint, puedo comprender la importancia de validar por ambos lados (servidor y cliente) los datos ingresados por el usuario, asi como reducir la probabilidad de errores que este puede tener. Las validaciones enriquecen más los sitios ya que ofrecen al usuario una visibilidad de estado del sistema, y como mencioné anteriormente, reduce la probabilidad de errores.
+
+    Retos:
+        Seguir con la buena comunicación entre los dos integrantes de equipo
+        Seguir trabajando en colaboración 
+        Mejorar la administración de tiempo
     
     

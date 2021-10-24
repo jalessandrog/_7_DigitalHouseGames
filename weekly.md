@@ -154,4 +154,14 @@
                 Implementar las validaciones en el front-end para el Register
                 Implementar las validaciones en el front-end y back-end para los forms de productos (Registrar producto, etc)
 
-### Semana : 15 - 17 de octubre de 2021
+### Semana : 18-25 de octubre de 2021
+        ¿Qué se hizo?:
+                -Se implementaron las validaciones en el front-end para el Login
+                -Se implementaron las validaciones en el front-end para la creación de cuenta
+                -Se implementaron las validaciones en el front-end para la modificación de información de usuarios
+                -Se implementaron las validaciones en el back-end para la modificación de información de usuarios
+                -Se implementaron las validaciones en el back-end para la creación y modificiación de productos
+        
+        ¿Qué se va a hacer después?
+                -Implementar las validaciones en el front-end para los forms de productos (Registrar producto, etc)
+                -Iniciar la última sprint de la certificación
