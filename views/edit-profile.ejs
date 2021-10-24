@@ -9,15 +9,16 @@
         <h1 class="title">Perfil de <%= usersList3.nombre %></h1>
         <div class="imagen-perfil">
             <img src="/images/users/<%= usersList3.avatar %>" width="10%">
+            
             <hr class="mini-divisor perfil">
         </div>
         <div class="form-container profile">
-            <form class="form" method="POST" action="/edit/<%=usersList3.idUsuario%>?_method=PUT" enctype="multipart/form-data">
-                
+            <form class="EditUserForm" id="EditUserForm" method="POST" action="/edit/<%=usersList3.idUsuario%>?_method=PUT" enctype="multipart/form-data">
+                    
                     <p>
                         <label class="label-1">
                             Nombre(s)
-                            <input type="text" name="nombre" placeholder="Nombre(s)" value="<%= usersList3.nombre %>" >
+                            <input type="text" name="nombre" id="nombre" placeholder="Nombre(s)" value="<%= usersList3.nombre %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.nombre) { %>
@@ -28,7 +29,7 @@
                     <p>
                         <label class="label-1">
                             Apellidos
-                            <input type="text" name="apellidos" placeholder="Apellido paterno y materno" value="<%= usersList3.apellidos %>" >
+                            <input type="text" name="apellidos"  id="apellidos" placeholder="Apellido paterno y materno" value="<%= usersList3.apellidos %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.apellidos) { %>
@@ -38,7 +39,7 @@
                     <p>
                         <label class="label-1">
                             Email
-                            <input type="email" name="email" placeholder="Correo electronico" value="<%= usersList3.email %>" >
+                            <input type="email" name="email" id="email" placeholder="Correo electronico" value="<%= usersList3.email %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.email) { %>
@@ -49,7 +50,7 @@
                     <p>
                         <label class="label-1">
                             Contraseña
-                            <input type="password" name="password" placeholder="Contraseña" >
+                            <input type="password" name="password" id="password" placeholder="Contraseña" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.password) { %>
@@ -69,7 +70,7 @@
                     <p>
                         <label class="label-date">
                             Fecha de nacimiento
-                            <input type="date" name="cumpleanios" value="<%= usersList3.cumpleanios %>" >
+                            <input type="date" name="cumpleanios" id="cumpleanios" value="<%= usersList3.cumpleanios %>" >
                         </label>
                     </p>
                     <% if (locals.errors && errors.cumpleanios) { %>
@@ -94,11 +95,18 @@
                     </p>
                     <br>
                     <p>
-                        <label class="label-file">
+                        <label class="label-file" >
                             Nueva imagen de perfil:
-                            <input type="file" name="avatar" accept="image/png, image/jpeg">
+                            <input type="file" name="avatar" id="avatar"  accept="image/png, image/.jpeg, image/.jpg, image/.gif">
                         </label>
+                        <br>
                     </p>
+                    <% if (locals.errors && errors.avatar) { %>
+                        <p class="msg-errores"><%= errors.avatar.msg %></p>
+                    <% } %>
+                    <!-- Image preview -->
+                    <div id="imagePreview" style="text-align: center;"></div>
+
                     <br>
                     <p class="buttons">
                         <button type="submit" class="action-button cargar">Actualizar</button>
@@ -107,10 +115,9 @@
             </form>
         </div>
     </section>
+<!------------------------Footer---------------------------------> 
+<%- include('partials/footer') %>
+<!-- /footer --> 
+<script src="/javascripts/ValidacionEditUser.js"></script>
 </body>
-<footer>
-    <!-- footer -->
-    <%- include('partials/footer') %>
-    <!-- /footer --> 
-  </footer>
 </html>

@@ -14,7 +14,9 @@
         <p class="banner-usuario">Registrate en DigitalHouseGames</p>
         <div class="form-container register">
             <form class="RegisterForm" id="RegisterForm" method="POST" action="/register" enctype="multipart/form-data">
-            
+                <!-- Image preview -->
+                <div id="imagePreview" style="text-align: center;"></div>
+
                 <p>
                     <label class="label-1">
                         Nombre(s)
@@ -89,13 +91,20 @@
                 <p>
                     <label class="label-file">
                         Imagen de perfil:
-                        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg, image/jpg">
+                        <input type="file" name="avatar" id="avatar"  accept="image/png, image/.jpeg, image/.jpg, image/.gif">
                     </label>
+                    
                 </p>
+                <% if (locals.errors && errors.avatar) { %>
+                    <p class="msg-errores"><%= errors.avatar.msg %></p>
+                <% } %>
+
                 <p class="buttons">
-                    <button type="submit" class="action-button">Crear Cuenta</button>
+                    <button type="submit"  class="action-button">Crear Cuenta</button>
                 </p>
             </form>
+            <br>
+            <br>
         </div>
     </section>
     <!------------------------Footer---------------------------------> 

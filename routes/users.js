@@ -2,6 +2,8 @@
 const express = require('express');
 const router = express.Router();
 const upload=require('../config/usersMulter');
+const db=require('../database/models');
+const path = require('path')
 const { body, matchedData, check } = require('express-validator');
 const authMiddleware = require('../middlewares/authMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
@@ -17,7 +19,20 @@ const validateCreateForm = [
     body('apellidos').notEmpty().withMessage('Debes completar el campo de apellido'),
     body('email')
         .notEmpty().withMessage('Debes completar el email').bail()
-        .isEmail().withMessage('Debes completar un email válido'),
+        .exists()
+        .isEmail().withMessage('Debes completar un email válido').bail()
+        .custom(userEmail=> {
+            return new Promise((resolve, reject) => {
+                db.Usuario.findOne({ where: { email: userEmail } })
+                .then(emailExist => {
+                    if(emailExist !== null){
+                        reject(new Error('El usuario ya existe'))
+                    }else{
+                        resolve(true)
+                    }
+                })
+            })
+        }),
     body('cumpleanios').isDate().withMessage('Debes ingresar una fecha de nacimiento válida'),
     body('password')
         .notEmpty().withMessage('Debes escribir una contraseña').bail()
@@ -32,16 +47,17 @@ const validateCreateForm = [
     //         }
     //     }),
     body('avatar')
-        .custom((value, {req})=>{
-            let file = req.file;
-            let acceptedExtensions=['.jpg','.png','.jpeg']
-
-            let fileExtension = path.extname(file.originalname)
+    .custom((value, {req})=>{
+        let file = req.file;
+        let acceptedExtensions=['.jpg','.png','.jpeg','.gif']
+        if(file){
+            let fileExtension = path.extname(file.filename)
             if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`)
             }
-            return true
-        })
+        }
+        return true
+    })
 ];
 
 const validateUserLogin = [
@@ -69,16 +85,17 @@ const validateEditForm = [
     //         }
     //     }), 
     body('avatar')
-        .custom((value, {req})=>{
-            let file = req.file;
-            let acceptedExtensions=['.jpg','.png','.jpeg']
-
-            let fileExtension = path.extname(file.originalname)
+    .custom((value, {req})=>{
+        let file = req.file;
+        let acceptedExtensions=['.jpg','.png','.jpeg','.gif']
+        if(file){
+            let fileExtension = path.extname(file.filename)
             if(!acceptedExtensions.includes(fileExtension)){
                 throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`)
             }
-            return true
-        })
+        }
+        return true
+    })
 ];
 
 
