@@ -1,5 +1,5 @@
 window.addEventListener('load', function(){
-    let forms = document.querySelector('.RegisterForm');
+    let forms = document.querySelector('.EditUserForm');
     let email = document.querySelector('#email');
     let password = document.querySelector('#password');
     let nombre = document.querySelector('#nombre');
@@ -138,4 +138,4 @@ window.addEventListener('load', function(){
         }
         console.log('Autenticación exitosa')
     })
-}})
+})

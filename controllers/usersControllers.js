@@ -116,10 +116,32 @@ const controller = {
 			res.render('edit-profile', {title: 'Perfil', cssFile : 'style', usersList3:resuser, string:string})
 		}).catch(error => console.error(error));
 	},
+
 	actualizar: (req, res) =>{
 
-		if(req.file){
-			if(req.file.filename){
+		let errors = validationResult(req);
+		if(errors.isEmpty()){
+			if(req.file){
+				if(req.file.filename){
+					db.Usuario.update({
+						nombre:req.body.nombre,
+						apellidos:req.body.apellidos,
+						email:req.body.email,
+						password:bcrypt.hashSync(req.body.password, 10),
+						cumpleanios:req.body.cumpleanios,
+						idCategoriaU: parseInt(req.body.categoriau,10),
+						avatar:req.file.filename
+					},{
+						WHERE: {
+							idUsuario: parseInt(req.params.id,10)
+						}
+					}).then(function(result){
+						console.log(result)
+						res.redirect('/profile/'+ parseInt(req.params.id,10))
+					})
+					.catch(error => console.error(error));
+				}
+			}else{
 				db.Usuario.update({
 					nombre:req.body.nombre,
 					apellidos:req.body.apellidos,
@@ -127,7 +149,6 @@ const controller = {
 					password:bcrypt.hashSync(req.body.password, 10),
 					cumpleanios:req.body.cumpleanios,
 					idCategoriaU: parseInt(req.body.categoriau,10),
-					avatar:req.file.filename
 				},{
 					where: {
 						idUsuario: parseInt(req.params.id,10)
@@ -139,22 +160,12 @@ const controller = {
 				.catch(error => console.error(error));
 			}
 		}else{
-			db.Usuario.update({
-				nombre:req.body.nombre,
-				apellidos:req.body.apellidos,
-				email:req.body.email,
-				password:bcrypt.hashSync(req.body.password, 10),
-				cumpleanios:req.body.cumpleanios,
-				idCategoriaU: parseInt(req.body.categoriau,10),
-			},{
-				where: {
-					idUsuario: parseInt(req.params.id,10)
-				}
-			}).then(function(result){
-				console.log(result)
-				res.redirect('/profile/'+ parseInt(req.params.id,10))
+			db.Usuario.findByPk(parseInt(req.params.id,10),{
+				include:[{association:'categoriau'}]
 			})
-			.catch(error => console.error(error));
+			.then(function(resuser){
+				res.render('edit-profile', {title: 'Editar perfil', cssFile : 'style', usersList3:resuser, string:string, errors: errors.mapped(), old : req.body });
+			}).catch(error => console.error(error));
 		}
 	},
 	all: (req, res) =>{
