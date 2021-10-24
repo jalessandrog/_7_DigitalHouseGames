@@ -1,6 +1,5 @@
-
 window.addEventListener("load",function(){
-    let productform=document.querySelector("form.productform")
+    let productform=document.querySelector("form.editpform")
     let camponombre=document.querySelector('input.nombre')
     let campobrevedescripcion=document.querySelector('textarea.breveDescripcion')
     let campoprecio=document.querySelector('input.precio')
@@ -135,9 +134,7 @@ window.addEventListener("load",function(){
     }
     function validatefile(){
         var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
-        if(document.querySelector('input[name="imagenPrincipal"]').value == ""){
-            p8.innerHTML='Debes adjuntar una imagen.'
-        }else if(allowedExtensions.exec(('input[name="imagenPrincipal"]').value)){
+        if(allowedExtensions.exec(('input[name="imagenPrincipal"]').value)){
             p8.innerHTML='Por favor sube aun archivo con las siguientes extensiones .jpeg/.jpg/.png/.gif only.'
         }else{
             p8.innerHTML=null
@@ -166,7 +163,7 @@ window.addEventListener("load",function(){
     
     productform.addEventListener('submit',(e)=>{
         validateform()
-        if(campos.nombre && campos.brevedescripcion && campos.precio && campos.rating && campos.plataforma && campos.consola && campos.categoria && campos.img){
+        if(campos.nombre && campos.brevedescripcion && campos.precio && campos.rating && campos.plataforma && campos.consola && campos.categoria){
             console.log('Exito')
         }else{
             e.preventDefault()
@@ -175,4 +172,3 @@ window.addEventListener("load",function(){
 
     
 })
-

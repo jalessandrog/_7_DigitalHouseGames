@@ -21,28 +21,30 @@
                 <p>
                     <label class="label-1">
                         Nombre del producto:
-                        <input type="text" name="nombre" value="<%=listpro3.nombre%>">
+                        <input type="text" name="nombre" value="<%=listpro3.nombre%>" class='nombre'>
                     </label>
                 </p>
                 <% if (locals.errors && errors.nombre) { %>
                     <p class="msg-errores"><%= errors.nombre.msg %></p>
                 <% } %>
+                <p class='msg-errores' id='error1'></p>
                 <p>
                     <label class="label-textarea">
                         Descripción del producto:
-                        <textarea type="text" name="breveDescripcion"><%=listpro3.breveDescripcion%></textarea>
+                        <textarea type="text" name="breveDescripcion" class='breveDescripcion'><%=listpro3.breveDescripcion%></textarea>
                     </label>
                 </p>
                 <% if (locals.errors && errors.breveDescripcion) { %>
                     <p class="msg-errores"><%= errors.breveDescripcion.msg %></p>
                 <% } %>
+                <p class='msg-errores' id='error2'></p>
                 <p>
                     <label class="label-1">
                         <label class="label-number">
                             Precio Unitario: 
-                            <input type="number" name="precio" value="<%=listpro3.precio%>" min='0'>
+                            <input type="number" name="precio" value="<%=listpro3.precio%>" min='0' class='precio'>
                             Rating: 
-                            <input type="number" name="rating" min='0' max="5" value="<%=listpro3.rating%>">
+                            <input type="number" name="rating" min='0' max="5" value="<%=listpro3.rating%>" class='rating'>
                         </label>
                     </label>
                 </p>
@@ -52,6 +54,8 @@
                 <% if (locals.errors && errors.rating) { %>
                     <p class="msg-errores"><%= errors.rating.msg %></p>
                 <% } %> 
+                <p class='msg-errores' id='error3'></p>
+                <p class='msg-errores' id='error4'></p>
                 <p>
                     <label class="label-2">
                         Plataforma:
@@ -84,6 +88,7 @@
                 <% if (locals.errors && errors.plataforma) { %>
                     <p class="msg-errores"><%= errors.plataforma.msg %></p>
                 <% } %>  
+                <p class='msg-errores' id='error5'></p>
                 <p>
                     <label class="label-2">
                         Consola:
@@ -173,6 +178,7 @@
                 <% if (locals.errors && errors.consola) { %>
                     <p class="msg-errores"><%= errors.consola.msg %></p>
                 <% } %>
+                <p class='msg-errores' id='error6'></p>
                 <p>
                     <label class="label-textarea">
                         Información Adicional:
@@ -221,6 +227,7 @@
                 <% if (locals.errors && errors.categoria) { %>
                     <p class="msg-errores"><%= errors.categoria.msg %></p>
                 <% } %>
+                <p class='msg-errores' id='error7'></p>
                 <p>
                     <label class="label-file">
                         Imagen Principal  :
@@ -229,7 +236,8 @@
                 </p>
                 <% if (locals.errors && errors.imagenPrincipal) { %>
                     <p class="msg-errores"><%= errors.imagenPrincipal.msg %></p>
-                <% } %> 
+                <% } %>
+                <p class='msg-errores' id='error8'></p> 
                 <p class="buttons">
                     <input class="action-button" type="submit" name="submit" value="Actualizar"/>
                  </p>
@@ -237,7 +245,15 @@
         </div>
     </section>
 </body>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
   <!-- footer -->
   <%- include('partials/footer') %>
   <!-- /footer --> 
+  <script src="/javascripts/ValidacionEditProduct.js"></script>
 </html>
