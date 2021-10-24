@@ -20,6 +20,7 @@ const controller = {
             })
         // res.render('all', {title: 'Detalles del producto', cssFile : 'style', listpro:listpro, toThousand:toThousand})
     },
+    
     detail: (req, res) => {
         let allproducts=db.Producto.findAll()
         let productspecific=db.Producto.findByPk(parseInt(req.params.id,10))

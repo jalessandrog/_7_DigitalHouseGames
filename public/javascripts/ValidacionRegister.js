@@ -88,8 +88,9 @@ window.addEventListener('load', function(){
             return;
         }
         if (/.(gif|jpeg|jpg|png)$/i.test(file.value)){
-            alert('Comprueba la extensión de tus imagenes, recuerda que los formatos aceptados son .gif, .jpeg, .jpg y .png');
+            alert('Comprueba la extensión de tus imagenes, recuerda que los formatos aceptados son .jpeg, .jpg y .png');
         }
+    }
 
     //el evento blur para detectar cuando el usuario haga clic fuera del input
     email.addEventListener("blur", function(){ validarEmail(email); })

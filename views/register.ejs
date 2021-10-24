@@ -56,6 +56,14 @@
                 <% } %>
                 
                 <p>
+                    <label class="label-1">
+                        Confirmar Contraseña
+                        <input type="password" name="password2" placeholder="Confirmar contraseña"  >
+                    </label>
+                </p>
+
+
+                <p>
                     <label class="label-date">
                         Fecha de nacimiento
                         <input type="date" name="cumpleanios" value="<%= locals.old && old.cumpleanios %>" >
@@ -78,7 +86,7 @@
                 <p>
                     <label class="label-file">
                         Imagen de perfil:
-                        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg">
+                        <input type="file" name="avatar" id="avatar" accept="image/png, image/jpeg, image/jpg">
                     </label>
                 </p>
                 <p class="buttons">
