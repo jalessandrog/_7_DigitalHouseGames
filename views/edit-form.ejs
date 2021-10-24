@@ -17,7 +17,7 @@
             <span class="actualizar_producto"><%=listpro3.nombre%></span> para 
             <span class="actualizar_producto"><%=listpro3.consola.nombre%></span></em></p>
         <div class="form-container addProduct">
-          <form class="form" method="POST" action="/products/edit/<%=listpro3.idProductos%>?_method=PUT" enctype="multipart/form-data">
+          <form class="editpform" method="POST" action="/products/edit/<%=listpro3.idProductos%>?_method=PUT" enctype="multipart/form-data">
                 <p>
                     <label class="label-1">
                         Nombre del producto:
