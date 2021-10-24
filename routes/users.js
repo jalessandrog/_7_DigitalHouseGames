@@ -23,14 +23,14 @@ const validateCreateForm = [
         .notEmpty().withMessage('Debes escribir una contraseña').bail()
         .isLength({min: 8, max: 32}).withMessage('Debes ingresar una contraseña con al menos 8 caracteres').bail()
         .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/,"i").withMessage('La contraseña no es lo suficiente fuerte, debe contener al menos un numero, una letra mayuscula, una letra minuscula, un caracter fuerte y un minimo de 8 caracteres'),
-    body('confirmPassword')
-        .custom((value, {req}) => {
-            if(value !== req.body.password){
-                throw new Error('Las contraseñas deben coincidir')
-            }else{
-                return true;
-            }
-        }),
+    // body('confirmPassword')
+    //     .custom((value, {req}) => {
+    //         if(value !== req.body.password){
+    //             throw new Error('Las contraseñas deben coincidir')
+    //         }else{
+    //             return true;
+    //         }
+    //     }),
     body('avatar')
         .custom((value, {req})=>{
             let file = req.file;
@@ -60,14 +60,14 @@ const validateEditForm = [
         .notEmpty().withMessage('Debes escribir una contraseña').bail()
         .isLength({min: 8, max: 32}).withMessage('Debes ingresar una contraseña con al menos 8 caracteres').bail()
         .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/,"i").withMessage('La contraseña no es lo suficiente fuerte, debe contener al menos un numero, una letra mayuscula, una letra minuscula, un caracter fuerte y un minimo de 8 caracteres'),
-    body('confirmPassword')
-        .custom((value, {req}) => {
-            if(value != req.body.password){
-                throw new Error('Las contraseñas deben coincidir')
-            }else{
-                return true;
-            }
-        }), 
+    // body('confirmPassword')
+    //     .custom((value, {req}) => {
+    //         if(value != req.body.password){
+    //             throw new Error('Las contraseñas deben coincidir')
+    //         }else{
+    //             return true;
+    //         }
+    //     }), 
     body('avatar')
         .custom((value, {req})=>{
             let file = req.file;
