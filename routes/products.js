@@ -68,7 +68,7 @@ const validateProductModification = [
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index); 
 
-
+// router.post('/', productsController.search);
 /*** GET ONE PRODUCT ***/ 
 router.get('/detail/:id/', productsController.detail); 
 router.get('/basket', authMiddleware, productsController.basket);

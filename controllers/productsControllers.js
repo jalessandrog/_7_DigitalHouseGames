@@ -261,7 +261,16 @@ const controller = {
 		})
 
 		res.redirect('/products/all')
-    }     
+    },
+    // search:(req,res)=>{
+    //     db.Producto.fetchAllbyTerm(req.body.query)
+    //         .then(([rows, fieldData]) => {
+    //             res.status(200).json({rows});
+    //         }).catch(err => {
+    //             console.log(err);
+    //             res.status(302).json({error: err});
+    //         });
+    // }
 };
 
 module.exports = controller;

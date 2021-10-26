@@ -29,18 +29,20 @@ app.use(usuarioLogueadoMiddleware);
 
 const usersRouter = require('./routes/users'); // Rutas main
 const productsRouter = require('./routes/products'); // Rutas /products
-const productsRouterApi = require('./routes/api/products'); // Rutas /products /api
+
 const { cookie } = require('express-validator');
 
 
 app.use('/', usersRouter);
 app.use('/products', productsRouter);
+
+
+
+// //Rutas API
+const ApiUsersRouter = require('./routes/api/users')
+app.use('/api/usuarios/',ApiUsersRouter)
+const productsRouterApi = require('./routes/api/products');
 app.use('/api', productsRouterApi);
-
-
-//Rutas API
-const usersRouterApi = require('./routes/api/users')
-app.use('/Auser',usersRouterApi)
 
 app.use((req, res, next)=>{
     res.status(404);

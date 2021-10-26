@@ -55,7 +55,7 @@ window.addEventListener('load', function(){
     }
 
     forms.addEventListener("submit", function(event) {
-        
+
         ValidacionForm()
         if(Object.keys(errors).length) {
             event.preventDefault();
