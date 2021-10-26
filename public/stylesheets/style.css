@@ -680,6 +680,18 @@ h2.InfoProduct{
 }
 
 
+/* VALIDACIONES */
+
+.ocultar {
+    display: none;
+}
+
+.mostrar {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+
 /*---------------------------------------
                 #RESPONSIVE
 ---------------------------------------*/

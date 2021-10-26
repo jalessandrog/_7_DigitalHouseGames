@@ -5,23 +5,36 @@ window.addEventListener('load', function(){
     let nombre = document.querySelector('#nombre');
     let apellidos = document.querySelector('#apellidos');
     let avatar = document.querySelector('#avatar');
+
+    let pNombre=document.querySelector('#errorNombre')
+    let pEmail=document.querySelector('#errorEmail')
+    let pApellidos=document.querySelector('#errorApellidos')
+    let pPassword=document.querySelector('#errorPassword')
+    let pAvatar=document.querySelector('#errorAvatar')
     
     const validarNombre = input =>{
         let name = /^[a-zA-ZÑñÁáÉéÍíÓóÚúÜü\s]+$/.test(input.value)
         
         if(input.value === ''){
             input.placeholder = "Campo obligatorio";
+            pNombre.classList.add("mostrar");
+            pNombre.innerHTML= "Campo Obligatorio"
             input.style.backgroundColor = "orange";
             errors[select.name] = `${select.name} is required`
         }else if((input.value).length<=2 || !name){
             input.placeholder = "Debe escribir un nombre valido";
+            pNombre.classList.add("mostrar");
+            pNombre.innerHTML= "Debe escribir un nombre valido";
             input.style.backgroundColor = "orange";
             input.value = "";
             errors[select.name] = `${select.name} invalido`
             alert('[ERROR] El campo debe tener un valor de...');
+            
         }else{
             input.classList.remove('invalid');
             input.style.backgroundColor = "white";
+            pNombre.classList.remove("mostrar");
+            pNombre.classList.add("ocultar");
         }
     }
 
@@ -30,10 +43,14 @@ window.addEventListener('load', function(){
         
         if(input.value === ''){
             input.placeholder = "Campo obligatorio";
+            pApellidos.classList.add("mostrar");
+            pApellidos.innerHTML= "Campo Obligatorio"
             input.style.backgroundColor = "orange";
             errors[select.name] = `${select.name} is required`
         }else if((input.value).length<=2 || !name){
             input.placeholder = "Debe escribir apellidos validos";
+            pApellidos.classList.add("mostrar");
+            pApellidos.innerHTML= "Debe escribir apellidos validos"
             input.style.backgroundColor = "orange";
             input.value = "";
             errors[select.name] = `${select.name} invalido`
@@ -41,6 +58,8 @@ window.addEventListener('load', function(){
         }else{
             input.classList.remove('invalid');
             input.style.backgroundColor = "white";
+            pApellidos.classList.remove("mostrar");
+            pApellidos.classList.add("ocultar");
         }
     }
 
@@ -50,17 +69,23 @@ window.addEventListener('load', function(){
         
         if(input.value === ''){
             input.placeholder = "Correo Electronico obligatorio";
+            pEmail.classList.add("mostrar");
+            pEmail.innerHTML= "Correo Electronico Obligatorio"
             input.style.backgroundColor = "orange";
             errors[select.name] = `${select.name} is required`
         }
         else if(!correo) {
             input.placeholder = "Escriba un correo electronico valido, por favor";
+            pEmail.classList.add("mostrar");
+            pEmail.innerHTML= "Correo Electronico Invalido"
             input.style.backgroundColor = "orange";
             input.value = "";
             errors[select.name] = `${select.name} es invalido`
         } else {
             input.classList.remove('invalid');
             input.style.backgroundColor = "white";
+            pEmail.classList.remove("mostrar");
+            pEmail.classList.add("ocultar");
         }
     }
 
@@ -69,17 +94,23 @@ window.addEventListener('load', function(){
 
         if(input.value === ''){
             input.placeholder = "Contraseña Obligatoria";
+            pPassword.classList.add("mostrar");
+            pPassword.innerHTML= "Contraseña Obligatoria"
             input.style.backgroundColor = "orange";
             input.value = "";
             errors[select.name] = `${select.name} is required`
         }else if((input.value).length<8 || !password){
             input.placeholder = "La contraseña contener al menos un numero, una letra mayuscula, una letra minuscula, un caracter fuerte y un minimo de 8 caracteres";
+            pPassword.classList.add("mostrar");
+            pPassword.innerHTML= "La contraseña contener al menos un numero, una letra mayuscula, una letra minuscula, un caracter fuerte y un minimo de 8 caracteres"
             input.value = "";
             input.style.backgroundColor = "orange";
             errors[select.name] = `${select.name} seguridad baja`
         }
         else{
             input.style.backgroundColor = "white";
+            pPassword.classList.remove("mostrar");
+            pPassword.classList.add("ocultar");
         }
     }
 
@@ -100,9 +131,13 @@ window.addEventListener('load', function(){
         var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
         if(!allowedExtensions.exec(filePath)){
             alert('Please upload file having extensions .jpeg/.jpg/.png/.gif only.');
+            pAvatar.classList.add("mostrar");
+            pAvatar.innerHTML= "Tipo de archivo invalido"
             file.value = '';
             return false;
         }else{
+            pAvatar.classList.remove("mostrar");
+            pAvatar.classList.add("ocultar");
             //Image preview
             if (file.files && file.files[0]) {
                 var reader = new FileReader();

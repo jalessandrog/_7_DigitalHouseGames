@@ -19,6 +19,7 @@
                         Email
                         <input type="text" name="email" id="email" placeholder="correo electronico" value="<%= locals.old && old.email %>">
                     </label>
+                    <p class='msg-errores ocultar' id='errorEmail'></p>
                 </p>
                 <% if (locals.errors && errors.email) { %>
                     <p class="msg-errores"><%= errors.email.msg %></p>
@@ -29,6 +30,7 @@
                         Contraseña
                         <input type="password" name="password" id="password" placeholder="Contraseña" value="<%= locals.old && old.password %>">
                     </label>
+                    <p class='msg-errores ocultar' id='errorPassword'></p>
                 </p>
                 <% if (locals.errors && errors.password) { %>
                     <p class="msg-errores"><%= errors.password.msg %></p>
