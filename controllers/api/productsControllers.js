@@ -16,12 +16,18 @@ const string= n=>n.toString()
 var constp=[]
 var constp1=[]
 var constp2=[]
+
 var constc=[]
 var constc1=[]
 var constc2=[]
 var constc3=[]
 var constc4=[]
 var constc5=[]
+
+var constca=[]
+var constca1=[]
+var constca2=[]
+var constca3=[]
 
 const controller = {
     index: (req, res) => {
@@ -55,31 +61,75 @@ const controller = {
                         }),
                         PlayStation_5:constc.length,
                         PlayStation_4_c:productos.forEach(art =>{
-                            if(art.idConsola==1){
+                            if(art.idConsola==2){
                                 constc1.push(art.idPlataforma)
                             }  
                         }),
                         PlayStation_4:constc1.length,
                         Xbox_One_c:productos.forEach(art =>{
-                            if(art.idConsola==1){
+                            if(art.idConsola==3){
                                 constc2.push(art.idPlataforma)
                             }  
                         }),
                         Xbox_One:constc2.length,
                         
-                        _c:productos.forEach(art =>{
-                            if(art.idConsola==1){
-                                constc2.push(art.idPlataforma)
+                        Xbox_Series_S_c:productos.forEach(art =>{
+                            if(art.idConsola==4){
+                                constc3.push(art.idPlataforma)
                             }  
                         }),
-                        Xbox_One:constc2.length,
+                        Xbox_Series_S:constc3.length,
+
+                        Xbox_Series_X_c:productos.forEach(art =>{
+                            if(art.idConsola==5){
+                                constc4.push(art.idPlataforma)
+                            }  
+                        }),
+                        Xbox_Series_X:constc4.length,
+
+                        Nintendo_Switch_c:productos.forEach(art =>{
+                            if(art.idConsola==6){
+                                constc5.push(art.idPlataforma)
+                            }  
+                        }),
+                        Nintendo_Switch:constc5.length,
+
+                        Lo_mas_nuevo_c:productos.forEach(art =>{
+                            if(art.idCategoria==1){
+                                constca.push(art.idPlataforma)
+                            }  
+                        }),
+                        Lo_mas_nuevo:constca.length,
+
+                        Lo_mas_comprado_c:productos.forEach(art =>{
+                            if(art.idCategoria==2){
+                                constca1.push(art.idPlataforma)
+                            }  
+                        }),
+                        Lo_mas_comprado:constca1.length,
+
+                        Mejores_ofertas_c:productos.forEach(art =>{
+                            if(art.idCategoria==3){
+                                constca2.push(art.idPlataforma)
+                            }  
+                        }),
+                        Mejores_ofertas:constca2.length,
+
+                        Preventas_c:productos.forEach(art =>{
+                            if(art.idCategoria==4){
+                                constca3.push(art.idPlataforma)
+                            }  
+                        }),
+                        Preventas:constca3.length,
+
+
                    },
                    products:productos.map(art => {
                         return {id: art.idProductos,
                                 name:art.nombre,
                                 description:art.breveDescripcion,
-                                Plataforma: [art.idProductos],
-                                detail: "api/products/" + art.idProductos }
+                                plataforma: [art.idProductos],
+                                detail: "/api/products/" + art.idProductos }
                        
                     
                    })
@@ -94,7 +144,18 @@ const controller = {
         let productspecific=db.Producto.findByPk(parseInt(req.params.id,10))
         Promise.all([allproducts,productspecific])
             .then(function([resultall,prod]){
-                res.render('detail', {title: 'Detalles del producto', cssFile : 'style',listpro2:prod,listpro:resultall, toThousand:toThousand })
+                res.json({
+                    id: prod.idProductos,
+                    name: prod.nombre,
+                    rating: prod.rating,
+                    price: prod.precio,
+                    description: prod.breveDescripcion,
+                    extraInformation: prod.informacionAdicional,
+                    plataform: [prod.idProductos],
+                    console: [prod.idConsola],
+                    category: [prod.idCategoria],
+                    img:"/images/" + prod.imagenPrincipal
+                })
             })
 
             
