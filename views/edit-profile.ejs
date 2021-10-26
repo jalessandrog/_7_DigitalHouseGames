@@ -20,6 +20,7 @@
                             Nombre(s)
                             <input type="text" name="nombre" id="nombre" placeholder="Nombre(s)" value="<%= usersList3.nombre %>" >
                         </label>
+                        <p class='msg-errores ocultar' id='errorNombre'></p>
                     </p>
                     <% if (locals.errors && errors.nombre) { %>
                         <p class="msg-errores"><%= errors.nombre.msg %></p>
@@ -31,6 +32,7 @@
                             Apellidos
                             <input type="text" name="apellidos"  id="apellidos" placeholder="Apellido paterno y materno" value="<%= usersList3.apellidos %>" >
                         </label>
+                        <p class='msg-errores ocultar' id='errorApellidos'></p>
                     </p>
                     <% if (locals.errors && errors.apellidos) { %>
                         <p class="msg-errores"><%= errors.apellidos.msg %></p>
@@ -41,6 +43,7 @@
                             Email
                             <input type="email" name="email" id="email" placeholder="Correo electronico" value="<%= usersList3.email %>" >
                         </label>
+                        <p class='msg-errores ocultar' id='errorEmail'></p>
                     </p>
                     <% if (locals.errors && errors.email) { %>
                         <p class="msg-errores"><%= errors.email.msg %></p>
@@ -52,6 +55,7 @@
                             Contraseña
                             <input type="password" name="password" id="password" placeholder="Contraseña" >
                         </label>
+                        <p class='msg-errores ocultar' id='errorPassword'></p>
                     </p>
                     <% if (locals.errors && errors.password) { %>
                         <p class="msg-errores"><%= errors.password.msg %></p>
@@ -99,6 +103,7 @@
                             Nueva imagen de perfil:
                             <input type="file" name="avatar" id="avatar"  accept="image/png, image/.jpeg, image/.jpg, image/.gif">
                         </label>
+                        <p class='msg-errores ocultar' id='errorAvatar'></p>
                         <br>
                     </p>
                     <% if (locals.errors && errors.avatar) { %>
