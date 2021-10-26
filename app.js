@@ -29,11 +29,13 @@ app.use(usuarioLogueadoMiddleware);
 
 const usersRouter = require('./routes/users'); // Rutas main
 const productsRouter = require('./routes/products'); // Rutas /products
+const productsRouterApi = require('./routes/api/products'); // Rutas /products /api
 const { cookie } = require('express-validator');
 
 
 app.use('/', usersRouter);
 app.use('/products', productsRouter);
+app.use('/api', productsRouterApi);
 
 
 app.use((req, res, next)=>{
