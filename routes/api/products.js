@@ -14,9 +14,13 @@ const productsController = require('../../controllers/api/productsControllers');
 /*** GET ALL PRODUCTS ***/ 
 router.get('/products/', productsController.index); 
 
+/*** GET ALL Categories ***/ 
+router.get('/products/categories', productsController.appCat); 
 
 /*** GET ONE PRODUCT ***/ 
-router.get('/products/:id', productsController.detail); 
+router.get('/products/:id', productsController.detail);
+
+
 
 
 

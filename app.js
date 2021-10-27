@@ -49,8 +49,8 @@ app.use((req, res, next)=>{
     res.send('ERROR 404')
 });
 
-app.listen(3000, () =>{
-    console.log('Servidor funcionando en el puerto 3000')
+app.listen(3001, () =>{
+    console.log('Servidor funcionando en el puerto 3001')
 })
 
 module.exports = app;
